@@ -1,4 +1,4 @@
-name: pipeline-ressources-multi-repo
+name: pipeline-resources-multi-repo
 
 trigger: none
 pr: none

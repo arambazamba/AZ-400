@@ -1,4 +1,4 @@
-name: pipeline-ressources-var-grps
+name: pipeline-resources-var-grps
 
 trigger: none
 pr: none
@@ -19,5 +19,5 @@ stages:
     - bash: |
         echo "node-version:"
         echo $(node-version)
-      name: nodeversion
+      name: node-version
       displayName: Output Node Version

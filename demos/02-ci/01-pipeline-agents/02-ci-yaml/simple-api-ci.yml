@@ -18,10 +18,10 @@ stages:
 
         steps:
           - task: UseDotNet@2
-            displayName: "Install .NET 6 SDK"
+            displayName: "Install .NET 8 SDK"
             inputs:
               packageType: "sdk"
-              version: "6.x"
+              version: "8.x"
 
           - task: DotNetCoreCLI@2
             displayName: dotnet build
@@ -39,6 +39,6 @@ stages:
 
           - task: PublishPipelineArtifact@1
             inputs:
-              artifactName: yamldrop
+              artifactName: drop
               targetPath: '$(Build.ArtifactStagingDirectory)'
-            displayName: "Publish Artifact: yamldrop"
+            displayName: "Publish Artifact: drop"
