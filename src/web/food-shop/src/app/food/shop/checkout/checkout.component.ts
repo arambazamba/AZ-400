@@ -21,7 +21,7 @@ export class CheckoutComponent {
   fb = inject(FormBuilder);
   cart = inject(CartFacade);
   os = inject(OrdersService)
-  order: Order | null = new Order();
+  order: Order = new Order();
   response: OrderEventResponse | null = null
 
   constructor() {
@@ -35,7 +35,7 @@ export class CheckoutComponent {
   completeCheckout(o: Order) {
     this.os.checkout(o).subscribe(orderResponse => {
       this.response = orderResponse
-      this.order = null;
+      this.cart.clear();
     });
   }
 }

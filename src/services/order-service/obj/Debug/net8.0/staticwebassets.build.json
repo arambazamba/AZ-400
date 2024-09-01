@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "/nrMUJwBYy/orKhdemf3G0mkS7PHi83uVGSC7Ic2TCY=",
+  "Source": "order-service",
+  "BasePath": "_content/order-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

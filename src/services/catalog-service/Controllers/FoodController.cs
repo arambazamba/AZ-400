@@ -9,9 +9,12 @@ namespace FoodApp
     [ApiController]
     public class FoodController : ControllerBase
     {
-        public FoodController(FoodDBContext context)
+        AILogger logger;
+
+        public FoodController(FoodDBContext context, AILogger ai)
         {
             ctx = context;
+            logger = ai;
         }
 
         FoodDBContext ctx;
@@ -20,6 +23,7 @@ namespace FoodApp
         [HttpGet()]
         public async Task<IEnumerable<CatalogItem>> GetFood()
         {
+            logger.LogEvent("GetFood", "test");
             return await ctx.Food.ToArrayAsync();
         }
 

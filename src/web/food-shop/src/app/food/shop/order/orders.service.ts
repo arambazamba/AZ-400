@@ -12,8 +12,9 @@ export class OrdersService {
   logger = inject(AILoggerService);
 
   checkout(order: any) {
-    this.logger.logEvent('ShopUI - Checkout Order', order);
-
+    this.logger.logEvent('checking out order', order);
+    var url = `${environment.ordersApi}/orders/create`;
+    this.logger.logEventObject('using url', url);
     return this.http.post<OrderEventResponse>(`${environment.ordersApi}/orders/create`, order);
   }
 }
