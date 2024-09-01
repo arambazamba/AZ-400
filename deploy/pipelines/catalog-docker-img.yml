@@ -12,7 +12,7 @@ trigger: none
 pr: none
 
 variables:
-  path: /az-400/src/services/catalog-service
+  appPath: src/services/catalog-service/
   imageName: catalog-service
   acr: conACR
 
@@ -36,7 +36,7 @@ stages:
             inputs:
               repository: '$(imageName)'
               command: 'buildAndPush'
-              Dockerfile: /az-400/src/services/catalog-service/dockerfile
+              Dockerfile: '$(appPath)dockerfile'
           - task: Docker@2
             displayName: Logout of ACR
             inputs:
