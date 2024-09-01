@@ -1,13 +1,13 @@
 export const environment = {
   production: false,
-  title: 'Food App',
+  title: 'Food Shop',
   authEnabled: false,
   mockCheckout: true,
-  catalogApi: 'https://localhost:5001',
-  ordersApi: 'https://localhost:5002',
+  catalogApi: 'http://localhost:5001',
+  ordersApi: 'http://localhost:5002',
   azure: {
     apimSubscriptionKey: "39fc8b24086a4346a6317d047869f983",
-    applicationInsights: '89094b1f-dde1-4c07-8d40-f7d01ef18d55',
+    applicationInsights: 'd1588cb9-4e43-4fdc-9aef-99436565d628',
     appReg: {
       clientId: 'd23642f7-9ccf-4165-92e7-919f625a5acc',
       authority:

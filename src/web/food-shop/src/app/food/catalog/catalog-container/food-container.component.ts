@@ -4,21 +4,23 @@ import { FoodEntityService } from '../../state/catalog/food-entity.service';
 import { FoodEditComponent } from '../food-edit/food-edit.component';
 import { NgIf, AsyncPipe } from '@angular/common';
 import { FoodListComponent } from '../food-list/food-list.component';
+import { AILoggerService } from '../../../logger/ai-logger.service';
 
 @Component({
-    selector: 'app-food-container',
-    templateUrl: './food-container.component.html',
-    styleUrls: ['./food-container.component.scss'],
-    standalone: true,
-    imports: [
-        FoodListComponent,
-        NgIf,
-        FoodEditComponent,
-        AsyncPipe,
-    ],
+  selector: 'app-food-container',
+  templateUrl: './food-container.component.html',
+  styleUrls: ['./food-container.component.scss'],
+  standalone: true,
+  imports: [
+    FoodListComponent,
+    NgIf,
+    FoodEditComponent,
+    AsyncPipe,
+  ],
 })
 export class FoodContainerComponent implements OnInit {
   foodES = inject(FoodEntityService);
+  logger = inject(AILoggerService);
   food = this.foodES.entities$;
   selected: CatalogItem | null = null;
 
@@ -26,6 +28,7 @@ export class FoodContainerComponent implements OnInit {
     this.foodES.loaded$.subscribe((loaded) => {
       if (!loaded) {
         this.foodES.getAll();
+        this.logger.logEvent('loaded data food from catalog');
       }
     });
   }

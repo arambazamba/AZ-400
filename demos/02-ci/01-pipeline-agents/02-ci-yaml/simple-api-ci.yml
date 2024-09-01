@@ -1,0 +1,44 @@
+name: "simple-api-ci.yaml"
+trigger:
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  buildConfiguration: "Release"
+
+stages:
+  - stage: "Build"
+    jobs:
+      - job: "Build"
+        displayName: "Build Api"
+
+        steps:
+          - task: UseDotNet@2
+            displayName: "Install .NET 8 SDK"
+            inputs:
+              packageType: "sdk"
+              version: "8.x"
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet build
+            inputs:
+              command: build
+              projects: "**/*.csproj"
+              arguments: "--configuration $(buildConfiguration)"
+
+          - task: DotNetCoreCLI@2
+            displayName: dotnet publish
+            inputs:
+              command: "publish"
+              publishWebProjects: true
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              artifactName: drop
+              targetPath: '$(Build.ArtifactStagingDirectory)'
+            displayName: "Publish Artifact: drop"

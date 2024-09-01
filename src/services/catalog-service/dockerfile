@@ -1,14 +1,22 @@
 # Build Image
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
-WORKDIR /build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
+WORKDIR /app
+
+COPY ["catalog-service/catalog-service.csproj", "catalog-service/"]
+COPY ["food-app-common/food-app-common.csproj", "food-app-common/"] 
+
+RUN dotnet restore "catalog-service/catalog-service.csproj"
 COPY . .
-RUN dotnet restore "catalog-service.csproj"
-RUN dotnet publish -c Release -o /app
+WORKDIR "/app/catalog-service"
+
+RUN dotnet build "catalog-service.csproj" -c Release -o /app/build
+FROM build as publish
+RUN dotnet publish "catalog-service.csproj" -c Release -o /app/publish
 
 # Runtime Image
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy-chiseled AS final
 WORKDIR /app
-COPY --from=build /app .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "catalog-service.dll"]
 
 # Build Image

@@ -1,5 +1,5 @@
 import { registerLocaleData } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors } from '@angular/common/http';
 import localeDe from '@angular/common/locales/de';
 import { ErrorHandler, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -45,7 +45,7 @@ const bootstrap = environment.authEnabled
     }),
     EffectsModule.forRoot([]),
     EntityDataModule.forRoot({}),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    !environment.production ? StoreDevtoolsModule.instrument({connectInZone: true}) : [],
     MsalAuthUtilModule,
     MatSidenavModule,
     NavbarComponent,

@@ -1,0 +1,23 @@
+name: pipeline-resources-var-grps
+
+trigger: none
+pr: none
+
+variables:
+- group: az400-variables
+
+stages:
+
+- stage: OutputVars
+
+  jobs: 
+
+  - job: ConsumeVars
+    dependsOn: []
+    
+    steps:
+    - bash: |
+        echo "node-version:"
+        echo $(node-version)
+      name: node-version
+      displayName: Output Node Version

@@ -1,0 +1,19 @@
+name: pipeline-resources-multi-repo
+
+trigger: none
+pr: none
+
+stages:
+
+- stage: repo
+
+  jobs: 
+
+  - job: repo
+    dependsOn: []
+    
+    steps:
+
+    - checkout: git://az-400/simple-api
+
+    - script: ls

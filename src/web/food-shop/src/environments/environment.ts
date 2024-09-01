@@ -6,7 +6,7 @@ declare global {
 
 export const environment = {
   production: true,
-  title: 'Food App',
+  title: 'Food Shop',
   authEnabled: false,
   mockCheckout: true,
   catalogApi: window['env'].CATALOG_API_URL || 'https://localhost:5001',

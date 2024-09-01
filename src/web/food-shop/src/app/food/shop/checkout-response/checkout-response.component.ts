@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderEventResponse } from '../order/order-event-response';
 import { MatCardModule } from '@angular/material/card';
+import { AILoggerService } from 'src/app/logger/ai-logger.service';
 
 @Component({
   selector: 'app-checkout-response',
@@ -12,5 +13,11 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class CheckoutResponseComponent {
   @Input() response: OrderEventResponse | null = null;
+  logger = inject(AILoggerService);
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['response']) {
+      this.logger.logEvent('checkout response', changes['response'].currentValue);
+    }
+  }
 }

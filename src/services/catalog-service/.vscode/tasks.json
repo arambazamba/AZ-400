@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/catalog-service.csproj",
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/26d4fdadeb49acf3337e429793686bbf/ms-dotnettools.csdevkit/catalog-service.generated.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/catalog-service.csproj",
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/26d4fdadeb49acf3337e429793686bbf/ms-dotnettools.csdevkit/catalog-service.generated.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,21 +33,9 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/catalog-service.csproj"
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/26d4fdadeb49acf3337e429793686bbf/ms-dotnettools.csdevkit/catalog-service.generated.sln"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "appId": "catalog-service",
-            "appPort": 5011,
-            "label": "dapr-debug",
-            "type": "dapr",
-            "dependsOn": "build"
-        },
-        {
-            "appId": "catalog-service",
-            "label": "daprd-down",
-            "type": "daprd-down"
         }
     ]
 }

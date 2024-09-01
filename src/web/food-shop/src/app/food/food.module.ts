@@ -8,15 +8,11 @@ import {
 } from '@ngrx/data';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-
-
-
 import { FoodContainerComponent } from './catalog/catalog-container/food-container.component';
 import { FoodEditComponent } from './catalog/food-edit/food-edit.component';
 import { FoodListComponent } from './catalog/food-list/food-list.component';
 import { FoodRoutingModule } from './food-routing.module';
 import { BorderDirective, BoxedDirective, ColumnDirective, RowDirective } from './formatting-directives';
-import { CheckoutConfirmedComponent } from './shop/checkout/checkout-confirmed/checkout-confirmed.component';
 import { CheckoutFormComponent } from './shop/checkout/checkout-form/checkout-form.component';
 import { CheckoutComponent } from './shop/checkout/checkout.component';
 import { FoodShopContainerComponent } from './shop/shop-container/food-shop-container.component';
@@ -30,7 +26,7 @@ import { FoodEntityService } from './state/catalog/food-entity.service';
 import { CustomUrlHttpGenerator } from './state/custom-url-generator';
 
 @NgModule({
-    imports: [
+  imports: [
     CommonModule,
     FoodRoutingModule,
     ReactiveFormsModule,
@@ -49,16 +45,15 @@ import { CustomUrlHttpGenerator } from './state/custom-url-generator';
     CheckoutComponent,
     StatusComponent,
     CheckoutFormComponent,
-    CheckoutConfirmedComponent,
-],
-    providers: [
-        {
-            provide: HttpUrlGenerator,
-            useClass: CustomUrlHttpGenerator,
-        },
-        FoodEntityService,
-        FoodDataService,
-    ],
+  ],
+  providers: [
+    {
+      provide: HttpUrlGenerator,
+      useClass: CustomUrlHttpGenerator,
+    },
+    FoodEntityService,
+    FoodDataService,
+  ],
 })
 export class FoodModule {
   constructor(

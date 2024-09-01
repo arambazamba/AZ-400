@@ -1,0 +1,67 @@
+@ordersUrl = http://localhost:5002
+@customerId = 1
+
+### Add new order
+# @name orderresp
+POST {{ordersUrl}}/orders/create HTTP/1.1
+content-type: application/json
+
+{    
+    "type": "order",
+    "customer": {
+        "Id": "5",
+        "name": "Marcela Tatra",
+        "email": "marcela.tatra@integrations.sk",
+        "phone": "+43 123 456 789"
+    },
+    "payment": {
+        "type": "Bank Transfer",
+        "accountNumber": "9876"
+    },
+    "items": [
+        {
+            "id": 3,
+            "name": "Falafel Plate",
+            "price": 18,
+            "quantity": 1
+        }
+    ],
+    "total": 48,
+    "shippingAddress" : {
+        "street": "Am Himmel",
+        "number": "1",
+        "zipCode": "1190",
+        "city": "Wien",
+        "country": "Austria"
+    }
+}
+
+### Get the order we have just create using the aggregate
+@getUrl = {{ordersUrl}}/orders/getById/{{ orderresp.response.body.orderId }}/{{ orderresp.response.body.customerId }}
+
+GET {{getUrl}} HTTP/1.1
+content-type: application/json
+
+### Add payment request
+POST {{ordersUrl}}/orders/events/add HTTP/1.1
+content-type: application/json
+
+{
+    "orderId": "{{ orderresp.response.body.orderId }}",
+    "customerId": "{{ orderresp.response.body.customerId }}",
+    "eventType": "PaymentRequested",
+    "data": {
+        "amount": 55,
+        "payment": {
+            "type": "Credit Card",
+            "account": "**** **** **** 1234"
+    	}
+    }
+}
+
+### Get all orders for a customer
+
+@getForCustomerUrl = {{ordersUrl}}/orders/getAllOrdersForCustomer/{{ orderresp.response.body.customerId }}
+
+GET {{getForCustomerUrl}} HTTP/1.1
+content-type: application/json
