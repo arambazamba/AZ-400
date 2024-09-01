@@ -12,6 +12,6 @@
 
 Demos are using [FoodApp Sample App](https://github.com/arambazamba/food-app) - A .NET Core Api and Angular UI implemented as Cloud Native App with step by step Installation Scripts
 
-- Build .NET WebApi -> `apps/catalog-api/api`
+- Build .NET WebApi -> `deploy/pipelines/catalog-api-ci.yml`
 
-- Build Angular FrontEnd -> `apps/shop-ui`
+- Build Angular FrontEnd -> `deploy/pipelinesw/shop-ui`
