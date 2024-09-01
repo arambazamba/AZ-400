@@ -2,16 +2,13 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 WORKDIR /app
 
-COPY ["catalog-service/catalog-service.csproj", "catalog-service/"]
-COPY ["food-app-common/food-app-common.csproj", "food-app-common/"] 
-
-RUN dotnet restore "catalog-service/catalog-service.csproj"
+RUN dotnet restore "**/catalog-service.csproj"
 COPY . .
 WORKDIR "/app/catalog-service"
 
-RUN dotnet build "catalog-service.csproj" -c Release -o /app/build
+RUN dotnet build "**/catalog-service.csproj" -c Release -o /app/build
 FROM build as publish
-RUN dotnet publish "catalog-service.csproj" -c Release -o /app/publish
+RUN dotnet publish "**/catalog-service.csproj" -c Release -o /app/publish
 
 # Runtime Image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-jammy-chiseled AS final

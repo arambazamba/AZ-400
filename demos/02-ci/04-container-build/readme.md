@@ -18,6 +18,8 @@
 
 - Build Azure Function Python -> [deploy/pipeline/payment-py-docker-img.yml](/deploy/pipelines/payment-py-docker-img.yml)
 
+- Build Spring Boot Job -> [deploy/pipeline/blob-console-img.yml](/deploy/pipelines/blob-console-img.yml)
+
 ## Additional Labs & Walkthroughs
 
 [Automate Docker container deployments with Azure Pipelines](https://docs.microsoft.com/en-us/learn/modules/deploy-docker/)
