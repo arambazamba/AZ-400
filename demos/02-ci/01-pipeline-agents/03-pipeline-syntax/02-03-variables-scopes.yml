@@ -1,4 +1,4 @@
-name: passing vars between jobs and stages
+name: 02-03-variables-scopes
 
 trigger: none
 
