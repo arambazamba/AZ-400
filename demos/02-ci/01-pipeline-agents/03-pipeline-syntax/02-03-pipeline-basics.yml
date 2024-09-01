@@ -10,7 +10,7 @@ trigger: none
 pr: none
 
 variables:
-  # exectJob used in condition is defined as pipeline var
+  # execJob used in condition is defined as pipeline var
   # inline syntax
   provision: true
   # two line syntax
@@ -23,9 +23,9 @@ variables:
 pool:
   vmImage: "ubuntu-latest"
 
-# use a selfhosted pool
+# use a self hosted pool
 # pool:
-#     name: linux-selfhosted
+#     name: linux-self-hosted
 
 stages:
   - stage: stageA

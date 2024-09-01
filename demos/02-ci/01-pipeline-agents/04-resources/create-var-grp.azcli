@@ -1,1 +1,0 @@
-az pipelines variable-group create --name az400-variables --variables node-version=14x app-name=food-app --output yaml
