@@ -1,6 +1,6 @@
-# Continous Integration
+# Continuous Integration
 
 - Agents & Pipeline Basics
 - Azure DevOps
 - GitHub Actions
-- Container CI (basics & optional)
+- Container CI

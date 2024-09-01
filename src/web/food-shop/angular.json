@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "food-shop": {
+    "food-shop-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/food-shop",
+            "outputPath": "dist/food-shop-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "food-shop:build:production"
+              "buildTarget": "food-shop-ui:build:production"
             },
             "development": {
-              "buildTarget": "food-shop:build:development"
+              "buildTarget": "food-shop-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "food-shop:build"
+            "buildTarget": "food-shop-ui:build"
           }
         },
         "test": {

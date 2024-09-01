@@ -1,4 +1,4 @@
-# .NET 6 Build & Deployment using GitHub Action
+# .NET Build & Deployment using GitHub Action
 
 [Manually running a workflow](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow)
 
@@ -52,7 +52,7 @@
         - name: Set up .NET Core
             uses: actions/setup-dotnet@v1
             with:
-            dotnet-version: "6.0.x"
+            dotnet-version: "8.0.x"
 
         - name: Build with dotnet
             run: dotnet build ${{ github.workspace }}/apps/catalog-api/api/catalog-api.csproj --configuration Release

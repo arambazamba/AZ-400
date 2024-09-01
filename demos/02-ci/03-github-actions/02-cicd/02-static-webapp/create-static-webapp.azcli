@@ -3,8 +3,8 @@ grp=az400-m04-$env
 loc=westeurope
 user=arambazamba
 app=foodui-$env
-repo="https://github.com/arambazamba/food-app"
+repo="https://github.com/arambazamba/az-400"
 
 az group create -n $grp -l $loc
 
-az staticwebapp create -n $app -g $grp -s $repo -l $loc -b master --app-location "apps/shop-ui/" --output-location "dist/food-shop-ui" --login-with-github
+az staticwebapp create -n $app -g $grp -s $repo -l $loc -b master --app-location "src/web/food-shop/" --output-location "dist/food-shop-ui" --login-with-github

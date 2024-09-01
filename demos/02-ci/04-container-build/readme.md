@@ -1,20 +1,22 @@
-# Container Continouse Integration
+# Container Continuos Integration
+
+## Links & Resources
+
+[Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/)
+
+[Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+
+[NGINX](https://www.nginx.com/)
+
+[Automate container image builds and maintenance with ACR Tasks](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview)
 
 ## Demos
 
-- Show Image creation .NET Core / Angular
-- Create and use Azure Container Registry (optional)
-- Azure Container Registry and Build Task (optional)
-## Readings
+- Build .NET WebApi -> [deploy/pipelines/catalog-docker-img.yml](/deploy/pipelines/catalog-docker-img.yml)
 
-[Build an image](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/containers/build-image?view=azure-devops)
+- Build Angular FrontEnd -> [deploy/pipeline/food-shop-docker-img.yml](/deploy/pipelines/food-shop-docker-img.yml)
 
-[Caddy Server with automatic Https](https://caddyserver.com/)
-
-[Azure Kubernetes Services Docs](https://docs.microsoft.com/en-us/azure/aks/)
-
-[Configure a Pod to use a Config Map](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
-
+- Build Azure Function Python -> [deploy/pipeline/payment-py-docker-img.yml](/deploy/pipelines/payment-py-docker-img.yml)
 
 ## Additional Labs & Walkthroughs
 

@@ -26,4 +26,4 @@
     az staticwebapp create -n $app -g $grp -s $repo -l $loc -b master --app-location "apps/shop-ui/" --output-location "dist/food-shop-ui" --token $gittoken
     ```
 
-    >Note: Before excuting the script set an GitHub acces token in your environment using: [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)    
+    >Note: Before executing the script set an GitHub access token in your environment using: [Creating a personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)    
