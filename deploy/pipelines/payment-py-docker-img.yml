@@ -36,7 +36,7 @@ stages:
             inputs:
               repository: '$(imageName)'
               command: 'buildAndPush'
-              Dockerfile: '$(appPath)dockerfile'
+              Dockerfile: '$(appPath)Dockerfile'
 
           - task: Docker@2
             displayName: Logout of ACR
