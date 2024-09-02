@@ -1,3 +1,4 @@
+name: deploy-to-aca
 trigger:
 - main
 pool:
@@ -5,7 +6,11 @@ pool:
 steps:
 - task: AzureContainerApps@1
   inputs:
-    azureSubscription: scFood
+    azureSubscription: 'scFood'
+    acrName: 'az400acrdev'
+    acrUsername: 'az400acrdev'
+    acrPassword: $(acaPassword)
     imageToDeploy: 'az400acrdev.azurecr.io/catalog-service:latest'
     containerAppName: 'catalog-service-v1'
     resourceGroup: 'az-400'
+    containerAppEnvironment: 'az400acaenv-dev'
