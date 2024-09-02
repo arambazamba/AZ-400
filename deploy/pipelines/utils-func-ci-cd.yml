@@ -16,12 +16,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: BnP
-  displayName: Build and Provision
+- stage: Build
+  displayName: Build
   jobs:
   - job: Build
-    displayName: Build
-
+    displayName: Build Function
     steps:
     - task: NodeTool@0
       inputs:
@@ -53,7 +52,7 @@ stages:
   jobs:  
   - deployment: Deploy
     environment: $(functionAppName)-dev
-    displayName: Deploy
+    displayName: Deploy Function to AppService
     strategy:
       runOnce:
         deploy:
