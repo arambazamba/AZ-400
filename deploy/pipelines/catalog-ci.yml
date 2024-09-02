@@ -41,11 +41,13 @@ stages:
           - task: DotNetCoreCLI@2
             displayName: Publish
             inputs:
-              command: "publish"
+              command: publish
               publishWebProjects: true
               arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+              zipAfterPublish: True
 
           - task: PublishPipelineArtifact@1
-            inputs:
-              artifactName: catalog-drop
             displayName: "Publish Artifact: catalog-drop"
+            inputs:
+              targetPath: $(Build.ArtifactStagingDirectory)
+              artifactName: catalog-drop
