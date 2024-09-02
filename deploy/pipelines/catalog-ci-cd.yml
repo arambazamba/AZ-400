@@ -70,7 +70,7 @@ stages:
     jobs:
       - deployment: DeployAppService
         displayName: Deploy to App Service YAML
-        environment: catalog-api-production
+        environment: $(appService)
         strategy:
           runOnce:
             deploy:

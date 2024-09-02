@@ -1,0 +1,11 @@
+trigger:
+- main
+pool:
+  name: default
+steps:
+- task: AzureContainerApps@1
+  inputs:
+    azureSubscription: scFood
+    imageToDeploy: 'az400acrdev.azurecr.io/catalog-service:latest'
+    containerAppName: 'catalog-service-v1'
+    resourceGroup: 'az-400'
