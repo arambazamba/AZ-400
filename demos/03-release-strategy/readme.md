@@ -2,6 +2,7 @@
 
 ## Demos
 
+- Database DevOps (optional)
 - Release Pipelines
     - Designer based Release pipeline
     - Service Connections and App Registrations
