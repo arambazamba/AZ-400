@@ -1,5 +1,9 @@
 # Designer & YAML based Release pipeline
 
+[Agent Demands](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/demands?view=azure-devops)
+
+## Demos
+
 - Execute `provision-catalog-api.azcli`
-- Show imported Designer pipeline `food-catalog-release-with-gates.json`
-- Show YAML pipeline `catalog-api-cicd.yml` from FoodApp
+- Show imported Designer pipeline `Catalog-Multistage-Release.json`
+- Show YAML pipeline `catalog-ci-cd.yml`

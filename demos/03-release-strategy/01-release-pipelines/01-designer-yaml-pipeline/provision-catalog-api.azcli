@@ -9,6 +9,8 @@ az appservice plan create -n $appPlan -g $grp --sku FREE
 
 az webapp create -n food-catalog-api-dev -g $grp --plan $appPlan --runtime "dotnet:8"
 
+az webapp create -n food-catalog-api-staging -g $grp --plan $appPlan --runtime "dotnet:8"
+
 az webapp create -n food-catalog-api-prod -g $grp --plan $appPlan --runtime "dotnet:8"
 
 az webapp create -n food-catalog-api-yaml -g $grp --plan $appPlan --runtime "dotnet:8"
