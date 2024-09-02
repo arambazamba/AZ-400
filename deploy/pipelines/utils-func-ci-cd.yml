@@ -50,18 +50,18 @@ stages:
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
-  jobs:
+  jobs:  
   - deployment: Deploy
-    environment: funcapp-production
+    environment: $(functionAppName)-dev
     displayName: Deploy
     strategy:
       runOnce:
         deploy:
           steps:
-          - task: AzureFunctionApp@1
+          - task: AzureFunctionApp@2
             displayName: 'Azure Functions App Deploy'
             inputs:
-              azureazSubscriptioniption: $(azSubscription)
+              connectedServiceNameARM : $(azSubscription)
               appType: functionAppLinux
               appName: $(functionAppName)
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
