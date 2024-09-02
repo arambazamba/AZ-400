@@ -11,6 +11,7 @@ pr: none
 variables:
   azSubscription: scFood  
   functionAppName: utils-func-dev
+  appPath: src/functions/utils-ts/
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -24,7 +25,7 @@ stages:
     steps:
     - task: NodeTool@0
       inputs:
-        versionSpec: '20.x'
+        versionSpec: '18.x'
       displayName: 'Install Node.js'
 
     - script: |
@@ -32,6 +33,7 @@ stages:
         npm run build --if-present
         npm run test --if-present
       displayName: 'Prepare binaries'
+      workingDirectory: $(appPath)
     
     - task: ArchiveFiles@2
       displayName: 'Archive files'
