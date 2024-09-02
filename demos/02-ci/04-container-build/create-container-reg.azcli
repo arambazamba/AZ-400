@@ -1,6 +1,6 @@
 env=dev
 loc=westeurope
-grp=az400
+grp=az400-$env
 acr=az400acr$env
 
 az group create -n $grp -l westeurope

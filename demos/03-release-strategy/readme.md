@@ -2,17 +2,16 @@
 
 ## Demos
 
-- Database DevOps (optional)
 - Release Pipelines
+    - Azure Devops Service Connections
     - Designer based Release pipeline
-    - Service Connections and App Registrations
         - Using Managed Identity in Service Connections (optional)
     - Node based Azure Function Deployment using yaml    
     - Container Deployments
 - Yaml based Deployment Jobs, Environments and Gates (optional)
 - Blue Green Deployment
 - Using Feature Toggles
-- Using Azure Functions as Custom Gates (optional)
+- Database DevOps (optional)
 
 ## Readings
 
