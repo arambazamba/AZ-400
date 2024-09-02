@@ -35,7 +35,7 @@ stages:
             displayName: Build .NET
             inputs:
               command: build
-              projects: "$(appPath)/*.csproj"
+              projects: "$(appPath)/catalog-service.csproj"
               arguments: "--configuration $(buildConfiguration)"
 
           - task: DotNetCoreCLI@2
