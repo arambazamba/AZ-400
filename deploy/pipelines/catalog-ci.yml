@@ -32,14 +32,14 @@ stages:
               version: "8.x"
 
           - task: DotNetCoreCLI@2
-            displayName: Build
+            displayName: Build .NET
             inputs:
               command: build
               projects: "$(appPath)/*.csproj"
               arguments: "--configuration $(buildConfiguration)"
 
           - task: DotNetCoreCLI@2
-            displayName: Publish
+            displayName: Publish .NET
             inputs:
               command: publish
               publishWebProjects: true
