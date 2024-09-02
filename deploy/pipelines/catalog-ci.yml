@@ -1,0 +1,51 @@
+name: "catalog-ci"
+
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#     include:
+#       - src/services/catalog-service/*
+
+trigger: none
+pr: none
+
+variables:
+  buildConfiguration: Release
+  appPath: src/services/catalog-service/
+
+pool:
+  vmImage: "ubuntu-latest"
+
+stages:
+  - stage: "Build"
+    jobs:
+      - job: "Build"
+        displayName: "Build Catalog Package"
+
+        steps:
+          - task: UseDotNet@2
+            displayName: "Install .NET 6 SDK"
+            inputs:
+              packageType: "sdk"
+              version: "8.x"
+
+          - task: DotNetCoreCLI@2
+            displayName: Build
+            inputs:
+              command: build
+              projects: "$(appPath)/*.csproj"
+              arguments: "--configuration $(buildConfiguration)"
+
+          - task: DotNetCoreCLI@2
+            displayName: Publish
+            inputs:
+              command: "publish"
+              publishWebProjects: true
+              arguments: "--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)"
+
+          - task: PublishPipelineArtifact@1
+            inputs:
+              artifactName: catalog-drop
+            displayName: "Publish Artifact: catalog-drop"

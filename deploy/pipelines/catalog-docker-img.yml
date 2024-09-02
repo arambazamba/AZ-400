@@ -20,10 +20,9 @@ pool:
   vmImage: "ubuntu-latest"
 
 stages:
-  - stage: "BuildImg"
-    displayName: "Build Catalog Api Image"
+  - stage: "Build"
+    displayName: "Build Catalog Image"
     jobs:
-
       - job: "Build"
         steps:
           - task: Docker@2
