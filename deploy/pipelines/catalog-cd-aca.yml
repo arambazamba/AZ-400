@@ -1,8 +1,17 @@
-name: deploy-to-aca
-trigger:
-- main
+name: 03-01-catalog-cd-aca
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#     include:
+#       - apps/catalog-api/*
+
+trigger: none
+pr: none
+
 pool:
-  name: default
+  vmImage: "ubuntu-20.04"
 steps:
 - task: AzureContainerApps@1
   inputs:
