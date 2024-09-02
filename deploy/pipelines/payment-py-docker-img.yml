@@ -12,7 +12,7 @@ trigger: none
 pr: none
 
 variables:
-  path: src/functions/payment-py/
+  appPath: src/functions/payment-py/
   imageName: payment-func-py
   acr: conACR
 
@@ -36,7 +36,7 @@ stages:
             inputs:
               repository: '$(imageName)'
               command: 'buildAndPush'
-              Dockerfile: '$(path)dockerfile'
+              Dockerfile: '$(appPath)Dockerfile'
 
           - task: Docker@2
             displayName: Logout of ACR

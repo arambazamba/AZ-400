@@ -9,7 +9,7 @@ trigger: none
 pr: none
 
 variables:
-  path: src/web/food-shop/
+  appPath: src/web/food-shop/
   imageName: food-shop
   acr: conACR
 
@@ -22,6 +22,10 @@ stages:
     jobs:
       - job: "Build"
         steps:
+          - task: NodeTool@0
+            inputs:
+              versionSource: 'spec'
+              versionSpec: '20.12.2'
           - task: Docker@2
             displayName: Login to ACR
             inputs:
@@ -33,7 +37,7 @@ stages:
             inputs:
               repository: '$(imageName)'
               command: 'buildAndPush'
-              Dockerfile: '$(path)dockerfile'
+              Dockerfile: '$(appPath)dockerfile'
 
           - task: Docker@2
             displayName: Logout of ACR
