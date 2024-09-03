@@ -6,12 +6,12 @@
   "version": "*",
   "manifestVersion": 2,
   "requiresCustomScript": false,
-  "supportedHosts": ["SharePointWebPart"],
+  "supportedHosts": ["SharePointWebPart", "TeamsTab"],
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", 
     "group": { "default": "Other" },
     "title": { "default": "FoodListWP" },
-    "description": { "default": "a webpart consuming sharepoint data" },
+    "description": { "default": "A WebPart consuming SharePoint data" },
     "officeFabricIconFontName": "Page",
     "properties": {
       "description": "FoodListWP"

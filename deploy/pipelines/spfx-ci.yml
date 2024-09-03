@@ -6,7 +6,7 @@ name: spfx build
 #       - master
 #   paths:
 #     include:
-#       - "food-spfx-wp/*"
+#       - src/teams/food-list/*
 
 trigger: none
 
@@ -14,7 +14,7 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  fld: food-spfx-wp  
+  appPath: src/teams/food-list/  
 
 stages:
   - stage: Build
@@ -29,12 +29,12 @@ stages:
             displayName: npm install
             inputs:
               script: "npm install"
-              workingDirectory: "$(fld)/"
+              workingDirectory: "$(appPath)/"
 
           - task: gulp@1
             displayName: "gulp bundel"
             inputs:
-              gulpFile: "$(fld)/gulpfile.js"
+              gulpFile: "$(appPath)/gulpfile.js"
               targets: "bundle"
               arguments: "--ship"
               enableCodeCoverage: false
@@ -42,14 +42,14 @@ stages:
           - task: gulp@1
             displayName: "gulp package solution"
             inputs:
-              gulpFile: "$(fld)/gulpfile.js"
+              gulpFile: "$(appPath)/gulpfile.js"
               targets: "package-solution"
               arguments: "--ship"
 
           - task: CopyFiles@2
             displayName: "Copy Files to: $(build.artifactstagingdirectory)/drop"
             inputs:
-              Contents: "$(fld)/sharepoint/solution/*.sppkg"
+              Contents: "$(appPath)/sharepoint/solution/*.sppkg"
               TargetFolder: "$(build.artifactstagingdirectory)/drop"
 
           - task: PublishBuildArtifacts@1
