@@ -6,13 +6,13 @@ name: catalog-build-docker-img
 #       - master
 #   paths:
 #     include:
-#       - src/services/catalog-service/*
+#       - src/services/catalog-service/api/*
 
 trigger: none      
 pr: none
 
 variables:
-  appPath: src/services/catalog-service/
+  appPath: src/services/catalog-service/api/
   imageName: catalog-service
   acr: conACR
 

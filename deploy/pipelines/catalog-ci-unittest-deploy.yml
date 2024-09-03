@@ -1,4 +1,4 @@
-name: catalog-api-ci-cd
+name: catalog-ci-unittest-deploy
 
 # trigger:
 #   branches:
@@ -6,7 +6,7 @@ name: catalog-api-ci-cd
 #       - master
 #   paths:
 #     include:
-#       - apps/catalog-api/*
+#       - src/services/catalog-service/*
 
 trigger: none
 pr: none
@@ -17,10 +17,11 @@ variables:
   releaseBranchName: master
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
-  appService: food-catalog-api-yaml
+  appTests: src/services/catalog-service/tests/
+  appService: food-catalog-api-staging
 
 pool:
-  vmImage: "ubuntu-20.04"
+  vmImage: "ubuntu-latest"
 
 stages:
   - stage: "Build"
@@ -61,25 +62,40 @@ stages:
             inputs:
               PathtoPublish: "$(Build.ArtifactStagingDirectory)"
               ArtifactName: "drop"
-              publishLocation: "Container"  
+              publishLocation: "Container"
+  
+  - stage: "Test"
+    displayName: "Unit Test"
+    dependsOn: []
+
+    jobs:
+      - job: test
+        displayName: Test .NET
+
+        steps:
+          - task: DotNetCoreCLI@2
+            inputs:
+              command: "test"
+              projects: "appTests/*.csproj"
+              arguments: "--configuration $(buildConfiguration)"
 
   - stage: "Deploy"
     displayName: "Deploy"
-    dependsOn: [Build]
+    dependsOn: [Build, Test]
 
     jobs:
       - deployment: DeployAppService
-        displayName: Deploy to App Service YAML
-        environment: $(appService)
+        displayName: Deploy to prod Appservice
+        environment: catalog-api-production
         strategy:
           runOnce:
             deploy:
               steps:                          
               - task: AzureRmWebAppDeployment@4
-                displayName: "Azure App Service Deploy: $(appService)"
+                displayName: "Azure App Service Deploy: $(appservice)"
                 inputs:
                   ConnectionType: "AzureRM"
                   azureSubscription: $(azSubscription)
                   appType: "webApp"
-                  WebAppName: $(appService)
+                  WebAppName: $(appservice)
                   packageForLinux: "$(Agent.BuildDirectory)/**/*.zip"

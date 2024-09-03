@@ -8,7 +8,7 @@
 
 ## Demo
 
-- Examine the use of a SQL Server database in [/src/services/catalog-service](/src/services/catalog-service/Program.cs):
+- Examine the use of a SQL Server database in [/src/services/catalog-service/api/](/src/services/catalog-service/api/Program.cs):
 
     ```csharp
     if (cfg.App.UseSQLite)
