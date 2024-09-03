@@ -9,6 +9,7 @@ name: spfx build
 #       - src/teams/food-list/*
 
 trigger: none
+pr: none
 
 pool:
   vmImage: "ubuntu-latest"
