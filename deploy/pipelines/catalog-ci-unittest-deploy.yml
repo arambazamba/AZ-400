@@ -73,10 +73,14 @@ stages:
         displayName: Test .NET
 
         steps:
+          - task: UseDotNet@2
+            displayName: "Use .NET Core SDK $(dotnetSdkVersion)"
+            inputs:
+              version: "$(dotnetSdkVersion)"
           - task: DotNetCoreCLI@2
             inputs:
               command: "test"
-              projects: "appTests/*.csproj"
+              projects: "$(appTests)/catalog-service-tests.csproj"
               arguments: "--configuration $(buildConfiguration)"
 
   - stage: "Deploy"
