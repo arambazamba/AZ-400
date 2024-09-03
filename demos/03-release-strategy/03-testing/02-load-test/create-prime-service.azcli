@@ -1,9 +1,10 @@
-env=load-test
-grp=az400-m04-$env
+env=dev
+grp=az400-$env
 loc=westeurope
-containerEnv=primes-$env
-containerApp=primes-api
-img=arambazamba/primesservice
+acr=az400acr$env
+acaenv=az400acaenv-$env
+app=prime-service-$env
+img=$acr./prime-service
 
 az group create -n $grp --l $loc
 

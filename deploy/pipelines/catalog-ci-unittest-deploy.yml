@@ -89,7 +89,7 @@ stages:
 
     jobs:
       - deployment: DeployAppService
-        displayName: Deploy to prod Appservice
+        displayName: Deploy to prod AppService
         environment: catalog-api-production
         strategy:
           runOnce:

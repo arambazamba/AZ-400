@@ -1,8 +1,8 @@
-env=e2e-test
-grp=az400-m04-$env
+env=dev
+grp=az400-$env
 loc=westeurope
-api=arambazamba/food-catalog-api:1.1.0
-ui=arambazamba/food-shop-ui
+api=az400acrdev.azurecr.io/catalog-service
+ui=az400acrdev.azurecr.io/food-shop
 
 az group create -n $grp -l $loc
 

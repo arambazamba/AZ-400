@@ -12,6 +12,7 @@
 - Blue Green Deployment
 - Using Feature Toggles
 - Database DevOps (optional)
+- LLMOps (optional)
 
 ## Readings
 
