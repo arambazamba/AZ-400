@@ -20,7 +20,8 @@ variables:
 stages:
   - stage: Build
     jobs:
-      - job: BuildJob
+      - job: Build
+        displayName: "Build SPFx Package"
         steps:
           - task: NodeTool@0
             inputs:

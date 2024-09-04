@@ -1,0 +1,111 @@
+name: spfx build
+
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#     include:
+#       - "$(appPath)/*"
+
+trigger: none      
+
+variables:
+  sppkg: foodlist-wp.sppkg
+  appPath: src/teams/food-list/ 
+  # set pipeline vars: username, password
+
+pool:
+  vmImage: "ubuntu-20.04"  
+
+stages:
+  - stage: Build
+    jobs:
+      - job: BuildJob
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: 14.x
+            displayName: Install Node.js
+          
+          - task: Cache@2
+            inputs:
+              key: '$(System.DefaultWorkingDirectory)/$(appPath)/package-lock.json'
+              path: '$(System.DefaultWorkingDirectory)/$(appPath)/node_modules'
+              cacheHitVar: 'CacheRestored'
+
+          - task: CmdLine@2
+            displayName: npm install
+            condition: eq(variables['CacheRestored'],False)
+            inputs:
+              script: "npm install"
+              workingDirectory: "$(appPath)/"              
+
+          - task: gulp@1
+            displayName: "gulp bundel"
+            inputs:
+              gulpFile: "$(appPath)/gulpfile.js"
+              targets: "bundle"
+              arguments: "--ship"
+              enableCodeCoverage: false
+
+          - task: gulp@1
+            displayName: "gulp package solution"
+            inputs:
+              gulpFile: "$(appPath)/gulpfile.js"
+              targets: "package-solution"
+              arguments: "--ship"
+
+          - task: CopyFiles@2
+            displayName: "Copy Files to: $(build.artifactstagingdirectory)/spfx"
+            inputs:
+              Contents: "$(appPath)/sharepoint/solution/*.sppkg"
+              TargetFolder: "$(build.artifactstagingdirectory)/spfx"
+
+          - task: PublishBuildArtifacts@1
+            displayName: "Publish artifacts: spfxdrop"
+            inputs:
+              PathtoPublish: "$(Build.ArtifactStagingDirectory)"
+
+  - stage: Deploy
+    displayName: Deploy to M365
+    dependsOn: Build
+    variables:
+      tenant: d92b247e-90e0-4469-a129-6a32866c0d0a
+
+    jobs:
+      - deployment: DeployM365
+        displayName: Deploy to M365
+        environment: M365Prod
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+            
+              - task: NodeTool@0
+                displayName: 'Use Node 14.x'
+                inputs:
+                  versionSpec: 14.x
+              
+              - task: CmdLine@2
+                inputs:
+                  script: |
+                   dir
+                   cd $(Build.ArtifactStagingDirectory)
+                   dir
+                  
+              - task: Npm@1
+                displayName: 'npm i -g @pnp/cli-microsoft365'
+                inputs:
+                  command: custom
+                  verbose: false
+                  customCommand: 'install -g @pnp/cli-microsoft365'
+              
+              - script: m365 login --authType password -u $(username) -p $(password) --tenant $(tenant)                 
+                displayName: 'Connect to M365'              
+
+              - script: 'm365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/food-spfx-wp/sharepoint/solution/foodlist-wp.sppkg --overwrite'
+                displayName: 'Upload to App Catalog'
+
+              - script: 'm365 spo app deploy --name $(sppkg)'
+                displayName: 'Deploy App'
