@@ -28,13 +28,13 @@ stages:
   - stage: Build
     jobs:
       - job: BuildJob
-        displayName: Build SPFx
+        displayName: Build SPFx Package
         steps:
           - template: templates/t-spfx-build.yaml
             parameters:
               nodeVersion: $(nodeVersion)
               pkg: $(package)
-              appPath: $(appPath)
+              fld: $(appPath)
 
   - stage: Deploy
     displayName: Deploy to M365
