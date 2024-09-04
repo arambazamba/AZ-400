@@ -14,6 +14,7 @@ pr: none
 variables:
   package: foodlist-wp.sppkg
   appPath: src/teams/food-list/ 
+  environment: m365-integrationsonline
   # set pipeline vars: username, password
 
 pool:
@@ -79,7 +80,7 @@ stages:
     jobs:
       - deployment: DeployM365
         displayName: Deploy to M365
-        environment: m365-integrationsonline
+        environment: $(environment)
         strategy:
           runOnce:
             deploy:
