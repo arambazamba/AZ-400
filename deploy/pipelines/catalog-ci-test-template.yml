@@ -38,8 +38,8 @@ stages:
 
         steps:
           - task: DotNetCoreCLI@2
+            displayName: Test
             inputs:
               command: "test"
               projects: "$(appTests)/*.csproj"
               arguments: "--configuration $(buildConfiguration)"
-
