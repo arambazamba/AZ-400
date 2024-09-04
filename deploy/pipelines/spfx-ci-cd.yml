@@ -24,7 +24,7 @@ stages:
   - stage: Build
     jobs:
       - job: Build
-        displayName: "Build SPFx Package"
+        displayName: Build SPFx Package
         steps:
           - task: NodeTool@0
             inputs:

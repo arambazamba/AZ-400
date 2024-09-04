@@ -8,13 +8,14 @@
 
 ## Demo: Use Task Groups with SPFx WP and Microsoft 365 CLI
 
-Import `spfx-build.yaml`:
+Import `spfx-ci.yaml`:
 
 ```yaml
 stages:
   - stage: Build
     jobs:
-      - job: BuildJob
+      - job: Build
+        displayName: "Build SPFx Package"
         steps:
           - task: NodeTool@0
             inputs:
@@ -24,12 +25,12 @@ stages:
             displayName: npm install
             inputs:
               script: "npm install"
-              workingDirectory: "$(fld)/"
+              workingDirectory: "$(appPath)/"
 
           - task: gulp@1
             displayName: "gulp bundel"
             inputs:
-              gulpFile: "$(fld)/gulpfile.js"
+              gulpFile: "$(appPath)/gulpfile.js"
               targets: "bundle"
               arguments: "--ship"
               enableCodeCoverage: false
@@ -37,14 +38,14 @@ stages:
           - task: gulp@1
             displayName: "gulp package solution"
             inputs:
-              gulpFile: "$(fld)/gulpfile.js"
+              gulpFile: "$(appPath)/gulpfile.js"
               targets: "package-solution"
               arguments: "--ship"
 
           - task: CopyFiles@2
             displayName: "Copy Files to: $(build.artifactstagingdirectory)/drop"
             inputs:
-              Contents: "$(fld)/sharepoint/solution/*.sppkg"
+              Contents: "$(appPath)/sharepoint/solution/*.sppkg"
               TargetFolder: "$(build.artifactstagingdirectory)/drop"
 
           - task: PublishBuildArtifacts@1
@@ -54,7 +55,7 @@ stages:
 
 ```
 
-Import `Deploy-M365-WebPart-CLI.json` as release pipeline. Notice the path in the downloaded artifact from the build:
+Import `m365-spfx-deployment.json` as release pipeline. Notice the path in the downloaded artifact from the build:
 
 ![artifact](_images/artifact.png)
 

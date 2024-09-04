@@ -16,6 +16,7 @@ pr: none
 
 variables:
   package: foodlist-wp.sppkg
+  packageLocation: /drop/src/teams/food-list/sharepoint/solution
   appPath: src/teams/food-list/ 
   environment: m365-integrationsonline
   nodeVersion: "14.x"
@@ -51,5 +52,6 @@ stages:
                   parameters:
                     nodeVersion: $(nodeVersion)
                     pkg: $(package)
+                    pkgLocation: $(packageLocation)
                     username: $(username)
                     password: $(password)

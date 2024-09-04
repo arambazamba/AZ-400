@@ -3,6 +3,10 @@ parameters:
     type: string
     default: "14.x" 
 
+  - name: pkgLocation
+    type: string
+    default: ""  
+
   - name: pkg
     type: string
     default: ""
@@ -32,7 +36,7 @@ steps:
   - script: "m365 login -t password -u ${{ parameters.username }} -p ${{ parameters.password }}"      
     displayName: 'Connect to M365'
 
-  - script: "m365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/src/teams/food-list/sharepoint/solution/${{ parameters.pkg }} --overwrite"
+  - script: "m365 spo app add -p $(Agent.BuildDirectory)${{ parameters.pkgLocation }}/${{ parameters.pkg }} --overwrite"
     displayName: 'Upload to App Catalog'
 
   - script: "m365 spo app deploy --name ${{ parameters.pkg }}"
