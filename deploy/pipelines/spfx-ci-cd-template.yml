@@ -1,4 +1,4 @@
-name: spfx-build-deploy
+name: spfx-ci-cd-template
 
 # trigger:
 #   branches:
@@ -6,7 +6,7 @@ name: spfx-build-deploy
 #       - master
 #   paths:
 #     include:
-#       - "*"
+#       - - src/teams/food-list/*
 #     exclude:
 #       - az-pipelines/*
 #       - _images/*
@@ -15,9 +15,9 @@ trigger: none
 pr: none
 
 variables:
+  package: foodlist-wp.sppkg
+  appPath: src/teams/food-list/ 
   nodeVersion: "14.x"
-  sppkg: teams-devops.sppkg
-  fld: apps/teams-spfx-wp
   # set pipeline vars: username, password
 
 pool:
@@ -32,8 +32,8 @@ stages:
           - template: templates/t-spfx-build.yaml
             parameters:
               nodeVersion: $(nodeVersion)
-              pkg: $(sppkg)
-              fld: $(fld)
+              pkg: $(package)
+              appPath: $(appPath)
 
   - stage: Deploy
     displayName: Deploy to M365
@@ -49,6 +49,6 @@ stages:
                 - template: templates/t-spfx-deploy-cli.yaml
                   parameters:
                     nodeVersion: $(nodeVersion)
-                    pkg: foodlist-wp.sppkg
+                    pkg: $(package)
                     username: $(username)
                     password: $(password)
