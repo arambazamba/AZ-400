@@ -1,13 +1,16 @@
-env=$RANDOM
-grp=az400-m05-deployment-patterns
+env=dev
+grp=az400-$env
 loc=westeurope
-plan=deployment-patterns-$env
-app=catalog-api-$env
+appPlan=foodplan-$env
 
 az group create -n $grp -l $loc
 
-az appservice plan create -n $plan -g $grp --sku P1V2
+az appservice plan create -n $appPlan -g $grp --sku P1V2
 
-az webapp create -n $app -g $grp -p $plan
-az webapp deployment slot create -n $app -g $grp --slot staging
-az webapp deployment slot create -n $app -g $grp --slot canary
+az webapp create -n catalog-service-bg -g $grp -p $appPlan
+
+az webapp deployment slot create -n catalog-service-bg -g $grp --slot staging
+
+az webapp create -n catalog-service-canary -g $grp -p $appPlan
+
+az webapp deployment slot create -n catalog-service-canary -g $grp --slot canary
