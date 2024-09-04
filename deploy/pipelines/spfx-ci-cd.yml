@@ -8,7 +8,8 @@ name: spfx build
 #     include:
 #       - "$(appPath)/*"
 
-trigger: none      
+trigger: none
+pr: none
 
 variables:
   package: foodlist-wp.sppkg
@@ -16,7 +17,7 @@ variables:
   # set pipeline vars: username, password
 
 pool:
-  vmImage: "ubuntu-20.04"  
+  vmImage: ubuntu-latest
 
 stages:
   - stage: Build
