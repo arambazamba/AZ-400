@@ -1,13 +1,13 @@
-env=$RANDOM
+env=dev
+grp=az400-$env
 loc=westeurope
-grp=az400-m05-deployment-patterns
-vault=deployment-vault-$env
+vault=az-400-vault-$env
 
 az group create -n $grp -l $loc
 
-az keyvault create -l $loc -n $vault -g $grp --sku standard
+az keyvault create -l $loc -n $vault -g $grp --sku free
 
-az keyvault secret set --vault-name $vault --name "m365user" --value "alexander.pajer@integrations.at"
+az keyvault secret set --vault-name $vault --name "m365user" --value "alexander.kastil@integrations.at"
 
 az keyvault secret set --vault-name $vault --name "m365pwd" --value "PW4vm@dmin123!$"
 
@@ -18,8 +18,6 @@ az keyvault secret set --vault-name $vault --name "sqlpwd" --value "PW4vm@dmin12
 az keyvault secret set --vault-name $vault --name "conSQLite" --value "Data Source=./food.db"
 
 az keyvault secret set --vault-name $vault --name "conSQLServer" --value "Data Source=mock-sql;Initial Catalog=food-db;Persist Security Info=True;User ID=sa;Password='TiTp4SQL@dmin'"
-
-echo "use this value in subscquent steps: evn: " $env
 
 # Delete KV and purge it to permanently delete it
 # Do not execute

@@ -32,6 +32,14 @@
 
 [Canary deployment strategy for Kubernetes deployments](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/kubernetes/canary-demo?view=azure-devops&tabs=yaml)
 
+[Run functional tests in Azure Pipelines](https://docs.microsoft.com/en-us/learn/modules/run-functional-tests-azure-pipelines/)
+
+[Run nonfunctional tests in Azure Pipelines](https://docs.microsoft.com/en-us/learn/modules/run-non-functional-tests-azure-pipelines/)
+
+[Azure DevOps Labs - Web Application Load and Performance Testing](https://azuredevopslabs.com/labs/azuredevops/load/)
+
+[Azure DevOps Labs - Automating Selenium Tests in Azure Pipelines](https://www.azuredevopslabs.com/labs/vstsextend/Selenium/)
+
 ## Extensions & Tools
 
 [CronMaker](http://www.cronmaker.com/)
