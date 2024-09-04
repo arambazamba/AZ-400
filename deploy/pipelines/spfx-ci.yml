@@ -1,4 +1,4 @@
-name: spfx build
+name: spfx-ci
 
 # trigger:
 #   branches:

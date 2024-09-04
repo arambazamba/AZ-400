@@ -1,4 +1,4 @@
-name: spfx build
+name: spfx-ci-cd
 
 # trigger:
 #   branches:
@@ -6,7 +6,7 @@ name: spfx build
 #       - master
 #   paths:
 #     include:
-#       - "$(appPath)/*"
+#       - src/teams/food-list/*
 
 trigger: none
 pr: none
@@ -22,7 +22,8 @@ pool:
 stages:
   - stage: Build
     jobs:
-      - job: BuildJob
+      - job: Build
+        displayName: "Build SPFx Package"
         steps:
           - task: NodeTool@0
             inputs:
@@ -30,6 +31,7 @@ stages:
             displayName: Install Node.js
           
           - task: Cache@2
+            displayName: Cache node_modules
             inputs:
               key: '$(System.DefaultWorkingDirectory)/$(appPath)/package-lock.json'
               path: '$(System.DefaultWorkingDirectory)/$(appPath)/node_modules'
@@ -77,7 +79,7 @@ stages:
     jobs:
       - deployment: DeployM365
         displayName: Deploy to M365
-        environment: M365Prod
+        environment: m365-integrationsonline
         strategy:
           runOnce:
             deploy:
@@ -87,20 +89,13 @@ stages:
                 displayName: 'Use Node 14.x'
                 inputs:
                   versionSpec: 14.x
-              
-              - task: CmdLine@2
-                inputs:
-                  script: |
-                   dir
-                   cd $(Build.ArtifactStagingDirectory)
-                   dir
                   
               - task: Npm@1
                 displayName: 'npm i -g @pnp/cli-microsoft365'
                 inputs:
                   command: custom
                   verbose: false
-                  customCommand: 'install -g @pnp/cli-microsoft365'
+                  customCommand: 'install -g @pnp/cli-microsoft365@6.0.0'
               
               - script: m365 login --authType password -u $(username) -p $(password) --tenant $(tenant)                 
                 displayName: 'Connect to M365'              
