@@ -11,7 +11,7 @@ name: spfx build
 trigger: none      
 
 variables:
-  sppkg: foodlist-wp.sppkg
+  package: foodlist-wp.sppkg
   appPath: src/teams/food-list/ 
   # set pipeline vars: username, password
 
@@ -107,5 +107,5 @@ stages:
               - script: 'm365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/food-spfx-wp/sharepoint/solution/foodlist-wp.sppkg --overwrite'
                 displayName: 'Upload to App Catalog'
 
-              - script: 'm365 spo app deploy --name $(sppkg)'
+              - script: 'm365 spo app deploy --name $(package)'
                 displayName: 'Deploy App'
