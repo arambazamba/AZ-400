@@ -17,11 +17,12 @@ pr: none
 variables:
   package: foodlist-wp.sppkg
   appPath: src/teams/food-list/ 
+  environment: m365-integrationsonline
   nodeVersion: "14.x"
   # set pipeline vars: username, password
 
 pool:
-  vmImage: "ubuntu-20.04"
+  vmImage: ubuntu-latest
 
 stages:
   - stage: Build
@@ -41,7 +42,7 @@ stages:
     jobs:
       - deployment: DeployM365
         displayName: Deploy to M365
-        environment: M365Prod
+        environment: $(environment)
         strategy:
           runOnce:
             deploy:
