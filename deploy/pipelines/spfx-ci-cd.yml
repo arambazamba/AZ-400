@@ -101,7 +101,7 @@ stages:
               - script: m365 login --authType password -u $(username) -p $(password) --tenant $(tenant)                 
                 displayName: 'Connect to M365'              
 
-              - script: 'm365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/food-spfx-wp/sharepoint/solution/foodlist-wp.sppkg --overwrite'
+              - script: 'm365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/src/teams/food-list/sharepoint/solution/$(package) --overwrite'
                 displayName: 'Upload to App Catalog'
 
               - script: 'm365 spo app deploy --name $(package)'
