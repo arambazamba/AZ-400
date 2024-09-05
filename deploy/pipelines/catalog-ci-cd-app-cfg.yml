@@ -27,10 +27,10 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: CfgBuild
+  - stage: Build
     jobs:    
-      - job: CfgBuild
-        displayName: "Replace Cfg and Build"
+      - job: Build
+        displayName: "Transform Config and Build"
         steps:
         - task: CmdLine@2
           displayName: Printing Env before
@@ -55,7 +55,6 @@ stages:
           inputs:
             script: |
                 printenv
-
         - task: FileTransform@1
           displayName: Update Configuration
           inputs:
@@ -72,7 +71,7 @@ stages:
 
   - stage: Deploy
     displayName: Deploy
-    dependsOn: CfgBuild
+    dependsOn: Build
     condition: eq(variables.deploy, true)
     
     jobs:
