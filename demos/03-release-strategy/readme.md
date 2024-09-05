@@ -50,12 +50,8 @@
 
 ## Additional Labs & Walkthroughs
 
-[Create a multistage pipeline by using Azure Pipelines](https://docs.microsoft.com/en-us/learn/modules/create-multi-stage-pipeline/)
-
-[Manage release cadence in Azure Pipelines by using deployment patterns - Blue / Green Deployment](https://docs.microsoft.com/en-us/learn/modules/manage-release-cadence/)
+[Learning Path: Deploy applications with Azure DevOps](https://docs.microsoft.com/en-us/learn/paths/deploy-applications-with-azure-devops/)
 
 [Azure DevOps Labs - Controlling Deployments using Release Gates](https://azuredevopslabs.com/labs/vstsextend/releasegates/)
 
 [Azure DevOps Labs - Feature Flag Management with LaunchDarkly and AzureDevOps](https://azuredevopslabs.com/labs/vstsextend/launchdarkly/)
-
-

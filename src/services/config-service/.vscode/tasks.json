@@ -7,9 +7,9 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/AppConfigConsole.csproj",
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/8d9b59ad3fa50dd0e576db815a905f82/ms-dotnettools.csdevkit/config-service.generated.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -19,9 +19,9 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/AppConfigConsole.csproj",
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/8d9b59ad3fa50dd0e576db815a905f82/ms-dotnettools.csdevkit/config-service.generated.sln",
                 "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -32,9 +32,8 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/AppConfigConsole.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/c:/Users/AlexanderKastil/AppData/Roaming/Code/User/workspaceStorage/8d9b59ad3fa50dd0e576db815a905f82/ms-dotnettools.csdevkit/config-service.generated.sln"
             ],
             "problemMatcher": "$msCompile"
         }

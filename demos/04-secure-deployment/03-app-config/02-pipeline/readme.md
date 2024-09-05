@@ -1,5 +1,9 @@
 # Using App Configuration in Azure Pipelines
 
-Sample uses [Food App](https://github.com/arambazamba/food-app)
+- Explain [catalog-ci-cd-app-cfg.yml](/deploy/pipelines/catalog-ci-cd-app-cfg.yml) which demonstrates the use of Azure App Configuration in Azure Pipelines.
 
-- Explain catalog-api-cicd-appcfg.yaml
+## Extensions & Tools
+
+[Azure App Configuration Pull](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task)
+
+[Azure App Configuration Push](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push)

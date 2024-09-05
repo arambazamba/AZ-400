@@ -12,20 +12,6 @@
 
 [Deployment Jobs](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/deployment-jobs?view=azure-devops)
 
-## CLI Reference
-
-[az keyvault](https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest)
-
-[az identity](https://docs.microsoft.com/en-us/cli/azure/identity?view=azure-cli-latest)
-
-[az appconfig](https://docs.microsoft.com/en-us/cli/azure/appconfig?view=azure-cli-latest)
-
-## Extensions & Tools
-
-[Azure App Configuration Pull](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task)
-
-[Azure App Configuration Push](https://marketplace.visualstudio.com/items?itemName=AzureAppConfiguration.azure-app-configuration-task-push)
-
 ## Additional Labs & Walkthroughs
 
 [Manage secrets in your server apps with Azure Key Vault](https://docs.microsoft.com/en-us/learn/modules/manage-secrets-with-azure-key-vault/)
@@ -33,5 +19,3 @@
 [Authenticate apps to Azure services by using service principals and managed identities for Azure resources](https://docs.microsoft.com/en-us/learn/modules/authenticate-apps-with-managed-identities/)
 
 [Implement application configuration](https://docs.microsoft.com/en-us/learn/modules/implement-application-configuration/)
-
-[Learning Path: Deploy applications with Azure DevOps](https://docs.microsoft.com/en-us/learn/paths/deploy-applications-with-azure-devops/)
