@@ -1,4 +1,4 @@
-name: spfx-build-deploy-kv
+name: spfx-ci-cd-kv
 
 # trigger:
 #   branches:
@@ -15,28 +15,29 @@ trigger: none
 pr: none
 
 variables:
+  package: foodlist-wp.sppkg
+  packageLocation: /drop/src/teams/food-list/sharepoint/solution
+  appPath: src/teams/food-list/ 
+  environment: m365-integrationsonline
   nodeVersion: "14.x"
-  fld: apps/teams-spfx-wp
-  sppkg: teams-devops.sppkg
-  azSubs: scPatterns
-  vault: deployment-vault-11246
+  azSubscription: scFood
+  vault: az400-vault-dev
+  # Do NOT set pipeline vars: username, password
 
 pool:
-  vmImage: "ubuntu-20.04"
+  vmImage: ubuntu-latest
 
 stages:
   - stage: Build
-    displayName: Build and Provision
-
     jobs:
       - job: BuildJob
-        displayName: Build SPFx
+        displayName: Build SPFx Package
         steps:
           - template: templates/t-spfx-build.yaml
             parameters:
               nodeVersion: $(nodeVersion)
-              pkg: $(sppkg)
-              fld: $(fld)
+              pkg: $(package)
+              fld: $(appPath)
 
   - stage: Deploy
     displayName: Deploy to M365
@@ -44,7 +45,7 @@ stages:
     jobs:
       - deployment: DeployM365
         displayName: Deploy to M365
-        environment: M365Prod
+        environment: $(environment)
         strategy:
           runOnce:
             deploy:
@@ -52,12 +53,13 @@ stages:
                 - task: AzureKeyVault@1
                   displayName: 'Azure Key Vault: $(vault)'
                   inputs:
-                    azureSubscription: $(azSubs)
+                    azureSubscription: $(azSubscription)
                     KeyVaultName: $(vault)
 
                 - template: templates/t-spfx-deploy-cli.yaml
                   parameters:
                     nodeVersion: $(nodeVersion)
-                    pkg: foodlist-wp.sppkg
+                    pkg: $(package)
+                    pkgLocation: $(packageLocation)
                     username: $(m365user)
                     password: $(m365pwd)
