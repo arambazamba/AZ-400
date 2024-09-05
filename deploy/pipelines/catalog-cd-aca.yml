@@ -29,4 +29,4 @@ stages:
             imageToDeploy: 'az400acrdev.azurecr.io/catalog-service:latest'
             containerAppName: 'catalog-service-v1'
             resourceGroup: 'az-400'
-            containerAppEnvironment: 'az400acaenv-dev'
+            containerAppEnvironment: 'az400acaenv'

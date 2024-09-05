@@ -2,7 +2,7 @@ env=dev
 grp=az400-$env
 loc=westeurope
 acr=az400acr$env
-acaenv=az400acaenv-$env
+acaenv=az400acaenv
 
 az group create -n $grp -l $loc
 

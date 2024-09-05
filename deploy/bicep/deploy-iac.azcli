@@ -3,7 +3,7 @@ loc=westeurope
 grp=az-400-$env
 logws=az-400-log-$env
 acr=acrcontainersdev
-acaenv=acaenv-az-400-$env
+acaenv=az400acaenv
 ai=az400ai-$env
 
 az group create -n $grp -l $loc

@@ -1,7 +1,7 @@
 param appName string
 param rgLocation string = resourceGroup().location
 
-param acaEnvName string = 'food-app-acaenv'
+param acaEnvName string = 'az400acaenv'
 
 param acrName string
 param acrPwd string
