@@ -12,15 +12,15 @@ trigger: none
 pr: none
 
 variables:
-  dotnetSdkVersion: "6.x"
+  dotnetSdkVersion: "8.x"
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
-  folder: apps/catalog-api/api/
-  appservice: catalog-api-mi-18760
-  cfgEP: 'https://foodconfig-18760.azconfig.io'
+  appPath: src/services/catalog-service/api/
+  appService: food-catalog-api-yaml
+  appConfigEP: 'https://az400-config-dev.azconfig.io'
+  deploy: false
 
-####
 # assign permissions to service connection pricipal on app config service
 
 pool:
@@ -31,23 +31,19 @@ stages:
     jobs:    
       - job: CfgBuild
         displayName: "Replace Cfg and Build"
-
-        steps:                
-        
+        steps:
         - task: CmdLine@2
           displayName: Printing Env before
           inputs:
             script: |
                 printenv
-
-        - task: AzureAppConfiguration@5
+        - task: AzureAppConfiguration@10
           displayName: Read App Config
           inputs:
-           azureSubscription: '$(azSubscription)'
-           AppConfigurationEndpoint: '$(cfgEP)'
-           KeyFilter: '*'
-           Label: 'production'
-        
+            azureSubscription: $(azSubscription)
+            AppConfigurationEndpoint: '$(appConfigEP)'
+            KeyFilter: '*'
+            Label: 'dev'
         - task: CmdLine@2
           displayName: Printing Env after
           inputs:
@@ -63,7 +59,7 @@ stages:
         - task: FileTransform@1
           displayName: Update Configuration
           inputs:
-            folderPath: '$(System.DefaultWorkingDirectory)/apps/catalog-api/api/**/'
+            folderPath: '$(System.DefaultWorkingDirectory)/$(appPath)/**/'
             fileType: 'json'
             targetFiles: '**/appsettings.json'
         
@@ -77,6 +73,7 @@ stages:
   - stage: Deploy
     displayName: Deploy
     dependsOn: CfgBuild
+    condition: eq(variables.deploy, true)
     
     jobs:
       - deployment: DeployAppService
@@ -94,10 +91,10 @@ stages:
                     downloadPath: "$(System.ArtifactsDirectory)"                    
 
                 - task: AzureRmWebAppDeployment@4
-                  displayName: "Azure App Service Deploy: $(appservice)"
+                  displayName: "Azure App Service Deploy: $(appService)"
                   inputs:
                     ConnectionType: "AzureRM"
                     azureSubscription: $(azSubscription)
                     appType: "webApp"
-                    WebAppName: $(appservice)
+                    WebAppName: $(appService)
                     packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"
