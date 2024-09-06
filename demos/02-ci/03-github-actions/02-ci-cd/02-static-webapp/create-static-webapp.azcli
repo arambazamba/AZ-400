@@ -1,7 +1,6 @@
-env=static-web-app
-grp=az400-m04-$env
+env=dev
+grp=az400-$env
 loc=westeurope
-user=arambazamba
 app=foodui-$env
 repo="https://github.com/arambazamba/az-400"
 
