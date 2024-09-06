@@ -18,6 +18,8 @@ variables:
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
   appService: food-catalog-api-yaml
+  rg: az400
+  templateFile: deploy/bicep/webapp-windows.bicep
 
 pool:
   vmImage: "ubuntu-latest"
@@ -34,19 +36,17 @@ stages:
               folder: $(appPath)
       
       - job: Provision
-        steps:        
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
-        displayName: 'Install Terraform 0.12.3'
-
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
-        displayName: 'Terraform : azurerm'
-        inputs:
-          backendServiceArm: 'Visual Studio Enterprise (78033352-805c-4acd-af80-f8f95083268d)'
-          backendAzureRmResourceGroupName: 'az400-tf-24892'
-          backendAzureRmStorageAccountName: tfstorage24892
-          backendAzureRmContainerName: terraform
-          backendAzureRmKey: 'KRLK8NrOUZ6OQz3L5WRBxbsPZKe1KffuVg7pFMAhLpI8NBBrsja0fisik+XBrpf1yHAPuwRt+fQq2Q1Y5BQWXA=='
-
+        steps:
+        - task: AzureCLI@2
+          displayName: 'Provision AppService'
+          inputs:
+            azureSubscription: '$(azSubscription)'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              az deployment group create --resource-group $(rg) \
+                --template-file $(templateFile) \
+                --parameters webAppName=$(appService)
 
   - stage: Deploy
     displayName: Deploy
@@ -68,10 +68,10 @@ stages:
                     downloadPath: "$(System.ArtifactsDirectory)"
 
                 - task: AzureRmWebAppDeployment@4
-                  displayName: "Azure App Service Deploy: $(appservice)"
+                  displayName: "Azure App Service Deploy: $(appService)"
                   inputs:
                     ConnectionType: "AzureRM"
                     azureSubscription: $(azSubscription)
                     appType: "webApp"
-                    WebAppName: "$(appservice)"
+                    WebAppName: "$(appService)"
                     packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"
