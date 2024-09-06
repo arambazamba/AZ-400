@@ -1,5 +1,7 @@
 # YAML Pipelines
 
+## Demos
+
 Add `simple-api-ci` to `simple-api` repo
 
 ```yml

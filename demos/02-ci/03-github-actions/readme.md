@@ -1,5 +1,12 @@
 # Implementing Continuous Integration using GitHub Actions
 
+## Links & Resources
+
+[GitHub Marketplace](https://github.com/marketplace)
+
+[GitHub Action Docs](https://docs.github.com/en/actions)
+
+
 ## Demos
 
 - Pipeline Basics
@@ -7,12 +14,6 @@
     - .NET MVC / WebApi Continuous Integration
     - Azure Static Web App with Angular UI Continuous Integration
 - GitHub Script Overview (optional)
-
-## Readings
-
-[GitHub Marketplace](https://github.com/marketplace)
-
-[GitHub Action Docs](https://docs.github.com/en/actions)
 
 ## Additional Labs & Walkthroughs
 

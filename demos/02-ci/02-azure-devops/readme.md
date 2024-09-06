@@ -1,15 +1,5 @@
 # Implementing Continuous Integration using Azure DevOps pipelines
 
-## Demos
-
-- .NET MVC / WebApi Continuous Integration
-- Azure Function App Continuous Integration
-- Angular Continuous Integration
-- Teams Tab with SPFx & React Continuous Integration
-- ...
-
->Note: More CI Demos with other project types and stack will be added in the future.
-
 ## Readings
 
 [YAML schema reference](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema)
@@ -25,6 +15,13 @@
 [Configure run or build numbers](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/run-number?view=azure-devops&tabs=yaml)
 
 [Build and release retention policies](https://learn.microsoft.com/en-us/azure/devops/pipelines/policies/retention?view=azure-devops&tabs=yaml)
+
+## Demos
+
+- .NET MVC / WebApi Continuous Integration
+- Azure Function App Continuous Integration
+- Angular Continuous Integration
+- Teams Tab with SPFx & React Continuous Integration
 
 ## Additional Labs & Walkthroughs
 

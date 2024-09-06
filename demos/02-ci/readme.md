@@ -3,4 +3,4 @@
 - Agents & Pipeline Basics
 - Azure DevOps
 - GitHub Actions
-- Container CI
+- Container Continuous Integration

@@ -1,5 +1,11 @@
 # Pipeline Agents
 
+## Links & Resources
+
+[Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops)
+
+[Azure Pipelines Ecosystem Support](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/ecosystems?view=azure-devops)
+
 ## Demos
 
 -   CI using designer pipelines
@@ -9,12 +15,6 @@
 -   Implementing Custom Agents
     -   Configure a self hosted agent on an Azure Windows VM (optional)
     -   Implement & Use a self-hosted Docker Agent using Azure Container Instances (optional)
-
-## Readings
-
-[Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops)
-
-[Azure Pipelines Ecosystem Support](https://learn.microsoft.com/en-us/azure/devops/pipelines/ecosystems/ecosystems?view=azure-devops)
 
 ## Extensions & Tools
 

@@ -1,10 +1,10 @@
-# Implementing Custom Agents
+# Implementing Custom DevOps Agents
 
 - Configure a self hosted agent on an Azure Windows VM (optional)
 - Implement & Use a self-hosted Docker Agent using Azure Container Apps (optional)
 - Azure Managed DevOps Agent Pools (optional)
 
-## Readings
+## Links & Resources
 
 [Azure Pipelines agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser)
 

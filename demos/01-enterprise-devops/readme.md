@@ -1,6 +1,6 @@
 # 01 Planning for DevOps Transformation
 
-## Readings
+## ## Links & Resources
 
 [Azure DevOps Process Guidance](https://docs.microsoft.com/en-us/azure/devops/boards/work-items/guidance/choose-process?view=azure-devops&tabs=basic-process)
 

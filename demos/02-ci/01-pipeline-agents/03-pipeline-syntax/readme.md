@@ -4,15 +4,7 @@ Elements of Azure DevOps Pipelines:
 
 ![key-concepts-overview](_images/key-concepts-overview.svg)
 
-## Demos
-
-1. Basic Pipeline Syntax: `base-syntax.yml`
-2. Conditions: `conditions-expressions.yml`
-3. Variables & Scopes: `variables-scopes.yml`
-4. Triggers: `triggers.yml`
-5. Build status, timeouts & badges
-
-## Readings
+## ## Links & Resources
 
 [Key concepts for new Azure Pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/key-pipelines-concepts?view=azure-devops)
 
@@ -27,3 +19,12 @@ Elements of Azure DevOps Pipelines:
 [Azure DevOps Expressions](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/expressions?view=azure-devops)
 
 [Specify events that trigger pipelines](https://learn.microsoft.com/en-us/azure/devops/pipelines/build/triggers?view=azure-devops)
+
+
+## Demos
+
+1. Basic Pipeline Syntax: `base-syntax.yml`
+2. Conditions: `conditions-expressions.yml`
+3. Variables & Scopes: `variables-scopes.yml`
+4. Triggers: `triggers.yml`
+5. Build status, timeouts & badges
