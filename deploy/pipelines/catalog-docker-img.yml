@@ -13,7 +13,7 @@ pr: none
 
 variables:
   appPath: src/services/catalog-service/api/
-  imageName: catalog-service
+  imageName: catalog-service:latest
   acr: conACR
 
 pool:
