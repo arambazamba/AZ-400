@@ -41,9 +41,9 @@ steps:
     displayName: "Restore project dependencies"
     inputs:
       command: 'restore'
-      restoreSolution: $(appPath)/*.csproj
-      feedsToUse: 'select'
-      vstsFeed: $(proj)/$(feed)
+      restoreSolution: '$(appPath)/*.csproj'
+      feedsToUse: 'config'
+      nugetConfigPath: '$(appPath)/'
 
   - task: DotNetCoreCLI@2
     displayName: "Build the project - $(buildConfiguration)"
