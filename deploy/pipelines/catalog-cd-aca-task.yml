@@ -31,8 +31,6 @@ stages:
           inputs:
             azureSubscription: 'scFood'
             acrName: 'az400acrdev.azurecr.io'
-            acrUsername: '$(acrName)'
-            acrPassword: '$(acaPassword)'
             imageToDeploy: '$(image)'
             containerAppName: '$(app)'
             resourceGroup: '$(grp)'
