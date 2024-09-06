@@ -50,13 +50,13 @@ steps:
     inputs:
       command: "build"
       arguments: "--no-restore --configuration $(buildConfiguration)"
-      projects: "$(folder)/*.csproj"
+      projects: "$(appPath)/*.csproj"
 
   - task: DotNetCoreCLI@2
     displayName: "Publish the project - $(buildConfiguration)"
     inputs:
       command: "publish"
-      projects: "$(folder)/*.csproj"
+      projects: "$(appPath)/*.csproj"
       publishWebProjects: false
       arguments: "--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
       zipAfterPublish: true
