@@ -27,10 +27,11 @@ stages:
       - job: Deploy
         displayName: Deploy to ACA
         steps:
+        - checkout: none
         - task: AzureContainerApps@1
           inputs:
             azureSubscription: 'scFood'
-            acrName: 'az400acrdev.azurecr.io'
+            acrName: $(acrName)
             imageToDeploy: '$(image)'
             containerAppName: '$(app)'
             resourceGroup: '$(grp)'
