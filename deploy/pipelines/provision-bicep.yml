@@ -10,7 +10,7 @@ variables:
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
   appService: food-catalog-api-yaml
-  rg: az400
+  rg: az400-dev
   templateFile: deploy/bicep/webapp-windows.bicep
 
 pool:
