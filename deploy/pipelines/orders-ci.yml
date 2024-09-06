@@ -21,7 +21,7 @@ variables:
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
-  appPath: src/services/food-app-common/
+  appPath: src/services/order-service/
 
 steps:
   - task: UseDotNet@2
@@ -41,7 +41,7 @@ steps:
     displayName: "Restore project dependencies"
     inputs:
       command: 'restore'
-      restoreSolution: $(folder)/*.csproj
+      restoreSolution: $(appPath)/*.csproj
       feedsToUse: 'select'
       vstsFeed: $(proj)/$(feed)
 
