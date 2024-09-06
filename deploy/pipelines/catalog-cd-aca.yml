@@ -26,7 +26,7 @@ stages:
             acrName: 'az400acrdev'
             acrUsername: 'az400acrdev'
             acrPassword: $(acaPassword)
-            imageToDeploy: 'az400acrdev.azurecr.io/catalog-service:latest'
+            imageToDeploy: 'az400acrdev.azurecr.io/catalog-service'
             containerAppName: 'catalog-service-v1'
             resourceGroup: 'az400-dev'
             containerAppEnvironment: 'az400acaenv'
