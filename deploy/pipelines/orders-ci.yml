@@ -48,9 +48,10 @@ steps:
   - task: DotNetCoreCLI@2
     displayName: "Build the project - $(buildConfiguration)"
     inputs:
-      command: "build"
-      arguments: "--no-restore --configuration $(buildConfiguration)"
-      projects: "$(appPath)/*.csproj"
+      command: 'build'
+      projects: '$(appPath)/*.csproj'
+      arguments: '--no-restore --configuration $(buildConfiguration)'
+      workingDirectory: '$(appPath)/'
 
   - task: DotNetCoreCLI@2
     displayName: "Publish the project - $(buildConfiguration)"
