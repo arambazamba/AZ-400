@@ -1,5 +1,7 @@
 # Pipelines & YAML: basics, expressions & conditions, variabes, triggers
 
+Elements of Azure DevOps Pipelines:
+
 ![key-concepts-overview](_images/key-concepts-overview.svg)
 
 ## Demos
