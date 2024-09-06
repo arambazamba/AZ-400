@@ -10,8 +10,6 @@
 
 ## Demo
 
-- Use this repo: [https://integrations-training@dev.azure.com/integrations-training/M02-Git/_git/BranchProtection](https://integrations-training@dev.azure.com/integrations-training/M02-Git/_git/BranchProtection):
-
 - Go to repositories
 - Select repository -> Policies
 - Select branch -> Explain Branch Policy
