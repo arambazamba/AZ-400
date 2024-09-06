@@ -16,7 +16,7 @@ pool:
 
 variables:
   acrName: 'az400acrdev'
-  image: 'az400acrdev.azurecr.io/catalog-service:latest'
+  image: 'az400acrdev.azurecr.io/catalog-service'
   app: 'catalog-service-v1'
   grp: 'az400-dev'
   acaenv: 'az400acaenv'
