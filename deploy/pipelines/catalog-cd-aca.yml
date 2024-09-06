@@ -14,6 +14,13 @@ pr: none
 pool:
   vmImage: "ubuntu-20.04"
 
+variables:
+  acrName: 'az400acrdev'
+  image: 'az400acrdev.azurecr.io/catalog-service:latest'
+  app: 'catalog-service-v1'
+  grp: 'az400-dev'
+  acaenv: 'az400acaenv'
+
 stages:
   - stage: Deploy
     jobs:
@@ -21,13 +28,16 @@ stages:
         displayName: Deploy to ACA
         steps:
           - checkout: none
-          - task: AzureContainerApps@1
+          - task: AzureCLI@2
             inputs:
               azureSubscription: 'scFood'
-              acrName: 'az400acrdev'
-              acrUsername: 'az400acrdev'
-              acrPassword: $(acaPassword)
-              imageToDeploy: 'az400acrdev.azurecr.io/catalog-service:33'
-              containerAppName: 'catalog-service-v1'
-              resourceGroup: 'az400-dev'
-              containerAppEnvironment: 'az400acaenv'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                az containerapp create -n $(app) -g $(grp) --image $(image) \
+                    --environment $(acaenv) \
+                    --target-port 8080 \
+                    --ingress external \
+                    --registry-server $(acrName).azurecr.io \
+                    --registry-username $(acrName) \
+                    --registry-password $(acrPassword)
