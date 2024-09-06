@@ -39,19 +39,19 @@ stages:
         displayName: "Restore project dependencies"
         inputs:
           command: "restore"
-          projects: "$(appPath)/food-calc.csproj"
+          projects: "$(appPath)/*.csproj"
 
       - task: DotNetCoreCLI@2
         displayName: "Build the project - $(buildConfiguration)"
         inputs:
           command: "build"
           arguments: "--no-restore --configuration $(buildConfiguration)"
-          projects: "$(appPath)/food-calc.csproj"
+          projects: "$(appPath)/*.csproj"
 
       - task: DotNetCoreCLI@2
         inputs:
           command: 'pack'
-          packagesToPack: '$(appPath)/food-calc.csproj'
+          packagesToPack: "$(appPath)/*.csproj"
         displayName: Create nuget package
 
       - task: NuGetCommand@2
