@@ -4,7 +4,7 @@ trigger: none
 pr: none
 
 variables:
-  scriptPath: "deploy/cli/create-orders-topic-func.sh"
+  script: "deploy/cli/create-orders-topic-func.sh"
   azSubscription: scFood
   environment: staging
 
@@ -21,6 +21,6 @@ stages:
             inputs:
               azureSubscription: 'scFood'
               scriptType: 'bash'
-              scriptLocation: '$(scriptPath)'
-              scriptPath: 'deploy/cli/create-orders-topic-func.sh'
+              scriptLocation: 'scriptPath'
+              scriptPath: '$(System.DefaultWorkingDirectory)/$(script)'
               arguments: '$(environment)'
