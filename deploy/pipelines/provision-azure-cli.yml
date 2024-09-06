@@ -22,5 +22,6 @@ stages:
             inputs:
               azureSubscription: 'scFood'
               scriptType: 'bash'
-              scriptPath: $(scriptPath)
-              arguments: $(environment)
+              scriptLocation: 'scriptPath'
+              scriptPath: 'deploy/cli/create-orders-topic-func.sh'
+              arguments: '$(environment)'
