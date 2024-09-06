@@ -1,4 +1,4 @@
-# Advanced techniques
+# Advanced Techniques
 
 - Task groups
 - Templates

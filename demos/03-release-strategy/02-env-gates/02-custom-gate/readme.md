@@ -1,4 +1,4 @@
-# Environments
+# Environments and Gates
 
 - Import `environment-checks.yml`
 - Explain checks

@@ -1,6 +1,6 @@
-# Release pipelines
+# Release Pipelines
 
-## Demo
+## Demos
 
 - Designer & YAML based Release pipeline
     - Service Connections and App Registrations
