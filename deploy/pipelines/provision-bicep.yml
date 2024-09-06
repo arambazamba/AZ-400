@@ -1,13 +1,5 @@
 name: catalog-ci-cd-bicep
 
-# trigger:
-#   branches:
-#     include:
-#       - master
-#   paths:
-#     include:
-#       - src/services/catalog-service/api/*
-
 trigger: none
 pr: none
 
