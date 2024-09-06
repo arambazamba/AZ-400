@@ -11,7 +11,7 @@ pr: none
 variables:
   appPath: src/web/food-shop/
   imageName: food-shop
-  acr: conACR
+  acr: scACR
 
 pool:
   vmImage: "ubuntu-latest"
