@@ -23,19 +23,36 @@ pool:
   vmImage: "ubuntu-latest"
 
 stages:
-  - stage: Provision
-    displayName: Provision Terraform
-    jobs:
-      - job: Provision
-        steps:        
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
-        displayName: 'Install Terraform 0.12.3'
+- stage: Plan
+  displayName: 'Terraform Plan'
+  jobs:
+  - job: TerraformPlan
+    displayName: 'Terraform Plan'
+    steps:
+    - task: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+      inputs:
+        terraformVersion: 'latest'
 
-      - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV1@0
-        displayName: 'Terraform : azurerm'
-        inputs:
-          backendServiceArm: 'Visual Studio Enterprise (78033352-805c-4acd-af80-f8f95083268d)'
-          backendAzureRmResourceGroupName: 'az400-tf-24892'
-          backendAzureRmStorageAccountName: tfstorage24892
-          backendAzureRmContainerName: terraform
-          backendAzureRmKey: 'KRLK8NrOUZ6OQz3L5WRBxbsPZKe1KffuVg7pFMAhLpI8NBBrsja0fisik+XBrpf1yHAPuwRt+fQq2Q1Y5BQWXA=='
+    - script: |
+        terraform --version
+        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
+        terraform plan -out=tfplan
+      displayName: 'Terraform Init and Plan'
+
+- stage: Deploy
+  displayName: 'Terraform Apply'
+  jobs:
+  - job: TerraformApply
+    displayName: 'Terraform Apply'
+    steps:
+    - task: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+      inputs:
+        terraformVersion: 'latest'
+
+    - script: |
+        terraform --version
+        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
+        terraform apply -auto-approve tfplan
+      displayName: 'Terraform Init and Apply'
+
+
