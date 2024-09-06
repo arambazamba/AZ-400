@@ -1,6 +1,6 @@
-rnd=$RANDOM
+env=dev
+grp=az400-$env
 loc=westeurope
-grp=az204-m09-evtgrid-customevt-$rnd
 topic=foodorder-topic-$rnd
 storage=orderprocessor$rnd
 app=order-processor-$rnd
@@ -15,16 +15,3 @@ key=$(az eventgrid topic key list --name $topic -g $grp --query "key1" --output 
 # create function app which will host the consumer
 az storage account  create -n $storage -g $grp
 az functionapp create -n $app -g $grp -s $storage --consumption-plan-location $loc --runtime dotnet --functions-version 4
-
-# Deploy to function app
-cd order-processor-func
-func azure functionapp publish $app --csharp
-cd ..
-
-sed -i "s/<TOPIC_NAME>/$topic/g"  ./publish-order-topic/appsettings.json
-sed -i "s/<TOPIC_KEY>/$key/g"  ./publish-order-topic/appsettings.json
-
-echo '** Update in publish-order-topic/Program.cs:'
-echo '** Topic: ' $topic
-echo '** Topic Key: ' $key
-# echo '** rnd: ' $rnd

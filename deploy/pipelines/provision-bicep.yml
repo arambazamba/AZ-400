@@ -1,4 +1,4 @@
-name: catalog-ci-cd-tf
+name: catalog-ci-cd-bicep
 
 # trigger:
 #   branches:
@@ -9,6 +9,7 @@ name: catalog-ci-cd-tf
 #       - src/services/catalog-service/api/*
 
 trigger: none
+pr: none
 
 variables:
   dotnetSdkVersion: "8.x"
