@@ -17,11 +17,10 @@ stages:
       - job: Provision
         displayName: Provision Azure CLI
         steps:
-          - checkout: none
           - task: AzureCLI@2
             inputs:
               azureSubscription: 'scFood'
               scriptType: 'bash'
-              scriptLocation: 'scriptPath'
+              scriptLocation: '$(scriptPath)'
               scriptPath: 'deploy/cli/create-orders-topic-func.sh'
               arguments: '$(environment)'
