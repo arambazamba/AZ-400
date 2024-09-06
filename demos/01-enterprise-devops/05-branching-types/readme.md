@@ -1,5 +1,7 @@
 # Branching Types
 
+## Links & Resources
+
 [GitFlow](https://danielkummer.github.io/git-flow-cheatsheet/)
 
 [GitHub Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
@@ -14,7 +16,7 @@
 
 ![gitflow](_images/gitflow.png)
 
-> Note: Require GIT 2.24.0+ - Check with `git --version` and seperate package installation on Linux `sudo apt-get install -y git-flow`
+> Note: Require GIT 2.24.0+ - Check with `git --version` and separate package installation on Linux `sudo apt-get install -y git-flow`
 
 Initialize repo for gitflow:
 
@@ -25,29 +27,29 @@ git flow init
 Start a new feature:
 
 ```
-git flow feature start MYFEATURE
+git flow feature start <FEATURE>
 ```
 
 Finish feature:
 
 ```
-git flow feature finish MYFEATURE
+git flow feature finish <FEATURE>
 ```
 
 Publish a feature:
 
 ```
-git flow feature publish  MYFEATURE
+git flow feature publish  <FEATURE>
 ```
 
 Start a release:
 
 ```
-git flow release start RELEASE
+git flow release start <RELEASE>
 ```
 
 Finish a release:
 
 ```
-git flow release finish  RELEASE
+git flow release finish <RELEASE>
 ```

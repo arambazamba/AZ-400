@@ -1,4 +1,5 @@
 # Git Basics: Working with Git locally - Commit, Branching, Merging
+
 ## Extensions & Tools
 
 [Git Bash Download](https://git-scm.com/downloads)

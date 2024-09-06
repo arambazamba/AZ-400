@@ -1,6 +1,6 @@
 # Plan Agile with GitHub Projects and Azure Boards
 
-## Readings
+## Links & Resources
 
 [Azure Boards documentation](https://docs.microsoft.com/en-us/azure/devops/boards/?view=azure-devops)
 
@@ -33,11 +33,7 @@ There are two options to connect Azure Boards and GitHub Issues:
 
 #### Setup Connection using GitHub App
 
-- In Azure DevOps, navigate to the project settings and add a new GitHub connection to your GitHub repo.
-
-or
-
-- Install the [Azure Boards](https://github.com/marketplace/azure-boards) App from the marketplace
+- In Azure DevOps, navigate to the project settings and add a new GitHub connection to your GitHub repo. Alternatively install the [Azure Boards](https://github.com/marketplace/azure-boards) App from the marketplace
 
 - In GitHub, navigate to the https://github.com/settings/profile, configure Azure Boards and check the installation using the configure button. 
 

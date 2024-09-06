@@ -1,6 +1,4 @@
-# Forking
-
-## Forking Workflow
+# Forking Workflow
 
 Example: Getting Updates for Class Material
 
@@ -8,7 +6,7 @@ Example: Getting Updates for Class Material
 
 Original Repo could be: `https://github.com/ARambazamba/az-400` where `ARambazamba` is the `original-owner-github-username` and `az-400` is the `reponame`
 
-### Listing the current Remotes
+## Listing the current remotes
 
 List the current configured remote repository for your fork.
 
@@ -20,7 +18,7 @@ git remote -v
 
 Specify a new remote upstream repository that will be synced with the fork.
 
-### Adding the Repo of the original owner as Upstream
+## Adding the repo of the original owner as upstream
 
 ```
 git remote add upstream https://github.com/original-owner-github-username/reponame.git
@@ -36,7 +34,7 @@ git remote -v
 > upstream  https://github.com/original-owner-github-username/reponame.git (push)
 ```
 
-### Getting Updates
+## Fetching Updates
 
 Fetch from Upstream:
 
@@ -50,19 +48,19 @@ Fetch from Upstream:
 
 Forking is done using the Fork Button
 
-![fork](../_images/fork.jpg)
+![forking-workflow](_images/forking-workflow.jpg)
 
 Add the repo your forked from as "upstream":
 
 ```
-git remote add upstream {upstream_url}
+git remote add upstream <upstream_url>
 ```
 
 Make changes an create a Pull Request
 
 Sync your fork to latest:
 
-```
+```bash
 git fetch upstream master
 git rebase upstream/master
 git push origin
