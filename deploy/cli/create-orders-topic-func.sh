@@ -6,6 +6,7 @@ topic=foodorder-topic-$rnd
 storage=orderprocessor$rnd
 app=order-processor-$rnd
 acaenv=az400acaenv
+image=order-processor:latest
 
 az group create --name $grp --location $loc
 
