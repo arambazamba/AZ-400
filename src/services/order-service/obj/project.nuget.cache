@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "prlnUcPPZbk=",
+  "dgSpecHash": "8/qsBpQoedc=",
   "success": true,
   "projectFilePath": "D:\\git-classes\\az-400\\src\\services\\order-service\\order-service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AlexanderKastil\\.nuget\\packages\\azure.core\\1.19.0\\azure.core.1.19.0.nupkg.sha512",
+    "C:\\Users\\AlexanderKastil\\.nuget\\packages\\food-app-common\\1.0.0\\food-app-common.1.0.0.nupkg.sha512",
     "C:\\Users\\AlexanderKastil\\.nuget\\packages\\mediatr\\12.4.0\\mediatr.12.4.0.nupkg.sha512",
     "C:\\Users\\AlexanderKastil\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\AlexanderKastil\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",

@@ -1,5 +1,5 @@
-env=monitoring
-grp=az400-m09-$env
+env=dev
+grp=az400-$env
 loc=westeurope
 ai=foodapp$env
 api=arambazamba/food-catalog-api:1.1.0

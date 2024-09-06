@@ -26,6 +26,24 @@
           }
         }
       },
+      "food-app-common/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ApplicationInsights": "2.22.0",
+          "Microsoft.ApplicationInsights.AspNetCore": "2.22.0",
+          "Newtonsoft.Json": "13.0.3",
+          "Swashbuckle.AspNetCore": "6.7.3"
+        },
+        "compile": {
+          "lib/net8.0/food-app-common.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/food-app-common.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "MediatR/12.4.0": {
         "type": "package",
         "dependencies": {
@@ -2990,25 +3008,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-      },
-      "food-app-common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "Microsoft.ApplicationInsights": "2.22.0",
-          "Microsoft.ApplicationInsights.AspNetCore": "2.22.0",
-          "Newtonsoft.Json": "13.0.3",
-          "Swashbuckle.AspNetCore": "6.7.3"
-        },
-        "compile": {
-          "bin/placeholder/food-app-common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/food-app-common.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
       }
     }
   },
@@ -3033,6 +3032,17 @@
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml",
         "pkgicon.png"
+      ]
+    },
+    "food-app-common/1.0.0": {
+      "sha512": "h1qzgsiVyjjqohRxvpvc3q2qW8B/BjTNouP7EpeLgdg8OXpofH18iEN5Q6Fp+TwePvTHfFlwQQh6hOSJqS6VSg==",
+      "type": "package",
+      "path": "food-app-common/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "food-app-common.1.0.0.nupkg.sha512",
+        "food-app-common.nuspec",
+        "lib/net8.0/food-app-common.dll"
       ]
     },
     "MediatR/12.4.0": {
@@ -8802,11 +8812,6 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "food-app-common/1.0.0": {
-      "type": "project",
-      "path": "../food-app-common/food-app-common.csproj",
-      "msbuildProject": "../food-app-common/food-app-common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8838,6 +8843,7 @@
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+        "D:\\git-classes\\az-400\\src\\services\\order-service\\NuGet.Config",
         "C:\\Users\\AlexanderKastil\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -8846,18 +8852,13 @@
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://pkgs.dev.azure.com/integrations-development/az-400/_packaging/food-packages/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "D:\\git-classes\\az-400\\src\\services\\food-app-common\\food-app-common.csproj": {
-              "projectPath": "D:\\git-classes\\az-400\\src\\services\\food-app-common\\food-app-common.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -8902,6 +8903,10 @@
           "System.Linq": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "food-app-common": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [
