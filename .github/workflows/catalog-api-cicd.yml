@@ -1,4 +1,4 @@
-name: catalog-api-cicd
+name: catalog-service-ci-cd
 
 on:
   push:
@@ -46,10 +46,10 @@ jobs:
 
       - name: dotnet publish
         run: dotnet publish ${{ github.workspace }}src/services/catalog-service/api/catalog-service.csproj -c Release -o ${{env.DOTNET_ROOT}}/api
-                        
+
       - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v2
+        uses: Azure/webapps-deploy@v3.0.1
         with:
-          app-name: ${{ env.Appservice }}
-          publish-profile: ${{ secrets.CATALOG_API_PROFILE }}
+          app-name: food-catalog-api-yaml
+          publish-profile: ${{ CATALOG_SERVICE_PUBLISH }}
           package: ${{env.DOTNET_ROOT}}/api
