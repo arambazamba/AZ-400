@@ -6,7 +6,7 @@ pr: none
 variables:
   script: "deploy/cli/create-orders-topic-func.sh"
   azSubscription: scFood
-  environment: staging
+  environment: dev
 
 pool:
   vmImage: "ubuntu-latest"
