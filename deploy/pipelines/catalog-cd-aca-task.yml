@@ -30,10 +30,10 @@ stages:
         - task: AzureContainerApps@1
           inputs:
             azureSubscription: 'scFood'
-            acrName: $(acrName)
-            acrUsername: 'az400acrdev'
-            acrPassword: $(acaPassword)
-            imageToDeploy: $(image)
-            containerAppName: $(app)
-            resourceGroup: $(grp)
-            containerAppEnvironment: $(acaenv)
+            acrName: '$(acrName)'
+            acrUsername: '$(acrName)'
+            acrPassword: '$(acaPassword)'
+            imageToDeploy: '$(image)'
+            containerAppName: '$(app)'
+            resourceGroup: '$(grp)'
+            containerAppEnvironment: '$(acaenv)'
