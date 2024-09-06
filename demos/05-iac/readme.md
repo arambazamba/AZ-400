@@ -6,8 +6,8 @@
 - ARM Templates
 - Bicep
 - Automation
-- Ansible (optional)
 - Terraform (optional)
+- Ansible (optional)
 
 ## Additional Labs & Walkthroughs
 
