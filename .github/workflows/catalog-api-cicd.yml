@@ -42,10 +42,10 @@ jobs:
           dotnet-version: "8.0.x"
 
       - name: Build with dotnet
-        run: dotnet build ${{ github.workspace }}src/services/catalog-service/api/catalog-service.csproj --configuration Release
+        run: dotnet build ${{ github.workspace }}/src/services/catalog-service/api/catalog-service.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{ github.workspace }}src/services/catalog-service/api/catalog-service.csproj -c Release -o ${{env.DOTNET_ROOT}}/api
+        run: dotnet publish ${{ github.workspace }}/src/services/catalog-service/api/catalog-service.csproj -c Release -o ${{env.DOTNET_ROOT}}/api
 
       - name: Deploy to Azure Web App
         uses: Azure/webapps-deploy@v3.0.1
