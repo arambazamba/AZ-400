@@ -1,0 +1,67 @@
+name: orders-ci
+
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#     include:
+#       - src/services/order-service/*
+
+trigger: none
+pr: none
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  proj: az-400
+  feed: food-packages
+  dotnetSdkVersion: "8.x"
+  buildConfiguration: Release
+  releaseBranchName: master
+  azSubscription: scFood
+  appPath: src/services/food-app-common/
+
+steps:
+  - task: UseDotNet@2
+    displayName: "Use .NET Core SDK $(dotnetSdkVersion)"
+    inputs:
+      version: "$(dotnetSdkVersion)"
+
+  - task: NuGetToolInstaller@0
+    inputs:
+      versionSpec: "5.8.1"
+      checkLatest: true
+
+  - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+    displayName: "Write build info"
+
+  - task: NuGetCommand@2
+    displayName: "Restore project dependencies"
+    inputs:
+      command: 'restore'
+      restoreSolution: $(folder)/*.csproj
+      feedsToUse: 'select'
+      vstsFeed: $(proj)/$(feed)
+
+  - task: DotNetCoreCLI@2
+    displayName: "Build the project - $(buildConfiguration)"
+    inputs:
+      command: "build"
+      arguments: "--no-restore --configuration $(buildConfiguration)"
+      projects: "$(folder)/*.csproj"
+
+  - task: DotNetCoreCLI@2
+    displayName: "Publish the project - $(buildConfiguration)"
+    inputs:
+      command: "publish"
+      projects: "$(folder)/*.csproj"
+      publishWebProjects: false
+      arguments: "--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
+      zipAfterPublish: true
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      artifactName: drop
+    displayName: "Publish Artifact: drop"

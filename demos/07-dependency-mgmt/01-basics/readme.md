@@ -1,4 +1,4 @@
-# Package Repos
+# Package Repositories
 
 [Semantic Versioning](https://semver.org/)
 
@@ -8,6 +8,6 @@
 
 [npm](https://www.npmjs.com/)
 
-## Demo
+[Java Package Index](https://mvnrepository.com/)
 
-- Show Package Repos: NuGet, npmjs, ...
+[Python Package Index](https://pypi.org/)

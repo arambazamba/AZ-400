@@ -1,5 +1,7 @@
 # Azure Artifacts
 
+## Links & Resources
+
 [Artifacts in Azure Pipelines](https://docs.microsoft.com/en-us/azure/devops/pipelines/artifacts/artifacts-overview?view=azure-devops&tabs=nuget)
 
 [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider#azure-artifacts-credential-provider)
@@ -8,12 +10,10 @@
 
 ## Demos
 
-- Source Code is located at [https://github.com/arambazamba/az-400-dependencies](https://github.com/arambazamba/az-400-dependencies)
-
+- This demo uses [order-service](/src/services/order-service/) which references [food-app-common](/src/services/food-app-common/). 
 - Explain Azure Artifacts
-- Create a Feed in Azure Artifacts and assign permissions to the [PROJECT]\Build Service ([PROJECT] is the name of your Azure DevOps project)
-- Checkout commit with tag `initial-project` and explain the relation between the two projects in `food-api.csproj`
-- Explain and run `az-pipelines/publish-foodcalc.yml` and mention GitVersion settings
+- Create a Feed `food-packages` in Azure Artifacts and assign permissions to the [PROJECT]\Build Service ([PROJECT] is the name of your Azure DevOps project)
+- Explain and run `food-app-common-ci-cd-artifacts.yml` and mention GitVersion settings
 - Explain [Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider) and [Device Auth Flow](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-device-code). The installation script can be downloaded [here](https://github.com/microsoft/artifacts-credprovider/blob/master/helpers/installcredprovider.ps1).
 - Checkout commit with tag `project-using-feed` and explain nuget.config and updated package ref
 
