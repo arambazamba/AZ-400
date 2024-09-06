@@ -23,16 +23,9 @@ pool:
   vmImage: "ubuntu-latest"
 
 stages:
-  - stage: BnP
-    displayName: Build and Provision
+  - stage: Provision
+    displayName: Provision Terraform
     jobs:
-      - job: "Build"
-        steps:
-          - template: templates/t-net-build.yaml
-            parameters:
-              cfg: $(buildConfiguration)
-              folder: $(appPath)
-      
       - job: Provision
         steps:        
       - task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
@@ -46,32 +39,3 @@ stages:
           backendAzureRmStorageAccountName: tfstorage24892
           backendAzureRmContainerName: terraform
           backendAzureRmKey: 'KRLK8NrOUZ6OQz3L5WRBxbsPZKe1KffuVg7pFMAhLpI8NBBrsja0fisik+XBrpf1yHAPuwRt+fQq2Q1Y5BQWXA=='
-
-
-  - stage: Deploy
-    displayName: Deploy
-    dependsOn: BnP
-
-    jobs:
-      - deployment: DeployAppService
-        displayName: Deploy to Appservice
-        environment: prod
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - task: DownloadBuildArtifacts@0
-                  inputs:
-                    buildType: "current"
-                    downloadType: "single"
-                    artifactName: "drop"
-                    downloadPath: "$(System.ArtifactsDirectory)"
-
-                - task: AzureRmWebAppDeployment@4
-                  displayName: "Azure App Service Deploy: $(appservice)"
-                  inputs:
-                    ConnectionType: "AzureRM"
-                    azureSubscription: $(azSubscription)
-                    appType: "webApp"
-                    WebAppName: "$(appservice)"
-                    packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"
