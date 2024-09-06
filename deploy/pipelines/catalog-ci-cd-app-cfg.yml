@@ -36,8 +36,8 @@ stages:
           displayName: Printing Env before
           inputs:
             script: |
-                printenv
-        - task: AzureAppConfiguration@10
+                printenv                                                
+        - task: AzureAppConfiguration@8
           displayName: Read App Config
           inputs:
             azureSubscription: $(azSubscription)
