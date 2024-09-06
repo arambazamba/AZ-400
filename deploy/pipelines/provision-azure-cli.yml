@@ -19,7 +19,7 @@ stages:
         steps:
           - task: AzureCLI@2
             inputs:
-              azureSubscription: 'scFood'
+              azureSubscription: $(azSubscription)
               scriptType: 'bash'
               scriptLocation: 'scriptPath'
               scriptPath: '$(System.DefaultWorkingDirectory)/$(script)'
