@@ -13,7 +13,7 @@ pr: none
 
 variables:
   appPath: src/services/catalog-service/api/
-  imageName: 'catalog-service:latest'
+  imageName: 'catalog-service'
   acr: conACR
 
 pool:
@@ -36,6 +36,7 @@ stages:
               repository: '$(imageName)'
               command: 'buildAndPush'
               Dockerfile: '$(appPath)dockerfile'
+              tags: 'latest'
           - task: Docker@2
             displayName: Logout of ACR
             inputs:
