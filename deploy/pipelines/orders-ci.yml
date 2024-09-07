@@ -33,14 +33,11 @@ stages:
             displayName: "Use .NET Core SDK $(dotnetSdkVersion)"
             inputs:
               version: "$(dotnetSdkVersion)"
-
           - task: NuGetToolInstaller@1
             inputs:
               checkLatest: true
-
           - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
             displayName: "Write build info"
-
           - task: NuGetCommand@2
             displayName: "Restore project dependencies"
             inputs:
@@ -49,15 +46,12 @@ stages:
               feedsToUse: 'select'
               vstsFeed: $(proj)/$(feed)
               includeNuGetOrg: true 
-
           - task: DotNetCoreCLI@2
             displayName: "Build"
             inputs:
               command: 'build'
               projects: '$(appPath)/*.csproj'
               arguments: '--no-restore --configuration $(buildConfiguration)'
-              # workingDirectory: '$(appPath)'
-
           - task: DotNetCoreCLI@2
             displayName: "Publish"
             inputs:
@@ -65,8 +59,6 @@ stages:
               publishWebProjects: false
               projects: '$(appPath)/*.csproj'
               arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-              # workingDirectory: '$(appPath)'
-
           - task: PublishPipelineArtifact@1
             inputs:
               artifactName: drop
