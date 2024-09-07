@@ -61,6 +61,7 @@ steps:
       publishWebProjects: false
       arguments: "--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
       zipAfterPublish: true
+      workingDirectory: '$(appPath)'
 
   - task: PublishPipelineArtifact@1
     inputs:
