@@ -26,7 +26,7 @@ Chose Bash and your subscription
 
 ![chose-bash](_images/chose-bash.jpg)
 
-Optional: Give a meaningfull name to your Cloud Shell Storage using Advanced Settings:
+Optional: Give a meaningful name to your Cloud Shell Storage using Advanced Settings:
 
 ![set-storage](_images/set-storage.jpg)
 

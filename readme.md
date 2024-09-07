@@ -9,20 +9,14 @@ Companion Material for Class Delivery by [Alexander Kastil](https://www.integrat
   - [Document Repos using Markdown](./tooling/03-markdown)
   - [Using Azure CLI](./tooling/04-cli)
 - [Instructor Demos](./demos)
-  - Advanced Demos are using a cloud native app which is located in the [food-app](https://github.com/arambazamba/food-app) GitHub repository
-- [Guided Scripts to setup an Azure hosted Development & Lab VM](./setup)
-  - [Base Dev Environment Setup inkluding Visual Studio Code Extensions](./setup/#basics)
-- [Labs](https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions/tree/master/Instructions/Labs)
 
 > Note: Labs are taken from the official repo [AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://github.com/MicrosoftLearning/AZ400-DesigningandImplementingMicrosoftDevOpsSolutions)
-
-This class uses the [food-app](https://github.com/arambazamba/food-app) GitHub repository as a sample application. 
 
 ## Exam
 
 [Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-us/learn/certifications/exams/az-400)
 
-## Required Cloud Ressources
+## Required Cloud Resources
 
 - [Github User Account](https://github.com/)
 
@@ -36,7 +30,7 @@ This class uses the [food-app](https://github.com/arambazamba/food-app) GitHub r
 
 - [Azure DevOps Organization](https://dev.azure.com/)
 
-  >Note: The Azure DevOps Organization and the Azrue Subscription should be created using the same account
+  >Note: The Azure DevOps Organization and the Azure Subscription should be created using the same account
 
 ## Contributing
 

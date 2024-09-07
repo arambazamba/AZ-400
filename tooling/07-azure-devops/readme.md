@@ -8,7 +8,7 @@ Create your DevOps organization. This will also the name of your first project:
 
 ![register-orga](_images/register-orga.png)
 
-Due to a ressource shortage explained [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=ms-hosted) you have to request free build minutes for Microsoft hosted agents
+Due to a resource shortage explained [here](https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=ms-hosted) you have to request free build minutes for Microsoft hosted agents
 
 ![shortage](_images/shortage.png)
 
