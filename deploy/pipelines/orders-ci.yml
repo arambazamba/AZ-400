@@ -64,7 +64,7 @@ stages:
               command: 'publish'
               publishWebProjects: false
               projects: '$(appPath)/*.csproj'
-              arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
+              arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
               workingDirectory: '$(appPath)'
 
           - task: PublishPipelineArtifact@1
