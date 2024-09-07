@@ -19,7 +19,7 @@ variables:
   appPath: src/services/catalog-service/api/
 
 pool:
-  vmImage: "ubuntu-latest"
+  name: az-pool
 
 steps:
   - task: UseDotNet@2
