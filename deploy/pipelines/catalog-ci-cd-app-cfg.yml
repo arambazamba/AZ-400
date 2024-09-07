@@ -65,9 +65,7 @@ stages:
         - template: templates/t-net-build.yaml
           parameters:
             cfg: $(buildConfiguration)
-            folder: $(folder)
-
-
+            folder: $(appPath)
 
   - stage: Deploy
     displayName: Deploy
