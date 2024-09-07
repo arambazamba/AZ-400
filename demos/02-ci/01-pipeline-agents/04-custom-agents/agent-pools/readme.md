@@ -1,14 +1,14 @@
 # Azure Managed DevOps Pools 
 
+Azure DevOps provides a way to manage your agents in pools. This allows you to group agents together and manage them as a single entity.
+
 ## Links & Resources
 
 [Managed DevOps Pools](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/overview?view=azure-devops)
 
 ## Demos 
 
-Azure DevOps provides a way to manage your agents in pools. This allows you to group agents together and manage them as a single entity.
-
-- Requires an existing [Azure Dev Center](https://learn.microsoft.com/en-us/azure/deployment-environments/how-to-create-configure-dev-center) and the registration of `Microsoft.DevOpsInfrastructure` Provider at subscription level.
+- Create an [Azure Dev Center](https://learn.microsoft.com/en-us/azure/deployment-environments/how-to-create-configure-dev-center) and register the `Microsoft.DevOpsInfrastructure` provider at subscription level.
 
 - The pool shows up in the Azure DevOps portal under `Project Settings` -> `Agent Pools` und pipelines can be configured to use the pool.
 
