@@ -12,7 +12,7 @@ variables:
   appTests: apps/catalog-api/api-tests/
   sonarCon: scSonarCloud
   sonaOrg: integrations-development
-  sonarKey: integrations-development
+  sonarKey: integrations-development_az-400
   sonarProj: az-400
 
 
