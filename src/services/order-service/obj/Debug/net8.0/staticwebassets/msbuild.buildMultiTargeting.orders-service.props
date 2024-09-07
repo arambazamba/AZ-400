@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\orders-service.props" />
-</Project>

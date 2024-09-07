@@ -2,7 +2,6 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.apidescription.server\6.0.5\build\Microsoft.Extensions.ApiDescription.Server.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.azure.documentdb.core\2.22.0\build\Microsoft.Azure.DocumentDB.Core.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.documentdb.core\2.22.0\build\Microsoft.Azure.DocumentDB.Core.targets')" />
-    <Import Project="$(NuGetPackageRoot)microsoft.azure.cosmos\3.42.0\build\netstandard2.0\Microsoft.Azure.Cosmos.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.cosmos\3.42.0\build\netstandard2.0\Microsoft.Azure.Cosmos.targets')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.azure.cosmos\3.43.0\build\netstandard2.0\Microsoft.Azure.Cosmos.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.azure.cosmos\3.43.0\build\netstandard2.0\Microsoft.Azure.Cosmos.targets')" />
   </ImportGroup>
 </Project>

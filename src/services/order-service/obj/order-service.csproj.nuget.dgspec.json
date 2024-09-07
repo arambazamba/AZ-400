@@ -60,11 +60,7 @@
             },
             "Microsoft.Azure.Cosmos": {
               "target": "Package",
-              "version": "[3.42.0, )"
-            },
-            "Microsoft.Azure.DocumentDB.Core": {
-              "target": "Package",
-              "version": "[2.22.0, )"
+              "version": "[3.43.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
