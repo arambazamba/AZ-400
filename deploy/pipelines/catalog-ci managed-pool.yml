@@ -15,8 +15,7 @@ variables:
   buildConfiguration: Release
   appPath: src/services/catalog-service/api/
 
-pool:
-  pool: az-pool
+pool: az-pool
 
 stages:
   - stage: "Build"
