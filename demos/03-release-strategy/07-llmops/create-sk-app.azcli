@@ -1,0 +1,17 @@
+env=dev
+grp=az400-ai-$env
+loc=westeurope
+res=az400-ai-$env
+model=gpt-35-turbo
+
+az group create -n $grp -l $loc
+
+az cognitiveservices account deployment create \
+   -g $grp \
+   -n $res \
+   --deployment-name $model \
+   --model-name $model \
+   --model-version "0301"  \
+   --model-format OpenAI \
+   --sku-name "Standard" \
+   --sku-capacity 1

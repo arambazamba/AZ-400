@@ -9,7 +9,7 @@ pool:
     - npm  
 
 variables: 
-  cypath: '/cypress-e2e/cypress'    
+  cypath: '/src/cypress-e2e/cypress'    
 
 stages:
   - stage: cypress
