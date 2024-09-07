@@ -1,22 +1,22 @@
-// general Azure Container App settings
+// General Azure Container App settings
 param location string
 param name string
 param containerAppEnvironmentId string
 
 // Container Image ref
 param containerImage string
-
-// Networking
-param useExternalIngress bool = false
-param containerPort int
-
 param registry string
 param registryUsername string
+@secure()
 param registryPassword string
+
+// Networking
+param useExternalIngress bool = true
+param containerPort int = 8080
 
 param envVars array = []
 
-resource containerApp 'Microsoft.App/containerApps@2023-05-01' = {
+resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
   name: name
   location: location
   properties: {

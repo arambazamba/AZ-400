@@ -4,7 +4,7 @@
 
 [Azure Quickstart Templates](https://azure.microsoft.com/en-us/resources/templates/)
 
-[Azure 101 Quickstarter Templates](https://github.com/Azure/azure-quickstart-templates)
+[Azure 101 Quick-starter Templates](https://github.com/Azure/azure-quickstart-templates)
 
 [Understand the structure and syntax of Azure Resource Manager templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/template-syntax)
 

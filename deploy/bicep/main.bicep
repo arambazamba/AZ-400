@@ -22,7 +22,7 @@ module logs 'log-analytics.bicep' = {
 	}
 }
 
-module ai 'ai.bicep' = {
+module ai 'app-insights.bicep' = {
   name: '${appName}-app-insights'
   params: {
       rgLocation: rgLocation
@@ -41,7 +41,7 @@ module containerAppEnvironment 'aca-env.bicep' = {
   }
 }
 
-module catalogApi 'containerapp.bicep' = {
+module catalogApi 'container-app.bicep' = {
   name: catalogName
   params: {
     name: catalogName
@@ -62,7 +62,7 @@ module catalogApi 'containerapp.bicep' = {
   }
 }
 
-module shopUI 'containerapp.bicep' = {
+module shopUI 'container-app.bicep' = {
   name: shopName
   params: {
     name: shopName

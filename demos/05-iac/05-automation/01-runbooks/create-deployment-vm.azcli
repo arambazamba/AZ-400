@@ -1,5 +1,6 @@
+env=dev
+grp=az400-$env
 loc=westeurope
-grp=az400-deployment
 vm=deployment$RANDOM
 user=azadmin
 pwd=Azure@dmin1234

@@ -4,6 +4,6 @@
 
 [Infrastructure Automation](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/infrastructure-automation)
 
-- Automation Account and Runbooks
+- Automation Account and Run-books
 - Desired State Configuration
 - Chocolatey (optional)

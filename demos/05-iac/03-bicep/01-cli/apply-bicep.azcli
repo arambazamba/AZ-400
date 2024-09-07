@@ -1,2 +1,0 @@
-grp=az400-m06-bicep
-az deployment group create -g $grp --template-file ./ressources-fixed.bicep

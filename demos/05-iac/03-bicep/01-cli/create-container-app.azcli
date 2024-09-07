@@ -1,7 +1,7 @@
 env=dev
 loc=westeurope
-grp=az-400-$env
-logws=az-400-log-$env
+grp=az400-$env
+logws=az400-log-$env
 acr=acrcontainersdev
 acaenv=az400acaenv
 ai=az400ai-$env

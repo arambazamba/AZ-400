@@ -1,6 +1,4 @@
-# Bicep from Export
+# Using Bicep with Azure CLI
 
-- Exucte `create-bob.azcli` to create the resource
-- Execute `export-bicep.azcli` to export the ARM Template to Bicep
-- Examine output `resources.bicep`
-- Excute `apply-bicep.azcli`
+- Execute `create-webapp-windows.azcli` to create a resource group and a web app
+- Execute `export-bicep.azcli` to export a given the resource group and create a Bicep file
