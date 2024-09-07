@@ -1,4 +1,4 @@
-name: catalog-ci-sonarcloud
+name: catalog-ci-sonar-cloud
 
 trigger: none
 pr: none
