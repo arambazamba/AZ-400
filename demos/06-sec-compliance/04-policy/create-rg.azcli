@@ -1,9 +1,10 @@
-env=az-policy
-grp=az400-07-$env
+env=dev
+rnd=$RANDOM
+grp=az400-$env
 loc=westeurope
-acct=storage$env
-plan=az400-$env
-web=policy-$env
+acct=storage$rnd$env
+plan=az400-$rnd-$env
+web=policy-$rnd-$env
 
 az group create -n $grp -l $loc
 
@@ -15,4 +16,4 @@ az storage account create -l $loc  -n $acct -g $grp --sku Standard_LRS
 
 az appservice plan create -n $plan -g $grp --sku FREE
 
-az webapp create -n $web -g $grp --plan $plan --runtime "DOTNET|6.0"
+az webapp create -n $web -g $grp --plan $plan --runtime "DOTNET|8.0"

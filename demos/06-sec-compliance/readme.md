@@ -5,7 +5,6 @@
 - Thread Modelling
 - Software Composition Analysis 
 - Static Analysis
-- Open Web Application Security Project (OWASP)
 - Azure Policy
 - Azure Blueprint (Optional)
 
