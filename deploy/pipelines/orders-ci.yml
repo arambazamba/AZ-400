@@ -23,47 +23,52 @@ variables:
   azSubscription: scFood
   appPath: src/services/order-service/
 
-steps:
-  - task: UseDotNet@2
-    displayName: "Use .NET Core SDK $(dotnetSdkVersion)"
-    inputs:
-      version: "$(dotnetSdkVersion)"
+stages:
+  - stage: "Build"
+    jobs:
+      - job: "Build"
+        displayName: "Build with Dependencies"
+        steps:
+          - task: UseDotNet@2
+            displayName: "Use .NET Core SDK $(dotnetSdkVersion)"
+            inputs:
+              version: "$(dotnetSdkVersion)"
 
-  - task: NuGetToolInstaller@1
-    inputs:
-      checkLatest: true
+          - task: NuGetToolInstaller@1
+            inputs:
+              checkLatest: true
 
-  - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
-    displayName: "Write build info"
+          - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+            displayName: "Write build info"
 
-  - task: NuGetCommand@2
-    displayName: "Restore project dependencies"
-    inputs:
-      command: 'restore'
-      restoreSolution: $(appPath)/*.csproj
-      feedsToUse: 'select'
-      vstsFeed: $(proj)/$(feed)
-      includeNuGetOrg: true 
+          - task: NuGetCommand@2
+            displayName: "Restore project dependencies"
+            inputs:
+              command: 'restore'
+              restoreSolution: $(appPath)/*.csproj
+              feedsToUse: 'select'
+              vstsFeed: $(proj)/$(feed)
+              includeNuGetOrg: true 
 
-  - task: DotNetCoreCLI@2
-    displayName: "Build the project - $(buildConfiguration)"
-    inputs:
-      command: 'build'
-      projects: '$(appPath)/*.csproj'
-      arguments: '--no-restore --configuration $(buildConfiguration)'
-      workingDirectory: '$(appPath)'
+          - task: DotNetCoreCLI@2
+            displayName: "Build"
+            inputs:
+              command: 'build'
+              projects: '$(appPath)/*.csproj'
+              arguments: '--no-restore --configuration $(buildConfiguration)'
+              workingDirectory: '$(appPath)'
 
-  - task: DotNetCoreCLI@2
-    displayName: "Publish the project - $(buildConfiguration)"
-    inputs:
-      command: "publish"
-      projects: "$(appPath)/*.csproj"
-      publishWebProjects: false
-      arguments: "--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
-      zipAfterPublish: true
-      workingDirectory: '$(appPath)'
+          - task: DotNetCoreCLI@2
+            displayName: "Publish"
+            inputs:
+              command: "publish"
+              projects: "$(appPath)/*.csproj"
+              publishWebProjects: false
+              arguments: "--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)"
+              zipAfterPublish: true
+              workingDirectory: '$(appPath)'
 
-  - task: PublishPipelineArtifact@1
-    inputs:
-      artifactName: drop
-    displayName: "Publish Artifact: drop"
+          - task: PublishPipelineArtifact@1
+            inputs:
+              artifactName: drop
+            displayName: "Publish Artifact: drop"
