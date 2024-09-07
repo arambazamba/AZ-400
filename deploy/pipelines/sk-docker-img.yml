@@ -6,13 +6,13 @@ name: sk-build-docker-img
 #       - master
 #   paths:
 #     include:
-#       - src/ai/sk-student-ai/*
+#       - src/ai/sk-students-ai/*
 
 trigger: none      
 pr: none
 
 variables:
-  appPath: src/ai/sk-student-ai/
+  appPath: src/ai/sk-students-ai/
   imageName: students-ai
   acr: scACR
 
