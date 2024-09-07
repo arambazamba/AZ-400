@@ -58,7 +58,7 @@ stages:
         - task: FileTransform@1
           displayName: Update Configuration
           inputs:
-            folderPath: '$(System.DefaultWorkingDirectory)/$(appPath)/**/'
+            folderPath: '$(System.DefaultWorkingDirectory)/$(appPath)/**'
             fileType: 'json'
             targetFiles: '**/appsettings.json'
         
