@@ -10,13 +10,14 @@ variables:
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
   appTests: apps/catalog-api/api-tests/
-  org: integrations-training
-  projKey: integrations-training_az-400
-  projName: az-400
+  sonarCon: scSonarCloud
+  sonaOrg: integrations-development
+  sonarKey: integrations-development
+  sonarProj: az-400
 
 
 pool:
-  vmImage: "ubuntu-20.04"
+  name: az-pool
 
 steps:
   - task: UseDotNet@2
@@ -38,11 +39,11 @@ steps:
   - task: SonarCloudPrepare@1
     displayName: 'Prepare analysis configuration'
     inputs:
-      SonarCloud: $(con)
-      organization: $(org)
+      SonarCloud: '$(sonarCon)'
+      organization: '$(sonaOrg)'
       scannerMode: 'MSBuild'
-      projectKey: $(projKey)
-      projectName: $(projName)
+      projectKey: '$(sonarKey)'
+      projectName: '$(projName)'
 
   - task: DotNetCoreCLI@2
     displayName: "Build the project - $(buildConfiguration)"
