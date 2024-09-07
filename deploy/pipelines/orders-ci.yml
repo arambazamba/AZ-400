@@ -56,7 +56,7 @@ stages:
               command: 'build'
               projects: '$(appPath)/*.csproj'
               arguments: '--no-restore --configuration $(buildConfiguration)'
-              workingDirectory: '$(appPath)'
+              # workingDirectory: '$(appPath)'
 
           - task: DotNetCoreCLI@2
             displayName: "Publish"
@@ -65,7 +65,7 @@ stages:
               publishWebProjects: false
               projects: '$(appPath)/*.csproj'
               arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-              workingDirectory: '$(appPath)'
+              # workingDirectory: '$(appPath)'
 
           - task: PublishPipelineArtifact@1
             inputs:
