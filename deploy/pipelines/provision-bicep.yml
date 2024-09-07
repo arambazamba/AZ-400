@@ -9,7 +9,7 @@ variables:
   releaseBranchName: master
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
-  appService: food-catalog-api-yaml
+  appService: catalog-service-bicep
   rg: az400-dev
   templateFile: deploy/bicep/webapp-windows.bicep
 
