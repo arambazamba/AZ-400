@@ -58,16 +58,14 @@ stages:
         - task: FileTransform@1
           displayName: Update Configuration
           inputs:
-            folderPath: '$(System.DefaultWorkingDirectory)/$(appPath)/**/'
+            folderPath: '$(System.DefaultWorkingDirectory)/$(appPath)'
             fileType: 'json'
             targetFiles: '**/appsettings.json'
         
         - template: templates/t-net-build.yaml
           parameters:
             cfg: $(buildConfiguration)
-            folder: $(folder)
-
-
+            folder: $(appPath)
 
   - stage: Deploy
     displayName: Deploy
