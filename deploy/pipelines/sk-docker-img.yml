@@ -1,4 +1,4 @@
-name: catalog-build-docker-img
+name: sk-build-docker-img
 
 # trigger:
 #   branches:
