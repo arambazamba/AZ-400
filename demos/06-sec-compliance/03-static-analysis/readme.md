@@ -18,7 +18,7 @@
 
     ![sonar-token](_images/sonar-token.jpg)
 
-- Execute `catalog-ci-sonarcloud.yml` to start analysis
+- Execute `catalog-ci-sonar-cloud.yml` to start analysis
 
 - Review the results in [SonarCloud Analysis](https://sonarcloud.io/summary/new_code?id=integrations-development_az-400&branch=main)   
 
