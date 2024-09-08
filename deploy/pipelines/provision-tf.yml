@@ -1,12 +1,4 @@
-name: catalog-ci-cd-tf
-
-# trigger:
-#   branches:
-#     include:
-#       - master
-#   paths:
-#     include:
-#       - src/services/catalog-service/api/*
+name: provisioning-tf
 
 trigger: none
 pr: none
@@ -17,7 +9,6 @@ variables:
   releaseBranchName: master
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
-  appService: food-catalog-api-yaml
 
 pool:
   vmImage: "ubuntu-latest"
@@ -29,7 +20,7 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    - task: TerraformInstaller@0
       inputs:
         terraformVersion: 'latest'
 
@@ -38,21 +29,4 @@ stages:
         terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
         terraform plan -out=tfplan
       displayName: 'Terraform Init and Plan'
-
-- stage: Deploy
-  displayName: 'Terraform Apply'
-  jobs:
-  - job: TerraformApply
-    displayName: 'Terraform Apply'
-    steps:
-    - task: JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-      inputs:
-        terraformVersion: 'latest'
-
-    - script: |
-        terraform --version
-        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
-        terraform apply -auto-approve tfplan
-      displayName: 'Terraform Init and Apply'
-
-
+      workingDirectory: $(appPath)
