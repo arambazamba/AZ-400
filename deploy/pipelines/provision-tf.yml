@@ -20,7 +20,7 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformInstaller@0
+    - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
       inputs:
         terraformVersion: 'latest'
 
@@ -29,4 +29,4 @@ stages:
         terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
         terraform plan -out=tfplan
       displayName: 'Terraform Init and Plan'
-      workingDirectory: $(appPath)
+      workingDirectory: $(appPath) 
