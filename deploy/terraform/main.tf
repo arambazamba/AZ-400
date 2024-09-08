@@ -12,11 +12,6 @@ provider "azurerm" {
     subscription_id = "78033352-805c-4acd-af80-f8f95083268d"
 }
 
-resource "azurerm_resource_group" "az400-dev" {
-    name = "az400-dev"
-    location = "westeurope"
-}
-
 resource "azurerm_service_plan" "az400-dev" {
     name                = "terraformPlan"
     location            = azurerm_resource_group.az400-dev.location
