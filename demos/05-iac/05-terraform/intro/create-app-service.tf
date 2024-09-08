@@ -4,6 +4,10 @@ terraform {
             source = "hashicorp/azurerm"
             version = ">= 4.00"
         }
+        random = {
+            source = "hashicorp/random"
+            version = ">= 3.0.0"
+        }
     }
 }
 
@@ -31,7 +35,7 @@ resource "random_integer" "random_id" {
 }
 
 resource "azurerm_linux_web_app" "az400-terraform" {
-    name                = "terraform-web-pipeline-${random_integer.random_id.result}"
+    name                = "terraform-web-${random_integer.random_id.result}"
     location            = azurerm_resource_group.az400-terraform.location
     resource_group_name = azurerm_resource_group.az400-terraform.name
     service_plan_id     = azurerm_service_plan.az400-terraform.id
