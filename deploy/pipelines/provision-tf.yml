@@ -34,7 +34,7 @@ stages:
 - stage: Apply
   displayName: 'Terraform Apply'
   jobs:
-  - job: TerraformPlan
+  - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
     - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
@@ -42,8 +42,6 @@ stages:
         terraformVersion: 'latest'
 
     - script: |
-        terraform --version
-        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
-        terraform plan -out=tfplan
+        terraform apply -auto-approve
       displayName: 'Terraform Apply'
       workingDirectory: $(appPath)      
