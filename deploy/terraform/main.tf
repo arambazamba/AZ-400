@@ -35,7 +35,7 @@ resource "random_integer" "random_id" {
 }
 
 resource "azurerm_linux_web_app" "az400-dev" {
-    name                = "terraform-web-pipeline-${random_integer.random_id.result}"
+    name                = "terraform-web-${random_integer.random_id.result}"
     location            = azurerm_resource_group.az400-dev.location
     resource_group_name = azurerm_resource_group.az400-dev.name
     service_plan_id     = azurerm_service_plan.az400-dev.id
