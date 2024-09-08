@@ -5,10 +5,6 @@ terraform {
             version = ">= 4.00"
         }
     }
-    random = {
-            source = "hashicorp/random"
-            version = ">= 3.0.0"
-        }
 }
 
 provider "azurerm" {
