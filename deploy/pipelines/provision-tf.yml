@@ -20,14 +20,19 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    - task:  TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
 
-    - script: |
+    - bash: |
         terraform --version
         terraform init
         terraform plan -out=tfplan
+      env:
+        ARM_CLIENT_ID: $(sp_clientId)
+        ARM_CLIENT_SECRET: $(sp_clientSecret)
+        ARM_SUBSCRIPTION_ID: $(sp_subscriptionId)
+        ARM_TENANT_ID: $(sp_tenantId)
       displayName: 'Terraform Init and Plan'
       workingDirectory: $(appPath) 
       
@@ -37,11 +42,11 @@ stages:
   - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
-    - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    - task:  TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
 
-    - script: |
+    - bash: |
         terraform apply -auto-approve
       displayName: 'Terraform Apply'
       workingDirectory: $(appPath)      
