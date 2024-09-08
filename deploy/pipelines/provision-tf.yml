@@ -8,7 +8,7 @@ variables:
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
-  appPath: src/services/catalog-service/api/
+  appPath: deploy/terraform
 
 pool:
   vmImage: "ubuntu-latest"
@@ -20,30 +20,38 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    - task:  TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
 
-    - script: |
+    - bash: |
         terraform --version
-        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
+        terraform init
         terraform plan -out=tfplan
-      displayName: 'Terraform Init and Plan'
+      env:
+        ARM_CLIENT_ID: $(client_id)
+        ARM_CLIENT_SECRET: $(client_secret)
+        ARM_SUBSCRIPTION_ID: $(subscription_id)
+        ARM_TENANT_ID: $(tenant_id)
       workingDirectory: $(appPath) 
+      displayName: 'Terraform Init and Plan'
       
 - stage: Apply
   displayName: 'Terraform Apply'
   jobs:
-  - job: TerraformPlan
+  - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
-    - task:  JasonBJohnson.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    - task:  TerraformInstaller@1
       inputs:
         terraformVersion: 'latest'
-
-    - script: |
-        terraform --version
-        terraform init -backend-config="storage_account_name=$(storageAccountName)" -backend-config="container_name=$(containerName)" -backend-config="key=$(key)" -backend-config="access_key=$(accessKey)"
-        terraform plan -out=tfplan
+    - bash: |
+        terraform init    
+        terraform apply -auto-approve
+      env:
+        ARM_CLIENT_ID: $(client_id)
+        ARM_CLIENT_SECRET: $(client_secret)
+        ARM_SUBSCRIPTION_ID: $(subscription_id)
+        ARM_TENANT_ID: $(tenant_id)
+      workingDirectory: $(appPath)
       displayName: 'Terraform Apply'
-      workingDirectory: $(appPath)      

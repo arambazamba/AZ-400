@@ -1,6 +1,7 @@
 name: intro-deployment
 
 trigger: none
+pr: none
 
 stages:
 - stage: Build
