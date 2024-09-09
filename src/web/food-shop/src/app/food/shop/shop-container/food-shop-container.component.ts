@@ -13,6 +13,7 @@ import { CartFacade } from '../../state/cart/cart.facade';
 import { FoodEntityService } from '../../state/catalog/food-entity.service';
 import { CartItem } from '../cart-item.model';
 import { ShopItemComponent } from '../shop-item/shop-item.component';
+import { AILoggerService } from 'src/app/logger/ai-logger.service';
 
 @Component({
   selector: 'app-food-shop-container',
@@ -33,6 +34,7 @@ export class FoodShopContainerComponent implements OnInit {
   cartItems = this.cart.getItems();
   cartSubs: Subscription | null = null;
   persistCart = environment.features.persistCart;
+  logger = inject(AILoggerService);
 
   constructor() {
     if (this.persistCart) {
@@ -61,6 +63,7 @@ export class FoodShopContainerComponent implements OnInit {
 
   updateCart(f: CartItem) {
     this.cart.set(f);
+    this.logger.logEvent('Cart updated', f);
   }
 
   ensureStorageFeature() {
