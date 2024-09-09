@@ -1,7 +1,7 @@
 param location string
 param name string
 
-resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2023-09-01' = {
   name: name
   location: location
   properties: any({
@@ -14,7 +14,6 @@ resource logAnalytics 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
     }
   })
 }
-
 
 output customerId string = logAnalytics.properties.customerId
 output primaryKey string = logAnalytics.listKeys().primarySharedKey

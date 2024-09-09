@@ -27,7 +27,7 @@ resource containerApp 'Microsoft.App/containerApps@2024-03-01' = {
           name: 'container-registry-password'
           value: registryPassword
         }
-      ]      
+      ]
       registries: [
         {
           server: '${registry}.azurecr.io'

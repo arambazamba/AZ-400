@@ -1,47 +1,43 @@
 param appName string
 param rgLocation string = resourceGroup().location
-
-param acaEnvName string = 'az400acaenv'
-
+param acaEnvName string
 param acrName string
+@secure()
 param acrPwd string
-
 param defaultPort int = 80
-
 param catalogName string
 param catalogImage string
-
 param shopName string
 param shopImage string
 
-module logs 'log-analytics.bicep' = {
-	name: '${appName}logs'
-	params: {
-      location: rgLocation
-      name: '${appName}logs'
-	}
-}
-
-module ai 'app-insights.bicep' = {
-  name: '${appName}-app-insights'
+module logs 'modules/log-analytics.bicep' = {
+  name: '${appName}logs'
   params: {
-      rgLocation: rgLocation
-      aiName: '${appName}-app-insights'
-      logAnalyticsId: logs.outputs.id
+    location: rgLocation
+    name: '${appName}logs'
   }
 }
 
-module containerAppEnvironment 'aca-env.bicep' = {
+module ai 'modules/app-insights.bicep' = {
+  name: '${appName}-app-insights'
+  params: {
+    rgLocation: rgLocation
+    aiName: '${appName}-app-insights'
+    logAnalyticsId: logs.outputs.id
+  }
+}
+
+module containerAppEnvironment 'modules/aca-env.bicep' = {
   name: 'container-app-environment'
   params: {
     name: acaEnvName
     location: rgLocation
-    logsCustomerId:logs.outputs.customerId
+    logsCustomerId: logs.outputs.customerId
     logsPrimaryKey: logs.outputs.primaryKey
   }
 }
 
-module catalogApi 'container-app.bicep' = {
+module catalogApi 'modules/container-app.bicep' = {
   name: catalogName
   params: {
     name: catalogName
@@ -50,10 +46,10 @@ module catalogApi 'container-app.bicep' = {
     containerImage: '${acrName}.azurecr.io/${catalogImage}:latest'
     containerPort: defaultPort
     envVars: [
-        {
+      {
         name: 'ApplicationInsights__ConnectionString'
         value: ai.outputs.aiConnectionString
-        }
+      }
     ]
     useExternalIngress: true
     registry: acrName
@@ -62,7 +58,7 @@ module catalogApi 'container-app.bicep' = {
   }
 }
 
-module shopUI 'container-app.bicep' = {
+module shopUI 'modules/container-app.bicep' = {
   name: shopName
   params: {
     name: shopName
@@ -71,14 +67,14 @@ module shopUI 'container-app.bicep' = {
     containerImage: '${acrName}.azurecr.io/${shopImage}:latest'
     containerPort: defaultPort
     envVars: [
-        {
-          name: 'ENV_CATALOG_API_URL'
-          value: 'https://${catalogApi.outputs.fqdn}'
-        }
-        {
-          name: 'ENV_APPLICATION_INSIGHTS'
-          value: ai.outputs.aiKey
-        }
+      {
+        name: 'ENV_CATALOG_API_URL'
+        value: 'https://${catalogApi.outputs.fqdn}'
+      }
+      {
+        name: 'ENV_APPLICATION_INSIGHTS'
+        value: ai.outputs.aiKey
+      }
     ]
     useExternalIngress: true
     registry: acrName

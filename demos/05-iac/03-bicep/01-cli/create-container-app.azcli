@@ -2,9 +2,8 @@ env=dev
 loc=westeurope
 grp=az400-$env
 logws=az400-log-$env
-acr=acrcontainersdev
+acr=az400acr$env
 acaenv=az400acaenv
-ai=az400ai-$env
 
 az group create -n $grp -l $loc
 
@@ -13,12 +12,12 @@ acrPwd=$(az acr credential show -n $acr --query passwords[0].value -o tsv)
 loginSrv=$(az acr list --query "[?name=='$acr'].loginServer" -o tsv) 
 
 az deployment group create -f main.bicep -g $grp \
-    -p appName='foodapp' \
+    -p appName=food-app-$env \
     -p rgLocation=westeurope \
     -p acaEnvName=$acaenv \
     -p acrName=$acr \
     -p acrPwd=$acrPwd \
-    -p catalogName='food-catalog' \
+    -p catalogName='catalog-service' \
     -p catalogImage='catalog-service' \
     -p shopName='food-shop' \
-    -p shopImage='shop-ui' 
+    -p shopImage='food-shop' 

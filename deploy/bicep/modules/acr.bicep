@@ -15,4 +15,4 @@ resource containerRegistry 'Microsoft.ContainerRegistry/registries@2023-07-01' =
 }
 
 output adminUsername string = containerRegistry.name
-output adminPassword string = listKeys(containerRegistry.id, containerRegistry.apiVersion).passwords[0].value 
+output adminPassword string = listKeys(containerRegistry.id, containerRegistry.apiVersion).passwords[0].value
