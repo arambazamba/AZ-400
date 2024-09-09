@@ -4,7 +4,6 @@ param acaEnvName string
 param acrName string
 @secure()
 param acrPwd string
-param defaultPort int = 80
 param catalogName string
 param catalogImage string
 param shopName string
@@ -18,7 +17,7 @@ module logs 'modules/log-analytics.bicep' = {
   }
 }
 
-module ai 'modules/app-insights.bicep' = {
+module appInsights 'modules/app-insights.bicep' = {
   name: '${appName}-app-insights'
   params: {
     rgLocation: rgLocation
@@ -27,13 +26,19 @@ module ai 'modules/app-insights.bicep' = {
   }
 }
 
+// because we need the primary key for the ACA Environment module, we need to get it from the existing Log Analytics workspace
+resource logWS 'Microsoft.OperationalInsights/workspaces@2023-09-01' = {
+  name: '${appName}logs'
+  location: rgLocation
+}
+
 module containerAppEnvironment 'modules/aca-env.bicep' = {
   name: 'container-app-environment'
   params: {
     name: acaEnvName
     location: rgLocation
     logsCustomerId: logs.outputs.customerId
-    logsPrimaryKey: logs.outputs.primaryKey
+    logsPrimaryKey: logWS.listKeys().primarySharedKey // provided the instance we can use functions like listKeys
   }
 }
 
@@ -44,11 +49,11 @@ module catalogApi 'modules/container-app.bicep' = {
     location: rgLocation
     containerAppEnvironmentId: containerAppEnvironment.outputs.id
     containerImage: '${acrName}.azurecr.io/${catalogImage}:latest'
-    containerPort: defaultPort
+    containerPort: 8080
     envVars: [
       {
         name: 'ApplicationInsights__ConnectionString'
-        value: ai.outputs.aiConnectionString
+        value: appInsights.outputs.aiConnectionString
       }
     ]
     useExternalIngress: true
@@ -65,7 +70,7 @@ module shopUI 'modules/container-app.bicep' = {
     location: rgLocation
     containerAppEnvironmentId: containerAppEnvironment.outputs.id
     containerImage: '${acrName}.azurecr.io/${shopImage}:latest'
-    containerPort: defaultPort
+    containerPort: 80
     envVars: [
       {
         name: 'ENV_CATALOG_API_URL'
@@ -73,7 +78,7 @@ module shopUI 'modules/container-app.bicep' = {
       }
       {
         name: 'ENV_APPLICATION_INSIGHTS'
-        value: ai.outputs.aiKey
+        value: appInsights.outputs.aiKey
       }
     ]
     useExternalIngress: true
