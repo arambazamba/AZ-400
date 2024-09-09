@@ -3,7 +3,8 @@ grp=az400-ai-$env
 loc=westeurope
 res=az400-ai-$env
 model=gpt-35-turbo
-subscription=78033352-805c-4acd-af80-f8f95083268d
+
+subscriptionId=$(az account list --query "[0].id" -o tsv)
 
 az group create -n $grp -l $loc
 
@@ -14,7 +15,7 @@ az cognitiveservices account create \
    -l $loc \
    --kind OpenAI \
    --sku S0 \
-   --subscription $subscription
+   --subscription $subscriptionId
 
 # deploy a model to the resource
 az cognitiveservices account deployment create \
