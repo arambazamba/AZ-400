@@ -9,7 +9,7 @@ param catalogImage string
 param shopName string
 param shopImage string
 
-module logs 'modules/log-analytics.bicep' = {
+module logWS 'modules/log-analytics.bicep' = {
   name: '${appName}logs'
   params: {
     location: rgLocation
@@ -22,12 +22,12 @@ module appInsights 'modules/app-insights.bicep' = {
   params: {
     rgLocation: rgLocation
     aiName: '${appName}-app-insights'
-    logAnalyticsId: logs.outputs.id
+    logAnalyticsId: logWS.outputs.id
   }
 }
 
 // because we need the primary key for the ACA Environment module, we need to get it from the existing Log Analytics workspace
-resource logWS 'Microsoft.OperationalInsights/workspaces@2023-09-01' = {
+resource logWSInstance 'Microsoft.OperationalInsights/workspaces@2023-09-01' = {
   name: '${appName}logs'
   location: rgLocation
 }
@@ -37,8 +37,8 @@ module containerAppEnvironment 'modules/aca-env.bicep' = {
   params: {
     name: acaEnvName
     location: rgLocation
-    logsCustomerId: logs.outputs.customerId
-    logsPrimaryKey: logWS.listKeys().primarySharedKey // provided the instance we can use functions like listKeys
+    logsCustomerId: logWS.outputs.customerId
+    logsPrimaryKey: logWSInstance.listKeys().primarySharedKey // provided the instance we can use functions like listKeys
   }
 }
 
