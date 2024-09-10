@@ -2,76 +2,76 @@
 
 ## Modules
 
--   Arbeiten mit Git für Enterprise DevOps (Source Control Essentials)
--   Implementierung von Continous Integration (CI) mit Azure Pipelines und GitHub-Actions
--   Planung und Umsetzung einer Release Stategie
--   Implementierung von sicheren Continous Deployments (CD) mit Azure Pipelines
--   Bereitstellen von Infrastructure as Code (IaC) mit ARM, CLI und Bicep
--   Implementieren von Secure DevOps & Compliance
--   Planen einer Package- und Deplendency Management Strategie
--   Sammeln und Verarbeiten von kontinuierlichem Feedback
+- Working with Git for Enterprise DevOps (Source Control Essentials)
+- Implementing Continuous Integration (CI) with Azure Pipelines and GitHub Actions
+- Planning and Implementing a Release Strategy
+- Implementing Secure Continuous Deployments (CD) with Azure Pipelines
+- Provisioning Infrastructure as Code (IaC) with ARM, CLI, and Bicep
+- Implementing Secure DevOps & Compliance
+- Planning a Package and Dependency Management Strategy
+- Collecting and Processing Continuous Feedback
 
 ## Details
 
--   Arbeiten mit Git für Enterprise DevOps
-    -   Git Repo strukturieren
-    -   Verwenden und Kennen von Git Branching Konzepten und -Workflows
-    -   Pull Requests in Azure Repos
-    -   Git Hooks & Events
-    -   Verwalten von Git-Repositories: Large Files and Repos
-    -   Automatisches Erkennen und Vermeiden von Technical Dept
-        Implementierung CI mit Azure Pipelines und GitHub Actions
--   Erkunde Azure Pipelines
-    -   Verwalten von Azure Pipeline Agents und Pools
-    -   YAML Pipelinesyntax
-    -   Beschreibung von Pipelines und Parallelität
-    -   Continuous Integration
-    -   Implementieren einer Pipline Strategie
-    -   Einbinden mit Azure Pipelines
-    -   Einführung in GitHub Actions
-    -   Continuous Integration mit GitHub Actions
-    -   Strategie zum Aufbau von Containern
--   Erstellen und Umsetzung einer Release-Strategie
-    -   Einführung in Continuous Delivery
-    -   Empfehlungen zu Release-Strategien
-    -   Hochwertige Release Pipline
-    -   Einführung in deployment patterns
-    -   Implementierung von Blue-Green Deployments und Verwenden von Feature Toggles
-    -   Implementierung von Canary Releases und Dark Launching
-    -   Implementierung von A-B Testing und progressives Exposure Deployment
--   Implementierung einer sicheren Continuous Deployment mit Azure Pipelines
-    -   Release Pipeline erstellen
-    -   Umgebungen konfigurieren und bereitstellen
-    -   Verwalten und modularisieren von tasks und Templates
-    -   Kennen der Option zum Verwalten der Anwendungskonfiguration
-    -   Anwendungskonfiguration implementieren
-    -   Integration in ein Identitätsmanagementsystem
-    -   Automatisierte Überwachung des Deployment Prozesses
-- Bereitstellen von Infrastructure as Code (IaC) mit ARM, CLI und Bicep
-    - Infrastruktur als Code und Konfigurationsmanagement
-    - Azure Resources mit Azure Manager Templates erstellen
-    - Azure Resources mit Azure CLI erstellen
-    - Provisionierung mit Bicep
-    - Azure Automation mit DevOps erkunden
-    - Einführen von Desired State Configuration (DSC)
-- Erstellen und Implementieren einer Dependency Management Strategy
-    - Paketabhängigkeiten verstehen und planen
-    - Einführung in Azure Artifacts und GitHub Packages
-    - Verstehen und Verwenden von Versionungsstrategien: SemVer
-    - Verwenden von Paketabhängigkeiten in Pipelines
+- Working with Git for Enterprise DevOps
+    - Structuring Git Repositories
+    - Understanding and Using Git Branching Concepts and Workflows
+    - Pull Requests in Azure Repos
+    - Git Hooks & Events
+    - Managing Git Repositories: Large Files and Repos
+    - Automatically Detecting and Avoiding Technical Debt
+- Implementing CI with Azure Pipelines and GitHub Actions
+    - Exploring Azure Pipelines
+    - Managing Azure Pipeline Agents and Pools
+    - YAML Pipeline Syntax
+    - Describing Pipelines and Parallelism
+    - Continuous Integration
+    - Implementing a Pipeline Strategy
+    - Integrating with Azure Pipelines
+    - Introduction to GitHub Actions
+    - Continuous Integration with GitHub Actions
+    - Strategy for Building Containers
+- Creating and Implementing a Release Strategy
+    - Introduction to Continuous Delivery
+    - Recommendations for Release Strategies
+    - High-Quality Release Pipeline
+    - Introduction to Deployment Patterns
+    - Implementing Blue-Green Deployments and Using Feature Toggles
+    - Implementing Canary Releases and Dark Launching
+    - Implementing A-B Testing and Progressive Exposure Deployment
+- Implementing Secure Continuous Deployment with Azure Pipelines
+    - Creating a Release Pipeline
+    - Configuring and Deploying Environments
+    - Managing and Modularizing Tasks and Templates
+    - Understanding Options for Managing Application Configuration
+    - Implementing Application Configuration
+    - Integrating with an Identity Management System
+    - Automated Monitoring of the Deployment Process
+- Provisioning Infrastructure as Code (IaC) with ARM, CLI, and Bicep
+    - Infrastructure as Code and Configuration Management
+    - Creating Azure Resources with Azure Manager Templates
+    - Creating Azure Resources with Azure CLI
+    - Provisioning with Bicep
+    - Exploring Azure Automation with DevOps
+    - Introducing Desired State Configuration (DSC)
+- Creating and Implementing a Dependency Management Strategy
+    - Understanding and Planning Package Dependencies
+    - Introduction to Azure Artifacts and GitHub Packages
+    - Understanding and Using Versioning Strategies: SemVer
+    - Using Package Dependencies in Pipelines
 - Secure DevOps & Compliance
-    - Einführung in Secure DevOps
-    - Implementierung von Open-Source-Software
-    - Analyse der Software-Zusammensetzung
-    - Statische Analyzer (Sonar Cloud, Mend)
-    - Dynamische Analyse mit OWASP
-    - Security Monitoring und Governance
-- Sammeln und Verarbeiten von kontinuierlichem Feedback
-    - Tools zur Verfolgung der Nutzung und Datenflow
-    - Implementierungsroute für Absturzberichte von mobilen Anwendungen
-    - Erstellung von Monitor und Status Dashboards
-    - Wissen innerhalb Teams teilen
-    - SRE und Designpraktiken zur Messung der Zufriedenheit der Endnutzer
-    - Verfahren zur Erfassung und Analyse von Nutzerfeedback erstellen
-    - Verfahren zur Automatisierung der Anwendungsanalytik erstellen
-    - Verwaltung von Alarmen, tadellose Retrospektiven und gerechte Kultur
+    - Introduction to Secure DevOps
+    - Implementing Open-Source Software
+    - Software Composition Analysis
+    - Static Analyzers (Sonar Cloud, Mend)
+    - Dynamic Analysis with OWASP
+    - Security Monitoring and Governance
+- Collecting and Processing Continuous Feedback
+    - Tools for Tracking Usage and Data Flow
+    - Implementing Crash Report Routes for Mobile Applications
+    - Creating Monitor and Status Dashboards
+    - Sharing Knowledge within Teams
+    - SRE and Design Practices for Measuring End-User Satisfaction
+    - Creating Procedures for Collecting and Analyzing User Feedback
+    - Creating Procedures for Automating Application Analytics
+    - Managing Alerts, Flawless Retrospectives, and Fair Culture
