@@ -64,7 +64,6 @@
     - Implementing Open-Source Software
     - Software Composition Analysis
     - Static Analyzers (Sonar Cloud, Mend)
-    - Dynamic Analysis with OWASP
     - Security Monitoring and Governance
 - Collecting and Processing Continuous Feedback
     - Tools for Tracking Usage and Data Flow
