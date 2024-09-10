@@ -2,7 +2,6 @@
 
 ## Modules
 
--   Planen & Beginnen der DevOps-Transformation
 -   Arbeiten mit Git für Enterprise DevOps (Source Control Essentials)
 -   Implementierung von Continous Integration (CI) mit Azure Pipelines und GitHub-Actions
 -   Planung und Umsetzung einer Release Stategie
@@ -14,13 +13,6 @@
 
 ## Details
 
--   Planen & Beginnen der DevOps-Transformation
-    -   Einführung zu DevOps
-    -   Projectauswahl: Greenfield / Brownfield
-    -   Auswählen des Transformationsteams
-    -   Einführung in Source Control
-    -   Verschiedene Source Control Systems
-    -   Arbeiten mit Azure Repos und GitHub
 -   Arbeiten mit Git für Enterprise DevOps
     -   Git Repo strukturieren
     -   Verwenden und Kennen von Git Branching Konzepten und -Workflows
