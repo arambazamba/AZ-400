@@ -1,4 +1,4 @@
-name: func-devops-ci-cd
+name: utils-func-ci-cd.yml
 
 # trigger:
 #   branches:
