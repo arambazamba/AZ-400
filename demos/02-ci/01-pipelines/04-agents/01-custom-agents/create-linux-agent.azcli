@@ -4,7 +4,7 @@
 org='https://dev.azure.com/integrations-training'
 grp=az400-devopsagents
 loc=westeurope
-img='arambazamba/devopsagentlinux'
+img='alexander-kastil/devopsagentlinux'
 pool=linux-selfhosted
 
 az group create -n $grp -l $loc

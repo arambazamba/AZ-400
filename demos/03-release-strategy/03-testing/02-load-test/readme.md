@@ -1,6 +1,6 @@
 # Load testing
 
-- PrimesService gets the count of prime numbers up to a given number and returns the time taken. It also contains a dockerfile to build a docker image which has been published to [Docker Hub](https://hub.docker.com/repository/docker/arambazamba/primesservice):
+- PrimesService gets the count of prime numbers up to a given number and returns the time taken. It also contains a dockerfile to build a docker image which has been published to [Docker Hub](https://hub.docker.com/repository/docker/alexander-kastil/primesservice):
 
     ```c#
     [HttpGet]

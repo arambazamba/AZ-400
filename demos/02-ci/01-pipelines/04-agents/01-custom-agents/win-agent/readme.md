@@ -10,7 +10,7 @@ Build Windows Agent:
 
 ```powershell
 $agent="devopsagentwindows"
-$dockerhubuser="arambazamba"
+$dockerhubuser="alexander-kastil"
 docker build -t $agent .
 docker tag $agent $dockerhubuser/$agent
 docker push $dockerhubuser/$agent

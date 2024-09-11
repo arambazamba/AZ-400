@@ -10,7 +10,7 @@
 
     ![approval](_images/approval.jpg)
 
-- Explain `/deploy/az-pipelines/catalog-api-cicd-gates.yml` from [food-app](https://github.com/arambazamba/food-app)
+- Explain `/deploy/az-pipelines/catalog-api-cicd-gates.yml` from [food-app](https://github.com/alexander-kastil/food-app)
 
     ```yaml
     jobs:

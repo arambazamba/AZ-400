@@ -2,7 +2,7 @@ env=dev
 grp=az400-$env
 loc=westeurope
 app=foodui-$env
-repo="https://github.com/arambazamba/az-400"
+repo="https://github.com/alexander-kastil/az-400"
 
 az group create -n $grp -l $loc
 

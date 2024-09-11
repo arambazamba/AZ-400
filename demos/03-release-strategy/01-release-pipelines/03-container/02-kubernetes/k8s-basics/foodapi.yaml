@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: foodapi
-        image: arambazamba/foodapi
+        image: alexander-kastil/foodapi
         imagePullPolicy: Always
         ports:
         - containerPort: 80        

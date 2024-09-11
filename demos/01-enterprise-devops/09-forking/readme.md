@@ -4,7 +4,7 @@ Example: Getting Updates for Class Material
 
 ![forking-wf](_images/forking-workflow.jpg)
 
-Original Repo could be: `https://github.com/ARambazamba/az-400` where `ARambazamba` is the `original-owner-github-username` and `az-400` is the `reponame`
+Original Repo could be: `https://github.com/alexander-kastil/az-400` where `alexander-kastil` is the `original-owner-github-username` and `az-400` is the `reponame`
 
 ## Listing the current remotes
 

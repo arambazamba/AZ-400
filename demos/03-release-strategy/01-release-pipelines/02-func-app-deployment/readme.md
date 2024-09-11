@@ -5,7 +5,7 @@
 - Implements Typescript based DoDouble Function
 - Multistage Pipeline with build, provision and deployment
 
-Source Code located at [https://github.com/arambazamba/func-devops](https://github.com/arambazamba/func-devops)
+Source Code located at [https://github.com/alexander-kastil/func-devops](https://github.com/alexander-kastil/func-devops)
 
 - Execute Provisioning Script
 

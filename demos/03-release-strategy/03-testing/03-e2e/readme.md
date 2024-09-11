@@ -4,7 +4,7 @@
 
 ## Demo
 
-Samples are taken from [arambazamba/cypress-e2e](https://github.com/arambazamba/cypress-e2e)
+Samples are taken from [alexander-kastil/cypress-e2e](https://github.com/alexander-kastil/cypress-e2e)
 
 Import `cypress-e2e.json`
 

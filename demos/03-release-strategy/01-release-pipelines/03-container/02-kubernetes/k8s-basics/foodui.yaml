@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: foodui
-        image: arambazamba/foodui
+        image: alexander-kastil/foodui
         imagePullPolicy: Always
         ports:
         - containerPort: 80        

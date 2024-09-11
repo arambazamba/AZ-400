@@ -88,7 +88,7 @@ az appservice plan create -n $appPlan -g $grp --sku B2
 > Note: You could also execute `create-app-service.azcli` or run the following remote script in Cloud Shell
 
 ```
-curl https://raw.githubusercontent.com/ARambazamba/az-400/master/setup/create-lab-vm.sh | bash
+curl https://raw.githubusercontent.com/alexander-kastil/az-400/master/setup/create-lab-vm.sh | bash
 ```
 
 #### Create a Lab VM

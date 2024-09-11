@@ -1,6 +1,6 @@
 # .NET MVC Continuous Integration
 
-Samples are included in the .NET MVC repo available at [mvc-devops](https://github.com/arambazamba/mvc-devops)
+Samples are included in the .NET MVC repo available at [mvc-devops](https://github.com/alexander-kastil/mvc-devops)
 
 Install the [.NET SDK](https://dotnet.microsoft.com/download)
 

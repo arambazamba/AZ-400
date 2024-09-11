@@ -31,7 +31,7 @@ Subscribe to Azure Board Status Change:
 
 Install Azure Pipelines App
 
-Add pipeline [api-build-provision-deploy-cli.yml](https://github.com/arambazamba/food-app/blob/master/az-pipelines/api-build-provision-deploy-cli.yml) and create service connection
+Add pipeline [api-build-provision-deploy-cli.yml](https://github.com/alexander-kastil/food-app/blob/master/az-pipelines/api-build-provision-deploy-cli.yml) and create service connection
 
 Start monitoring all pipelines in project
 

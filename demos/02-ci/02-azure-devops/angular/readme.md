@@ -1,6 +1,6 @@
 # Angular Continuous Integration
 
-Samples are included in the Angular repo available at [angular-devops](https://github.com/arambazamba/angular-devops)
+Samples are included in the Angular repo available at [angular-devops](https://github.com/alexander-kastil/angular-devops)
 
 Requires [Node 16](https://nodejs.org/en/download/releases/) and Angular
 

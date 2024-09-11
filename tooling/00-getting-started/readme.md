@@ -27,10 +27,10 @@ git config --global user.email "your.email@yourdomain.com"
 
 ## Setup Git and Fork the class repo
 
-Go to `https://github.com/ARambazamba/az-400` and fork the repo or use the GitHub CLI:
+Go to `https://github.com/alexander-kastil/az-400` and fork the repo or use the GitHub CLI:
 
 ```
-gh repo fork https://github.com/arambazamba/az-400
+gh repo fork https://github.com/alexander-kastil/az-400
 ```
 
 ![forking-wf](_images/fork.jpg)
@@ -45,4 +45,4 @@ Clone Class Repo:
 git clone https://github.com/Student01/az-400
 ```
 
-> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/ARambazamba/az-400
+> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/alexander-kastil/az-400

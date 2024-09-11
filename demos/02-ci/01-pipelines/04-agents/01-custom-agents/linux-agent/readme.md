@@ -1,6 +1,6 @@
 # Implement & Use a Self-hosted Docker Linux Agent
 
-A production ready version of this agent is published at [DockerHub](https://hub.docker.com/repository/docker/arambazamba/aciagentlinux)
+A production ready version of this agent is published at [DockerHub](https://hub.docker.com/repository/docker/alexander-kastil/aciagentlinux)
 
 ## Configure Agent Container
 
@@ -38,8 +38,8 @@ Build & Upload Linux Agent:
 
 ```bash
 docker build -t devopsagentlinux .
-docker tag devopsagentlinux arambazamba/devopsagentlinux
-docker push arambazamba/devopsagentlinux
+docker tag devopsagentlinux alexander-kastil/devopsagentlinux
+docker push alexander-kastil/devopsagentlinux
 ```
 
 >Note: Local testing can be done using: `docker run -it --rm aciagentlinux -e AZP_URL=$org -e AZP_TOKEN=$token -e AZP_POOL=$pool`

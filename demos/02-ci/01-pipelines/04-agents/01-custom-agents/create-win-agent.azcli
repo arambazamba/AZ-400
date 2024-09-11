@@ -4,7 +4,7 @@
 org='https://dev.azure.com/integrations-training'
 grp=az400-devopsagents
 loc=westeurope
-img=arambazamba/devopsagentwindows
+img=alexander-kastil/devopsagentwindows
 agent=aci-win-agent-$RANDOM
 pool=win-selfhosted
 

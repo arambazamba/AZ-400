@@ -11,7 +11,7 @@
 Execute `create-agent-vm.azcli` to install the vm in Cloud Shell using:
 
 ```bash
-curl https://raw.githubusercontent.com/arambazamba/az-400/agents/demos/03-ci/01-agents/05-custom-agents/01-virtual-machines/create-agent-vm.azcli | bash
+curl https://raw.githubusercontent.com/alexander-kastil/az-400/agents/demos/03-ci/01-agents/05-custom-agents/01-virtual-machines/create-agent-vm.azcli | bash
 ```
 
 > Note: If you want to change the vm size use: `az vm list-sizes --location westeurope -o table`
@@ -20,7 +20,7 @@ Execute `install-sw-devops-agent-vm.ps1` from inside the vm you created in the p
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force;
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/arambazamba/az-400/agents/demos/03-ci/01-agents/05-custom-agents/01-virtual-machines/install-sw-devops-agent-vm.ps1'))
+Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/alexander-kastil/az-400/agents/demos/03-ci/01-agents/05-custom-agents/01-virtual-machines/install-sw-devops-agent-vm.ps1'))
 ```
 
 Create an agent pool `AzureVMS` in `https://dev.azure.com/<tenant>/<project>/_settings/agentqueues`

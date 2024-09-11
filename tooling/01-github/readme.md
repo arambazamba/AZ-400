@@ -252,7 +252,7 @@ git pull / git push
 
 ![forking-wf](_images/forking-workflow.jpg)
 
-Original Repo could be: `https://github.com/ARambazamba/AZ-204` where `ARambazamba` is the `original-owner-github-username` and `AZ-204` is the `reponame`
+Original Repo could be: `https://github.com/alexander-kastil/AZ-204` where `alexander-kastil` is the `original-owner-github-username` and `AZ-204` is the `reponame`
 
 ### Listing the current Remotes
 
@@ -297,7 +297,7 @@ Fetch from Upstream:
 Add a Submodule:
 
 ```
-git submodule add https://github.com/ARambazamba/FoodApp FoodApp
+git submodule add https://github.com/alexander-kastil/FoodApp FoodApp
 git commit -m foodapp-submodule
 ```
 

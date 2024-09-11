@@ -6,9 +6,9 @@
 
 - Execute `provision-catalog-api-webapp.azcli`
 
-- Update Publishing Profile in [Secrets](https://github.com/arambazamba/food-app/settings/secrets/actions)
+- Update Publishing Profile in [Secrets](https://github.com/alexander-kastil/food-app/settings/secrets/actions)
 
-- Explain [.github/workflows/catalog-api-cicd.yml](https://github.com/arambazamba/food-app/blob/master/.github/workflows/catalog-api-cicd.yml) of repo. Also mention the dispatch trigger
+- Explain [.github/workflows/catalog-api-cicd.yml](https://github.com/alexander-kastil/food-app/blob/master/.github/workflows/catalog-api-cicd.yml) of repo. Also mention the dispatch trigger
 
     ```yaml 
     name: catalog-api-cicd
