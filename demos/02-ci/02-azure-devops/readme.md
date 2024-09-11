@@ -1,6 +1,6 @@
 # Implementing Continuous Integration using Azure DevOps pipelines
 
-## Readings
+## Links & Resources
 
 [YAML schema reference](https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema)
 

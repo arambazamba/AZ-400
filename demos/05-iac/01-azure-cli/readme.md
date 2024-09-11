@@ -3,7 +3,7 @@
 - Azure CLI Script
 - Using Azure CLI Task in pipeline
 
-## Readings
+## Links & Resources
 
 [Azure Cloud Shell Tools](https://docs.microsoft.com/en-us/azure/cloud-shell/features)
 

@@ -14,7 +14,7 @@
 - Database DevOps (optional)
 - LLMOps (optional)
 
-## Readings
+## Links & Resources
 
 [Task Groups](https://docs.microsoft.com/en-us/azure/devops/pipelines/library/task-groups?view=azure-devops)
 

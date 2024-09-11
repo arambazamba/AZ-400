@@ -1,6 +1,6 @@
 # Implement & Use a Self-hosted Docker Agent
 
-## Readings
+## Links & Resources
 
 [Run a self-hosted agent in Docker](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/docker?view=azure-devops)
 
