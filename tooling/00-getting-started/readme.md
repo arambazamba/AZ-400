@@ -1,15 +1,18 @@
 # Getting Started
 
 To avoid problems with saved credentials I recommend using an alternate browser.
-
+]
 - [Register a Github User Account](https://github.com/) or use your existing account
+- [Get the Azure Pass from the GoDeploy Lab](../09-godeploy-lab)
 - [Activate your Azure Pass to create your Azure Subscription](../05-azure-pass) to create a subscription with free grants
 
-    >Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts with existing subscriptions. If you are not sure, please register a new [Outlook.com](https://outlook.live.com/owa/) account. Use the same e-mail account as you have used for the Azure DevOps Organization
+    >Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Account:
 
-- [Configure CloudShell for first use in your Azure Tenant](../04-CLI/#configure-cloud-shell)
+      - [Outlook.com](https://outlook.live.com/owa/) 
+      - GitHub
+      - Gmail
+
 - [Register an Azure DevOps Organization](../07-azure-devops)
-- [Setup your Lab Machine & install required Software using Script - optional](../../setup)
   
   >Note: You can also work on your own machine. Execute [setup-az-400.ps1](../../setup/setup-az-400.ps1) to install the required Software on a Windows machine
 

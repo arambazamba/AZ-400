@@ -37,5 +37,5 @@ jobs:
             - name: 'Auto-assign issue'
               uses: pozil/auto-assign-issue@v1
               with:
-                  repo-token: ${{ secrets.ISSUESSECRET }}
+                  repo-token: ${{ secrets.ISSUES_SECRET }}
                   assignees: ${{ secrets.DEFAULT_ISSUE_ASSIGNEE }}
