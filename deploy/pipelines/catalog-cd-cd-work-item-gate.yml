@@ -44,7 +44,8 @@ stages:
             scriptType: 'bash'
             scriptLocation: 'inlineScript'
             inlineScript: |
-              az deployment group create --resource-group $(rg) \
+              az deployment group create \
+                --resource-group $(rg) \
                 --template-file $(templateFile) \
                 --parameters webAppName=$(appService)             
              
