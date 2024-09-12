@@ -58,7 +58,7 @@ stages:
         steps:
           - task: queryWorkItems@0
             inputs:
-              queryId: 'CriticalBugs'
+              queryId: '1'
               maxThreshold: '0'
               minThreshold: '0'
 
