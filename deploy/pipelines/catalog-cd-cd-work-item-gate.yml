@@ -16,6 +16,7 @@ variables:
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
+  rg: az400-dev
   appPath: src/services/catalog-service/api/
   appService: food-catalog-api-gate
   templateFile: deploy/bicep/webapp-windows.bicep
@@ -44,7 +45,8 @@ stages:
             scriptType: 'bash'
             scriptLocation: 'inlineScript'
             inlineScript: |
-              az deployment group create --resource-group $(rg) \
+              az deployment group create \
+                --resource-group $(rg) \
                 --template-file $(templateFile) \
                 --parameters webAppName=$(appService)             
              
