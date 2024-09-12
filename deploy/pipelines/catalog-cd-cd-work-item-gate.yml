@@ -16,6 +16,7 @@ variables:
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
+  rg: az400-dev
   appPath: src/services/catalog-service/api/
   appService: food-catalog-api-gate
   templateFile: deploy/bicep/webapp-windows.bicep
@@ -32,7 +33,7 @@ stages:
           - template: templates/t-net-build.yaml
             parameters:
               cfg: $(buildConfiguration)
-              appPath: $(appPath)
+              folder: $(appPath)
       
       - job: Provision
 
@@ -48,10 +49,22 @@ stages:
                 --resource-group $(rg) \
                 --template-file $(templateFile) \
                 --parameters webAppName=$(appService)             
-             
+
+  - stage: Gate
+    jobs:
+      - job: QueryWorkItem
+        timeoutInMinutes: 2
+        pool: server
+        steps:
+          - task: queryWorkItems@0
+            inputs:
+              queryId: '1'
+              maxThreshold: '0'
+              minThreshold: '0'
+
   - stage: Deploy
     displayName: Deploy to AppService
-    dependsOn: BuildProvision
+    dependsOn: Gate
 
     jobs:
       - deployment: DeployAppService
