@@ -3,8 +3,6 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-jammy AS build
 WORKDIR /build
 COPY . .
 
-# Get artifacts
-# nuget restore
 # Install Credential Provider and set env variables to enable Nuget restore with auth
 ARG PAT
 RUN wget -qO- https://raw.githubusercontent.com/Microsoft/artifacts-credprovider/master/helpers/installcredprovider.sh | bash
