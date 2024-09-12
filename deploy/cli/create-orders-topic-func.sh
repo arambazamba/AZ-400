@@ -5,7 +5,7 @@ loc=westeurope
 topic=foodorder-topic-$rnd
 storage=orderprocessor$rnd
 app=order-processor-$rnd
-acaenv=az400acaenv
+acaenv=az400-acaenv
 image=order-processor:latest
 
 az group create --name $grp --location $loc
