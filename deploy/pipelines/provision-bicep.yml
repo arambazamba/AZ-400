@@ -7,7 +7,7 @@ variables:
   dotnetSdkVersion: "8.x"
   buildConfiguration: Release
   releaseBranchName: master
-  azSubscription: scFood
+  azSubscription: scWorkload
   appPath: src/services/catalog-service/api/
   appService: catalog-service-bicep
   rg: az400-dev
