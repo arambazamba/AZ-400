@@ -32,7 +32,7 @@ stages:
           - template: templates/t-net-build.yaml
             parameters:
               cfg: $(buildConfiguration)
-              appPath: $(appPath)
+              folder: $(appPath)
       
       - job: Provision
 
