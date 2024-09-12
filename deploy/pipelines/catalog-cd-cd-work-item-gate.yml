@@ -64,7 +64,7 @@ stages:
 
   - stage: Deploy
     displayName: Deploy to AppService
-    dependsOn: BuildProvision
+    dependsOn: Gate
 
     jobs:
       - deployment: DeployAppService
