@@ -49,7 +49,19 @@ stages:
                 --resource-group $(rg) \
                 --template-file $(templateFile) \
                 --parameters webAppName=$(appService)             
-             
+
+  - stage: Gate
+    jobs:
+      - job: QueryWorkItem
+        timeoutInMinutes: 2
+        pool: server
+        steps:
+          - task: queryWorkItems@0
+            inputs:
+              queryId: 'CriticalBugs'
+              maxThreshold: '0'
+              minThreshold: '0'
+
   - stage: Deploy
     displayName: Deploy to AppService
     dependsOn: BuildProvision
