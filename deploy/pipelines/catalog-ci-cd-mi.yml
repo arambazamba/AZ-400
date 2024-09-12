@@ -6,7 +6,7 @@ name: catalog-api-ci-cd-mi
 #       - master
 #   paths:
 #     include:
-#       - apps/catalog-api/*
+#       - src/services/catalog-service/api/*
 
 trigger: none
 pr: none

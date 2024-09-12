@@ -1,33 +1,41 @@
-name: catalog-ci-cd-bicep
+name: catalog-cd-cd-work-item-gate
+
+# trigger:
+#   branches:
+#     include:
+#       - master
+#   paths:
+#     include:
+#       - src/services/catalog-service/api/*
 
 trigger: none
 pr: none
 
 variables:
-  dotnetSdkVersion: "8.x"
+  dotnetSdkVersion:  "8.x"
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
-  appService: catalog-service-bicep
-  rg: az400-dev
+  appService: food-catalog-api-gate
   templateFile: deploy/bicep/webapp-windows.bicep
 
 pool:
   vmImage: "ubuntu-latest"
 
 stages:
-  - stage: BnP
+  - stage: BuildProvision
     displayName: Build and Provision
     jobs:
-      - job: "Build"
+      - job: Build
         steps:
           - template: templates/t-net-build.yaml
             parameters:
               cfg: $(buildConfiguration)
-              folder: $(appPath)
+              appPath: $(appPath)
       
       - job: Provision
+
         steps:
         - task: AzureCLI@2
           displayName: 'Provision AppService'
@@ -38,16 +46,16 @@ stages:
             inlineScript: |
               az deployment group create --resource-group $(rg) \
                 --template-file $(templateFile) \
-                --parameters webAppName=$(appService)
-
+                --parameters webAppName=$(appService)             
+             
   - stage: Deploy
-    displayName: Deploy
-    dependsOn: BnP
+    displayName: Deploy to AppService
+    dependsOn: BuildProvision
 
     jobs:
       - deployment: DeployAppService
-        displayName: Deploy to Appservice
-        environment: prod
+        displayName: Deploy to AppService
+        environment: catalog-service-gate
         strategy:
           runOnce:
             deploy:
@@ -60,10 +68,10 @@ stages:
                     downloadPath: "$(System.ArtifactsDirectory)"
 
                 - task: AzureRmWebAppDeployment@4
-                  displayName: "Azure App Service Deploy: $(appService)"
+                  displayName: "Deploy: $(appService)"
                   inputs:
                     ConnectionType: "AzureRM"
                     azureSubscription: $(azSubscription)
                     appType: "webApp"
-                    WebAppName: "$(appService)"
-                    packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"
+                    WebAppName: $(appService)
+                    packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"                  

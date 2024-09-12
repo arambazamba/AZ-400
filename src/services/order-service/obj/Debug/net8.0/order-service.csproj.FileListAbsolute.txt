@@ -1,9 +1,8 @@
-D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\Cosmos.CRTCompat.dll
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\Microsoft.Azure.Cosmos.ServiceInterop.dll
+D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\Cosmos.CRTCompat.dll
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\msvcp140.dll
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\vcruntime140.dll
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\vcruntime140_1.dll
-D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\nuget.config
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\appsettings.json
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\order-service.exe
 D:\git-classes\az-400\src\services\order-service\bin\Debug\net8.0\order-service.deps.json
