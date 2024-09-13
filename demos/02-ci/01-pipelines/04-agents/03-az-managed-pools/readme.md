@@ -6,6 +6,8 @@ Azure DevOps provides a way to manage your agents in pools. This allows you to g
 
 [Managed DevOps Pools](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/overview?view=azure-devops)
 
+[Quickstart: Create a Managed DevOps Pool using the Azure portal](https://learn.microsoft.com/en-us/azure/devops/managed-devops-pools/quickstart-azure-portal?view=azure-devops)
+
 ## Demos 
 
 - Create an [Azure Dev Center](https://learn.microsoft.com/en-us/azure/deployment-environments/how-to-create-configure-dev-center) and register the `Microsoft.DevOpsInfrastructure` provider at subscription level.
