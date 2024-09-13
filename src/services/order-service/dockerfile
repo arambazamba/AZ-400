@@ -5,12 +5,13 @@ COPY . .
 
 # Install Credential Provider and set env variables to enable Nuget restore with auth
 ARG PAT
+ARG FEED_URL
 RUN wget -qO- https://raw.githubusercontent.com/Microsoft/artifacts-credprovider/master/helpers/installcredprovider.sh | bash
 ENV NUGET_CREDENTIALPROVIDER_SESSIONTOKENCACHE_ENABLED true
-ENV VSS_NUGET_EXTERNAL_FEED_ENDPOINTS "{\"endpointCredentials\": [{\"endpoint\":\"https://pkgs.dev.azure.com/integrations-development/az-400/_packaging/food-packages/nuget/v3/index.json\", \"username\":\"optional\", \"password\":\"${PAT}\"}]}"
+ENV VSS_NUGET_EXTERNAL_FEED_ENDPOINTS "{\"endpointCredentials\": [{\"endpoint\":\"${FEED_URL}\", \"username\":\"optional\", \"password\":\"${PAT}\"}]}"
 ENV DOTNET_SYSTEM_NET_HTTP_USESOCKETSHTTPHANDLER 0
 
-RUN dotnet restore -s "https://pkgs.dev.azure.com/integrations-development/az-400/_packaging/food-packages/nuget/v3/index.json" "order-service.csproj"
+RUN dotnet restore -s "${FEED_URL}" "order-service.csproj"
 RUN dotnet publish -c Release -o /app
 
 # Runtime Image
@@ -20,7 +21,7 @@ COPY --from=build /app .
 ENTRYPOINT ["dotnet", "order-service.dll"]
 
 # Build Image
-# docker build --rm -f dockerfile -t order-service . --build-arg PAT=<Token>
+# docker build --rm -f dockerfile -t order-service . --build-arg PAT=<Token> --build-arg FEED_URL=<FeedUrl>
 
 # Run Image without env vars
 # docker run -it --rm -p 5051:8080 order-service
