@@ -5,6 +5,7 @@
 - Thread Modelling
 - Software Composition Analysis 
 - Static Analysis
+- Technical Debt
 - Azure Policy
 - Azure Blueprint (Optional)
 
