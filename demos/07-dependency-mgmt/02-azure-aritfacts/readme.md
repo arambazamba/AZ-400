@@ -8,6 +8,8 @@
 
 [Azure Artifacts Upstream Sources](https://docs.microsoft.com/en-us/azure/devops/artifacts/concepts/upstream-sources?view=azure-devops)
 
+[Azure Artifacts Credential Provider](https://github.com/microsoft/artifacts-credprovider?tab=readme-ov-file)
+
 ## Demo
 
 - This demo uses [order-service](/src/services/order-service/) which references [food-app-common](/src/services/food-app-common/). 
