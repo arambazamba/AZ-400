@@ -20,7 +20,7 @@ stages:
           displayName: 'Azure Key Vault: $(vault)'
           inputs:
             azureSubscription: $(azSubscription)
-            KeyVaultName: $(vault)
+            KeyVaultName: $(vault)            
         - task: AzureCLI@2
           displayName: 'Provision AppService'
           inputs:
