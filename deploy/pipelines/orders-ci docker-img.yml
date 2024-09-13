@@ -20,6 +20,7 @@ variables:
   buildConfiguration: Release
   releaseBranchName: master
   azSubscription: scFood
+  acr: scACR
   appPath: src/services/order-service/
   vault: az400-vault-dev
 
