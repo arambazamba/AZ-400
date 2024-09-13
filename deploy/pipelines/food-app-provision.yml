@@ -7,8 +7,9 @@ pool:
   vmImage: "ubuntu-latest"
 
 variables:
-  vault: az400-vault-dev  
+  azSubscription: scFood
   rg: az400-dev
+  vault: az400-vault-dev  
   templateFile: deploy/bicep/food-app.bicep
 
 stages:
