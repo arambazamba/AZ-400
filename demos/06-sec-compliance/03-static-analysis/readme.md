@@ -21,13 +21,3 @@
 - Execute `catalog-ci-sonar-cloud.yml` to start analysis
 
 - Review the results in [SonarCloud Analysis](https://sonarcloud.io/summary/new_code?id=integrations-development_az-400&branch=main)   
-
-### Mend
-
-Mend results:
-
-![mend](_images/mend-01.jpg)
-
-![mend](_images/mend-02.jpg)
-
-![mend](_images/mend-03.jpg)

@@ -7,3 +7,15 @@
 [OWASP Dependency Check](https://marketplace.visualstudio.com/items?itemName=dependency-check.dependencycheck)
 
 [WhiteSource Advice](https://marketplace.visualstudio.com/items?itemName=whitesource.whitesource-advise)
+
+## Demos
+
+### Mend
+
+Mend results:
+
+![mend](_images/mend-01.jpg)
+
+![mend](_images/mend-02.jpg)
+
+![mend](_images/mend-03.jpg)
