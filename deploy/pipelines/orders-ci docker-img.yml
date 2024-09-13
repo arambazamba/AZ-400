@@ -23,6 +23,7 @@ variables:
   acr: scACR
   appPath: src/services/order-service/
   vault: az400-vault-dev
+  imageName: 'order-service'
 
 stages:
   - stage: "Build"
