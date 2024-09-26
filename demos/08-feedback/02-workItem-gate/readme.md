@@ -2,7 +2,7 @@
 
 ## Links & Resources
 
-[Agentless Jobs](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml)
+[Agent-less Jobs](https://learn.microsoft.com/en-us/azure/devops/pipelines/process/phases?view=azure-devops&tabs=yaml)
 
 ## Demo
 

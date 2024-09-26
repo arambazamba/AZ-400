@@ -18,7 +18,7 @@ Link your Azure Boards project to the Azure Boards app:
 
 ```
 @azure boards link [project url]
-@azure boards link https://dev.azure.com/integrations-training/az-400
+@azure boards link https://dev.azure.com/integrations-development/az-400
 ```
 
 Subscribe to Azure Board Status Change:
