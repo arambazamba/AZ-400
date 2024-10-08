@@ -23,7 +23,5 @@ To avoid problems with saved credentials I recommend using an alternate browser 
 - Clone Class Repo:
 
 ```bash
-git clone https://github.com/Student01/az-400
+git clone [https://github.com/Student01/az-400](https://github.com/alexander-kastil/az-400)
 ```
-
-> Note: If you have forked the class repo clone your own fork, otherwise use https://github.com/alexander-kastil/az-400
