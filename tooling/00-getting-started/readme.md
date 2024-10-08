@@ -12,7 +12,7 @@ To avoid problems with saved credentials I recommend using an alternate browser 
 
 - Configure Git on the Lab VM and clone the class repo
 
-## Configure Git on the Lab VM and clone the class repo
+## Configure Git on the lab host and clone the class repo
 
 - [Register a Github User Account](https://github.com/) or use your existing account
 
