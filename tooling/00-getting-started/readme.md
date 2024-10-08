@@ -16,23 +16,11 @@ To avoid problems with saved credentials I recommend using an alternate browser 
 - Configure Git on the Lab VM
 - Setup Git and Fork the class repo
 
-## Setup Git and Fork the class repo
+## Setup Git and clone the class repo
 
 - [Register a Github User Account](https://github.com/) or use your existing account
 
-Go to `https://github.com/alexander-kastil/az-400` and fork the repo or use the GitHub CLI:
-
-```
-gh repo fork https://github.com/alexander-kastil/az-400
-```
-
-![forking-wf](_images/fork.jpg)
-
-The forking-workflow allows you to commit your changes to your fork of the repo and still get updates on the repo
-
-![forking-wf](_images/forking-workflow.jpg)
-
-Clone Class Repo:
+- Clone Class Repo:
 
 ```bash
 git clone https://github.com/Student01/az-400
