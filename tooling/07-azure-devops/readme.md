@@ -14,11 +14,17 @@ Create your DevOps organization. This will also the name of your first project:
 
 - Go to `Parallel Jobs`. 
 
-- Chose `purchase parallel jobs`
+    ![free-jobs](_images/free-jobs.png)
 
-- Set up billing. Choose your Azure Subscription and the amount of parallel jobs you want to purchase.
+- Chose `Purchase parallel jobs`
 
-![free-jobs](_images/free-jobs.png)
+- Set up billing.
+
+    ![billing](_images/billing.jpg)
+
+- Choose your Azure Subscription and the amount of parallel jobs you want to purchase.    
+
+    ![subscription](_images/subscription.jpg)
 
 ## Request your free 1.800 minutes of Microsoft Hosted Agents
 
