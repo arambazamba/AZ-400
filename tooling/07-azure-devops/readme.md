@@ -26,7 +26,7 @@ Create your DevOps organization. This will also the name of your first project:
 
     ![subscription](_images/subscription.jpg)
 
-- Setup 1 job
+- Setup at least one MS Hosted job
 
     ![job](_images/job.jpg)
 
