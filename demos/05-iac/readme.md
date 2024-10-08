@@ -1,4 +1,4 @@
-# 01 Infrastructure and Configuration Azure Tools
+# 01 Infrastructure & Configuration as Code
 
 [What is Infrastructure as Code](https://docs.microsoft.com/en-us/devops/deliver/what-is-infrastructure-as-code)
 
