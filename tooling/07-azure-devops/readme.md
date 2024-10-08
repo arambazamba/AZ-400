@@ -8,7 +8,7 @@ Create your DevOps organization. This will also the name of your first project:
 
 ![register-orga](_images/register-orga.png)
 
-## Use your Azure Credits to purchase Free Job Minutes for Microsoft Hosted Agents
+## Use your Azure Credits to purchase Paralell Jobs for the Microsoft Hosted Agents
 
 - Go to your organization settings
 
@@ -22,11 +22,11 @@ Create your DevOps organization. This will also the name of your first project:
 
     ![billing](_images/billing.jpg)
 
-- Choose your Azure Subscription and the amount of parallel jobs you want to purchase.    
+- Choose your Azure Subscription that will be used for billing. Very likley is it the "Azure Pass Sponsorship" subscription.    
 
     ![subscription](_images/subscription.jpg)
 
-- Setup 1 job
+- Setup at least one MS Hosted job
 
     ![job](_images/job.jpg)
 
