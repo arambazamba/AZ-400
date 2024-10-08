@@ -1,11 +1,15 @@
 # Azure Pass
 
-## !!! Important !!! DO  NOT USE YOUR WORK ACCOUNT FOR THIS PROCESS
+## !!! Important !!! DO  NOT USE YOUR SCHOOL or WORK ACCOUNT FOR THIS PROCESS !!!
+## !!! Important !!! DO  NOT USE AN ACCOUNT THAT YOU HAVE PREVIOUSLY USED TO CLAIM AN AZURE PASS !!!
+
+>Note: Azure Passes can only be used once per [Microsoft Account](https://account.microsoft.com/Account). Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Account:
+
+- [Outlook.com](http://www.outlook.com/)      
 
 
-Use your Azure Pass Code to create a subscription with free credits at [www.microsoftazurepass.com](https://www.microsoftazurepass.com/)
 
-> Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts with existing Azure Subscriptions - if you do so you will not get the credits and the code entered will be invalidated. If you are not sure register an new e-mail account at [Outlook.com](http://www.outlook.com) or use your [GitHub account](https://github.com/). 
+Use your Azure Pass Code to create a subscription with free credits at [www.microsoftazurepass.com](https://www.microsoftazurepass.com/). To avoid proxy issues with your company network, please use the lab host that you have activated in the last step. 
 
 ![azure-pass](_images/azure-pass.jpg)
 
