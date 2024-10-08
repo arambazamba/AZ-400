@@ -11,6 +11,8 @@ Azure Passes can only be used once per [Microsoft Account](https://account.micro
 
 Use your Azure Pass Code to create a subscription with free credits at [www.microsoftazurepass.com](https://www.microsoftazurepass.com/). To avoid proxy issues with your company network, please use the lab host that you have activated in the last step. 
 
+>Note: You can check the balance of your Azure Pass Credits on https://www.microsoftazuresponsorships.com/balance
+
 ![azure-pass](_images/azure-pass.jpg)
 
 Click Start & Log In:
@@ -40,5 +42,3 @@ Wait for Setup to complete:
 Congratulations! You have claimed an Azure Pass for this training and activated your account on an Azure Subscription with 50$ spending limit.
 
 ![azure-pass](_images/azure-welcome.jpg)
-
->Note: You can check the balance of your Azure Pass Credits on https://www.microsoftazuresponsorships.com/balance
