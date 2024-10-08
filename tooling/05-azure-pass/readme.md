@@ -3,7 +3,7 @@
 ## !!! Important !!! DO  NOT USE YOUR SCHOOL or WORK ACCOUNT FOR THIS PROCESS !!!
 ## !!! Important !!! DO  NOT USE AN ACCOUNT THAT YOU HAVE PREVIOUSLY USED TO CLAIM AN AZURE PASS !!!
 
-Azure Passes can only be used once per [Microsoft Account](https://account.microsoft.com/Account). Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Account:
+Azure Passes can only be used once per [Microsoft Account](https://account.microsoft.com/Account). Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Microsoft Account:
 
 - [Outlook.com](http://www.outlook.com/)      
 
