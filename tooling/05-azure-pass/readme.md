@@ -1,4 +1,4 @@
-# Azure Pass
+# Activate and use your Lab Host
 
 ## !!! Important !!! DO  NOT USE YOUR SCHOOL or WORK ACCOUNT FOR THIS PROCESS !!!
 ## !!! Important !!! DO  NOT USE AN ACCOUNT THAT YOU HAVE PREVIOUSLY USED TO CLAIM AN AZURE PASS !!!
