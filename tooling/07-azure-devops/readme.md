@@ -1,6 +1,6 @@
 # Register Azure DevOps Organization
 
-Go to [http://dev.azure.com](http://dev.azure.com) to register your Azure DevOps Organization
+Go to [https://azure.microsoft.com/de-de/products/devops](https://azure.microsoft.com/de-de/products/devops) to register your Azure DevOps Organization
 
 ![register-1](_images/register-1.png)
 

@@ -2,15 +2,12 @@
 
 To avoid problems with saved credentials I recommend using an alternate browser or log of all accounts in your browser before starting the lab.
 
-- [Register a Github User Account](https://github.com/) or use your existing account
 - [Get the Azure Pass from the GoDeploy Lab](../09-godeploy-lab)
 - [Activate your Azure Pass to create your Azure Subscription](../05-azure-pass) to create a subscription with free grants
 
     >Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Account:
 
     - [Outlook.com - preferred](http://www.outlook.com/)      
-    - GitHub
-    - Gmail
 
 - [Register an Azure DevOps Organization](../07-azure-devops)
   
@@ -19,16 +16,9 @@ To avoid problems with saved credentials I recommend using an alternate browser 
 - Configure Git on the Lab VM
 - Setup Git and Fork the class repo
 
-## Configure Git on the Lab VM - Optional
-
-Set User and E-Mail in order to be able to commit to git:
-
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@yourdomain.com"
-```
-
 ## Setup Git and Fork the class repo
+
+- [Register a Github User Account](https://github.com/) or use your existing account
 
 Go to `https://github.com/alexander-kastil/az-400` and fork the repo or use the GitHub CLI:
 
