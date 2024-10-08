@@ -6,6 +6,10 @@
 
 [DataOps for the modern data warehouse](https://docs.microsoft.com/en-us/azure/architecture/example-scenario/data-warehouse/dataops-mdw)
 
+## Additional Labs & Walkthroughs
+
+[Provision databases in Azure Pipelines](https://docs.microsoft.com/en-us/learn/modules/provision-database-azure-pipelines/)
+
 ## Demo
 
 - Examine the use of a SQL Server database in [/src/services/catalog-service/api/](/src/services/catalog-service/api/Program.cs):

@@ -12,6 +12,6 @@
 
 [Define Resources](https://learn.microsoft.com/en-us/azure/templates/)
 
-## Labs
+## Additional Labs & Walkthroughs
 
 [Learn modules for Bicep](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/learn-bicep)

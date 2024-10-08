@@ -20,3 +20,7 @@
 ## Extensions & Tools
 
 [VS Code Extension: ARM Template Viewer](https://marketplace.visualstudio.com/items?itemName=bencoleman.armview)
+
+## Additional Labs & Walkthroughs
+
+[Build Azure Resource Manager templates](https://docs.microsoft.com/en-us/learn/modules/build-azure-vm-templates/)
