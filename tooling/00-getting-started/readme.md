@@ -8,9 +8,9 @@ To avoid problems with saved credentials I recommend using an alternate browser 
 
     >Note: Azure Passes can only be used once per e-mail account. Please do not use Azure AD Accounts (Cooperate Accounts). Use the same e-mail account that you will use for the Azure DevOps Organization. If you are not sure, please register a new Account:
 
-      - [Outlook.com](https://outlook.live.com/owa/) 
-      - GitHub
-      - Gmail
+    - [Outlook.com - preferred](http://www.outlook.com/)      
+    - GitHub
+    - Gmail
 
 - [Register an Azure DevOps Organization](../07-azure-devops)
   
