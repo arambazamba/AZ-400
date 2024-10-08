@@ -1,7 +1,7 @@
 # Getting Started
 
 To avoid problems with saved credentials I recommend using an alternate browser or log of all accounts in your browser before starting the lab.
-]
+
 - [Register a Github User Account](https://github.com/) or use your existing account
 - [Get the Azure Pass from the GoDeploy Lab](../09-godeploy-lab)
 - [Activate your Azure Pass to create your Azure Subscription](../05-azure-pass) to create a subscription with free grants
