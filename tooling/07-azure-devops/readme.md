@@ -8,7 +8,7 @@ Create your DevOps organization. This will also the name of your first project:
 
 ![register-orga](_images/register-orga.png)
 
-## Use your Azure Credits to purchase Free Job Minutes for Microsoft Hosted Agents
+## Use your Azure Credits to purchase Paralell Jobs for the Microsoft Hosted Agents
 
 - Go to your organization settings
 
