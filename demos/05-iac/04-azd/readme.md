@@ -1,6 +1,6 @@
 # Azure Developer CLI
 
-[Bicep documentation](https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/)
+[Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/)
 
 ## Additional Labs & Walkthroughs
 
