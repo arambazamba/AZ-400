@@ -1,13 +1,88 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
-    "features": {
-      "ghcr.io/devcontainers/features/dotnet:1": {},
-      "ghcr.io/devcontainers/features/azure-cli:1": {},
-      "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-      "ghcr.io/devcontainers-contrib/features/angular-cli:2": {},
-      "ghcr.io/devcontainers/features/node:1": {
-        "version": "16"
-      },
-      "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {}
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:2.1.3": {
+      "version": "8"
+    },
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-contrib/features/angular-cli:2": {
+      "version": "18"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    },
+    "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools:1": {
+      "version": "4"
     }
-  }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "alex-pattison.theme-cobalt3",
+        "aliasadidev.nugetpackagemanagergui",
+        "angular.ng-template",
+        "az-resource-explorer-vscode.azure-resource-explorer-for-vscode",
+        "azure-automation.vscode-azureautomation",
+        "azurite.azurite",
+        "cweijan.dbclient-jdbc",
+        "cweijan.vscode-redis-client",
+        "dline.cobaltnext",
+        "donjayamanne.python-environment-manager",
+        "esbenp.prettier-vscode",
+        "formulahendry.code-runner",
+        "foxundermoon.shell-format",
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-chat",
+        "github.vscode-github-actions",
+        "github.vscode-pull-request-github",
+        "graphql.vscode-graphql",
+        "graphql.vscode-graphql-syntax",
+        "humao.rest-client",
+        "joshuapoehls.json-escaper",
+        "kevinrose.vsc-python-indent",
+        "mdickin.markdown-shortcuts",
+        "ms-azure-devops.azure-pipelines",
+        "ms-azuretools.azure-dev",
+        "ms-azuretools.vscode-azurecontainerapps",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-bicep",
+        "ms-azuretools.vscode-dapr",
+        "ms-azuretools.vscode-docker",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "ms-python.debugpy",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode-remote.remote-ssh",
+        "ms-vscode-remote.remote-ssh-edit",
+        "ms-vscode-remote.remote-wsl",
+        "ms-vscode-remote.vscode-remote-extensionpack",
+        "ms-vscode.azure-account",
+        "ms-vscode.azurecli",
+        "ms-vscode.hexeditor",
+        "ms-vscode.powershell",
+        "ms-vscode.remote-explorer",
+        "ms-vscode.remote-server",
+        "msazurermtools.azurerm-vscode-tools",
+        "mskelton.npm-outdated",
+        "oliversturm.fix-json",
+        "redhat.java",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-german",
+        "teamsdevapp.ms-teams-vscode-extension",
+        "yzane.markdown-pdf"
+      ]
+    }
+  },
+  "remoteUser": "root"
+}

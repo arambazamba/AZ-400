@@ -1,3 +1,4 @@
 {
-    "azureAutomation.directory.basePath": "c:\\Users\\AlexanderKastil"
+    "azureAutomation.directory.basePath": "c:\\Users\\AlexanderKastil",
+    "dotnet.defaultSolution": "disable"
 }
