@@ -21,7 +21,7 @@ pool:
 
 stages:
   - stage: "BuildImg"
-    displayName: "Build Catalog Api Image"
+    displayName: "Build Payment Service Python"
     jobs:
       - job: "Build"
         steps:
