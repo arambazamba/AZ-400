@@ -1,2 +1,2 @@
-choco install jdk8 -y
-choco install jmeter -y
+winget install --id Oracle.JDK.17 -e
+winget install --id Apache.JMeter -e

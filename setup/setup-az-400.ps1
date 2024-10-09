@@ -1,23 +1,17 @@
-# Install Chocolatey
-Write-Host "Installing Chocolatey - 1/4" -ForegroundColor yellow
-Set-ExecutionPolicy Bypass -Scope Process -Force; 
-[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
 # Install Software
-choco install googlechrome -y
-choco install vscode -y
-choco install git -y
-choco install gitextensions -y
-choco install git-lfs.install -y
-choco install gitversion.portable -y
-choco install dotnetcore-sdk -y
-choco install dotnet-6.0-sdk -y
-choco install nodejs-lts --version=16.15.0 -y
-choco install azure-cli -y
-choco install azure-functions-core-tools-4 --params="'/x64:true'" -y
-choco install gh -y
-choco install curl -y
+winget install Google.Chrome
+winget install Microsoft.VisualStudioCode
+winget install Git.Git
+winget install GitExtensionsTeam.GitExtensions
+winget install GitHub.GitLFS
+winget install GitTools.GitVersion
+winget install Microsoft.DotNet.SDK.8
+winget install OpenJS.NodeJS.LTS --version 20.12.2
+winget install Microsoft.AzureCLI
+winget install Microsoft.AzureFunctionsCoreTools --params "/x64:true"
+winget install GitHub.cli
+winget install curl.curl
+winget install microsoft.azd
 
 # Refresh Path Env for npm 
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
