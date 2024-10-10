@@ -39,6 +39,10 @@ Wait for Setup to complete:
 
 ![azure-pass](_images/acct-setup.jpg)
 
-Congratulations! You have claimed an Azure Pass for this training and activated your account on an Azure Subscription with 50$ spending limit.
+Congratulations! You have claimed an Azure Pass for this training and activated your account on an Azure Subscription.
 
 ![azure-pass](_images/azure-welcome.jpg)
+
+You do not have to setup MFA for this account. You can skip this step and close the popup.
+
+![popup-mfa.png](_images/popup-mfa.png)
