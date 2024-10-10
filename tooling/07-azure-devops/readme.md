@@ -8,7 +8,14 @@ Create your DevOps organization. This will also the name of your first project:
 
 ![register-orga](_images/register-orga.png)
 
-## Use your Azure Credits to purchase Paralell Jobs for the Microsoft Hosted Agents
+In order to be able to use the Microsoft Hosted Agents you have two options:
+
+1. Use your Azure Credits to purchase Parallel Jobs for the Microsoft Hosted Agents
+2. Request your free 1.800 minutes of Microsoft Hosted Agents
+
+The first option works immediately, the second option takes a few days. Even if you choose the first option, you can still request the free minutes and remove the purchased parallel jobs once the free minutes are available.
+
+## Use your Azure Credits to purchase Parallel Jobs for the Microsoft Hosted Agents
 
 - Go to your organization settings
 
