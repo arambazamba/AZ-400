@@ -20,6 +20,8 @@
 
 [Monitor the health of your Azure virtual machine by using Azure Metrics Explorer and metric alerts](https://docs.microsoft.com/en-us/learn/modules/monitor-azure-vm-using-diagnostic-data/)
 
+[Visualize data combined from multiple data sources by using Azure Workbooks](https://learn.microsoft.com/en-us/training/modules/visualize-data-workbooks/)
+
 [Manage site reliability](https://docs.microsoft.com/en-us/learn/modules/manage-site-reliability/)
 
 [Recommend and design system feedback mechanisms](https://docs.microsoft.com/en-us/learn/modules/recommend-system-feedback-mechanisms/)
