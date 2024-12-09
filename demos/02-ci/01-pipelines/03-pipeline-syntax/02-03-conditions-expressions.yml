@@ -1,6 +1,7 @@
 name: 02-03-conditions-expressions
 
 trigger: none
+pr: none
 
 variables:
   eval: true
