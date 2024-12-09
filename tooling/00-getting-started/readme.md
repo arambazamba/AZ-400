@@ -1,6 +1,6 @@
 # Getting Started
 
-- [Get the Azure Pass Voucher from the GoDeploy Lab](../09-godeploy-lab)
+- [Activate your GoDeploy Lab and Get the Azure Pass Voucher](../09-godeploy-lab)
 
 - [Activate your Azure Pass Voucher to create your Azure Subscription](../05-azure-pass) to create a subscription with free grants
 
