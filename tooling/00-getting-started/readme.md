@@ -1,7 +1,5 @@
 # Getting Started
 
-To avoid problems with saved credentials I recommend using an alternate browser or log of all accounts in your browser before starting the lab.
-
 - [Get the Azure Pass Voucher from the GoDeploy Lab](../09-godeploy-lab)
 
 - [Activate your Azure Pass Voucher to create your Azure Subscription](../05-azure-pass) to create a subscription with free grants
