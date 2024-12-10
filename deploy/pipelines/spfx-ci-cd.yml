@@ -14,7 +14,7 @@ pr: none
 variables:
   package: foodlist-wp.sppkg
   appPath: src/teams/food-list/ 
-  environment: m365-integrationsonline
+  environment: m365-integrationsonline-dev
   # set pipeline vars: username, password
 
 pool:
@@ -78,9 +78,9 @@ stages:
       tenant: d92b247e-90e0-4469-a129-6a32866c0d0a
 
     jobs:
-      - deployment: DeployM365
+      - deployment: DeployM365Dev
         displayName: Deploy to M365
-        environment: $(environment)
+        environment: m365-integrationsonline-dev
         strategy:
           runOnce:
             deploy:
@@ -106,3 +106,33 @@ stages:
 
               - script: 'm365 spo app deploy --name $(package)'
                 displayName: 'Deploy App'
+
+    
+      - deployment: DeployM365Staging
+        displayName: Deploy to M365
+        environment: m365-integrationsonline-staging
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+            
+              - task: NodeTool@0
+                displayName: 'Use Node 14.x'
+                inputs:
+                  versionSpec: 14.x
+                  
+              - task: Npm@1
+                displayName: 'npm i -g @pnp/cli-microsoft365'
+                inputs:
+                  command: custom
+                  verbose: false
+                  customCommand: 'install -g @pnp/cli-microsoft365@6.0.0'
+              
+              - script: m365 login --authType password -u $(username) -p $(password) --tenant $(tenant)                 
+                displayName: 'Connect to M365'              
+
+              - script: 'm365 spo app add -p $(Agent.BuildDirectory)/drop/spfx/src/teams/food-list/sharepoint/solution/$(package) --overwrite'
+                displayName: 'Upload to App Catalog'
+
+              - script: 'm365 spo app deploy --name $(package)'
+                displayName: 'Deploy App'                               
