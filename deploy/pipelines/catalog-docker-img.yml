@@ -14,7 +14,7 @@ pr: none
 variables:
   appPath: src/services/catalog-service/api/
   imageName: catalog-service
-  acr: scACR
+  acr: scARC
 
 pool:
   vmImage: ubuntu-latest
