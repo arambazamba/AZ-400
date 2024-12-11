@@ -11,7 +11,7 @@ variables:
   appPath: src/services/catalog-service/api/
   appService: catalog-service-bicep
   templateFile: deploy/bicep/webapp-windows.bicep
-  rg: az400-dev
+  rg: az400
   loc: westeurope
   subscriptionId: 78033352-805c-4acd-af80-f8f95083268d
 
