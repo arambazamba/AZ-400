@@ -7,7 +7,7 @@ variables:
   dotnetSdkVersion: "8.x"
   buildConfiguration: Release
   releaseBranchName: master
-  azSubscription: scIdentityWorkload
+  azCon: scIdentityWorkload
   appPath: src/services/catalog-service/api/
   appService: catalog-service-bicep
   templateFile: deploy/bicep/webapp-windows.bicep
@@ -28,13 +28,14 @@ stages:
             parameters:
               cfg: $(buildConfiguration)
               folder: $(appPath)
+              project: catalog-service
       
       - job: Provision
         steps:
         - task: AzureResourceManagerTemplateDeployment@3
           inputs:
             deploymentScope: 'Resource Group'
-            azureResourceManagerConnection: 'scFood'
+            azureResourceManagerConnection: $(azCon)
             subscriptionId: '$(subscriptionId)'
             action: 'Create Or Update Resource Group'
             resourceGroupName: '$(rg)'
@@ -46,7 +47,7 @@ stages:
         # - task: AzureCLI@2
         #   displayName: 'Provision AppService'
         #   inputs:
-        #     azureSubscription: '$(azSubscription)'
+        #     azureSubscription: '$(azCon)'
         #     scriptType: 'bash'
         #     scriptLocation: 'inlineScript'
         #     inlineScript: |
@@ -77,7 +78,7 @@ stages:
                   displayName: "Azure App Service Deploy: $(appService)"
                   inputs:
                     ConnectionType: "AzureRM"
-                    azureSubscription: $(azSubscription)
+                    azureSubscription: $(azCon)
                     appType: "webApp"
                     WebAppName: "$(appService)"
                     packageForLinux: "$(System.ArtifactsDirectory)/**/*.zip"
