@@ -7,7 +7,7 @@ variables:
   dotnetSdkVersion: "8.x"
   buildConfiguration: Release
   releaseBranchName: master
-  azSubscription: scAZ400
+  azSubscription: scIdentityWorkload
   appPath: src/services/catalog-service/api/
   appService: catalog-service-bicep
   templateFile: deploy/bicep/webapp-windows.bicep
