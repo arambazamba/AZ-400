@@ -43,17 +43,7 @@ stages:
             templateLocation: 'Linked artifact'
             csmFile: '$(templateFile)'
             deploymentMode: 'Incremental'
-            overrideParameters: '-webAppName $(appService) '
-        # - task: AzureCLI@2
-        #   displayName: 'Provision AppService'
-        #   inputs:
-        #     azureSubscription: '$(azCon)'
-        #     scriptType: 'bash'
-        #     scriptLocation: 'inlineScript'
-        #     inlineScript: |
-        #       az deployment group create --resource-group $(rg) \
-        #         --template-file $(templateFile) \
-        #         --parameters webAppName=$(appService)
+            overrideParameters: '-webAppName $(appService)'
 
   - stage: Deploy
     displayName: Deploy
