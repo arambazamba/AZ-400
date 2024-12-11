@@ -1,18 +1,20 @@
 env=dev
 loc=westeurope
-grp=az204-m05-containers
-acr=az204demos$env
-imgCatalog=catalog-service
-imgShopUI=shop-ui
+grp=az400-$env
+acr=az400acr$env
 
 az group create -n $grp -l $loc
 az acr create -g $grp -n $acr --sku Basic --admin-enabled true
 az acr login --name $acr
 
 cd web/food-shop
-az acr build --image $imgShopUI --registry $acr --file dockerfile .
+az acr build --image food-shop --registry $acr --file dockerfile .
 cd ../..
 
 cd services/catalog-service/api
-az acr build --image $imgCatalog --registry $acr --file dockerfile .
+az acr build --image catalog-service --registry $acr --file dockerfile .
+cd ../..
+
+cd services/prime-service
+az acr build --image prime-service --registry $acr --file dockerfile .
 cd ../..
