@@ -27,9 +27,16 @@
     subjectIdentifier="sc://integrations-development/az-400/scIdentityWorkload"
     contributorRoleId=b24988ac-6180-42a0-ab88-20f7382dd24c
 
+    # Create a managed identity
     principalId=$(az identity create --name $identityName --resource-group $grp --query principalId -o tsv)
 
+    # Get the client id
+    clientId=$(az identity show --name $identityName --resource-group $grp --query clientId -o tsv)
+
+    # Assign the managed identity the contributor role
     az role assignment create --assignee $principalId --role $contributorRoleId --scope $resourceGroupScope
+
+    # Create a federated credential
     az identity federated-credential create --name $federatedCredentialName --identity-name $identityName --resource-group $grp --issuer $issuerUrl --subject $subjectIdentifier --audiences $audience
     ```    
 
@@ -40,3 +47,17 @@
     ![create](_images/create-details.jpg)
 
 - Adjust RBAC permissions on Resource Group as required. Role Ids are available [here](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles)
+
+## Use Workload identity in Azure DevOps
+
+- Examine pipeline `catalog-ci-cd-workload-identity.yml`. It uses `scWorkload`
+
+```yaml
+variables:
+  dotnetSdkVersion: "8.x"
+  buildConfiguration: Release
+  releaseBranchName: master
+  azSubscription: scWorkload
+  appPath: src/services/catalog-service/api/
+  appService: food-catalog-api-yaml
+```
