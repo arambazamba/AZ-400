@@ -1,7 +1,7 @@
 env=dev
-grp=az204-m07-secure-solutions-$env
+grp=az400-$env
 loc=westeurope
-vault=foodvault-rbac-$env
+vault=foodvaultxx-$env
 plan=foodplan-$env
 app=foodapi-$env
 

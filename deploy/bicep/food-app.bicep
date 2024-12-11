@@ -8,8 +8,6 @@ param catalogName string
 param catalogImage string
 param shopName string
 param shopImage string
-param orderName string
-param orderImage string
 
 module logWS 'modules/log-analytics.bicep' = {
   name: '${appName}logs'
@@ -65,27 +63,6 @@ module catalogApi 'modules/container-app.bicep' = {
   }
 }
 
-module orderApi 'modules/container-app.bicep' = {
-  name: orderName
-  params: {
-    name: orderName
-    location: rgLocation
-    containerAppEnvironmentId: containerAppEnvironment.outputs.id
-    containerImage: '${acrName}.azurecr.io/${orderImage}:latest'
-    containerPort: 8080
-    envVars: [
-      {
-        name: 'ApplicationInsights__ConnectionString'
-        value: appInsights.outputs.aiConnectionString
-      }
-    ]
-    useExternalIngress: true
-    registry: acrName
-    registryUsername: acrName
-    registryPassword: acrPwd
-  }
-}
-
 module shopUI 'modules/container-app.bicep' = {
   name: shopName
   params: {
@@ -98,10 +75,6 @@ module shopUI 'modules/container-app.bicep' = {
       {
         name: 'ENV_CATALOG_API_URL'
         value: 'https://${catalogApi.outputs.fqdn}'
-      }
-      {
-        name: 'ENV_ORDERS_API_URL'
-        value: 'https://${orderApi.outputs.fqdn}'
       }
       {
         name: 'ENV_APPLICATION_INSIGHTS'
