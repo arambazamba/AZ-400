@@ -2,6 +2,7 @@ env=dev
 grp=az400-$env
 loc=westeurope
 acr=az400acr$env
+acaenv=az400acaenv
 apiApp=catalog-service
 uiApp=food-shop
 apiImg=$acr.azurecr.io/$apiApp
@@ -28,4 +29,4 @@ az containerapp create -n $uiApp-$env -g $grp --image $uiImg \
     --registry-server $loginSrv \
     --registry-username $acr \
     --registry-password $pwd \
-    --env-vars ENV_API_URL=https://$apiUrl  
+    --env-vars ENV_CATALOG_API_URL=https://$apiUrl  
