@@ -3,14 +3,17 @@
 ## Demos
 
 - Release Pipelines
+    - Yaml based Deployment Jobs, Environments and Gates (optional)
+    - Using Templates
     - Azure Devops Service Connections
     - Designer based Release pipeline
         - Using Managed Identity in Service Connections (optional)
     - Node based Azure Function Deployment using yaml    
     - Container Deployments
-- Yaml based Deployment Jobs, Environments and Gates (optional)
-- Blue Green Deployment
-- Using Feature Toggles
+- Testing Strategies
+    - Unit Testing
+    - Load Testing (optional)
+    - Integration Testing (optional)
 - Database DevOps (optional)
 - LLMOps (optional)
 
