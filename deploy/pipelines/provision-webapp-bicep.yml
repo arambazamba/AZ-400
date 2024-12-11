@@ -42,7 +42,7 @@ stages:
             templateLocation: 'Linked artifact'
             csmFile: '$(templateFile)'
             deploymentMode: 'Incremental'
-            overrideParameters: '-webAppName $(appService) -location $(loc)'
+            overrideParameters: '-webAppName $(appService) '
         # - task: AzureCLI@2
         #   displayName: 'Provision AppService'
         #   inputs:
