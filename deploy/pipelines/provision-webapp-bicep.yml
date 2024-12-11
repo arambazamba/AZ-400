@@ -10,8 +10,10 @@ variables:
   azSubscription: scFood
   appPath: src/services/catalog-service/api/
   appService: catalog-service-bicep
-  rg: az400-dev
   templateFile: deploy/bicep/webapp-windows.bicep
+  rg: az400-dev
+  loc: westeurope
+  subscriptionId: 78033352-805c-4acd-af80-f8f95083268d
 
 pool:
   vmImage: "ubuntu-latest"
@@ -29,16 +31,28 @@ stages:
       
       - job: Provision
         steps:
-        - task: AzureCLI@2
-          displayName: 'Provision AppService'
+        - task: AzureResourceManagerTemplateDeployment@3
           inputs:
-            azureSubscription: '$(azSubscription)'
-            scriptType: 'bash'
-            scriptLocation: 'inlineScript'
-            inlineScript: |
-              az deployment group create --resource-group $(rg) \
-                --template-file $(templateFile) \
-                --parameters webAppName=$(appService)
+            deploymentScope: 'Resource Group'
+            azureResourceManagerConnection: 'scFood'
+            subscriptionId: '$(subscriptionId)'
+            action: 'Create Or Update Resource Group'
+            resourceGroupName: '$(rg)'
+            location: '$(loc)'
+            templateLocation: 'Linked artifact'
+            csmFile: '$(templateFile)'
+            deploymentMode: 'Incremental'
+            overrideParameters: '-webAppName $(appService) -location $(loc)'
+        # - task: AzureCLI@2
+        #   displayName: 'Provision AppService'
+        #   inputs:
+        #     azureSubscription: '$(azSubscription)'
+        #     scriptType: 'bash'
+        #     scriptLocation: 'inlineScript'
+        #     inlineScript: |
+        #       az deployment group create --resource-group $(rg) \
+        #         --template-file $(templateFile) \
+        #         --parameters webAppName=$(appService)
 
   - stage: Deploy
     displayName: Deploy
