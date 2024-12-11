@@ -12,7 +12,7 @@ variables:
   appService: catalog-service-bicep
   templateFile: deploy/bicep/webapp-windows.bicep
   rg: az400
-  loc: westeurope
+  loc: 'West Europe'
   subscriptionId: 78033352-805c-4acd-af80-f8f95083268d
 
 pool:
