@@ -19,26 +19,26 @@ $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";"
 # Set NuGet Source
 dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
-# Intall VS Code Extensions
-code --install-extension ms-dotnettools.csharp
-code --install-extension ms-vscode.powershell
-code --install-extension ms-vscode.azurecli
-code --install-extension ms-vscode.azure-account
-code --install-extension ms-azuretools.vscode-azureappservice
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-azuretools.vscode-azurefunctions
-code --install-extension GitHub.vscode-pull-request-github
-code --install-extension redhat.vscode-yaml
-code --install-extension bencoleman.armview
-code --install-extension mdickin.markdown-shortcuts
-code --install-extension mhutchie.git-graph 
-code --install-extension ms-azure-devops.azure-pipelines		
-code --install-extension ms-azuretools.vscode-azureterraform
-code --install-extension vs-publisher-1448185.keyoti-changeallendoflinesequence
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension msazurermtools.azurerm-vscode-tools
-code --install-extension ms-azuretools.vscode-bicep
-code --install-extension ms-azuretools.vscode-azurecontainerapps
+# Install VS Code Extensions
+winget install ms-dotnettools.csharp
+winget install ms-vscode.powershell
+winget install ms-vscode.azurecli
+winget install ms-vscode.azure-account
+winget install ms-azuretools.vscode-azureappservice
+winget install ms-azuretools.vscode-docker
+winget install ms-azuretools.vscode-azurefunctions
+winget install GitHub.vscode-pull-request-github
+winget install redhat.vscode-yaml
+winget install bencoleman.armview
+winget install mdickin.markdown-shortcuts
+winget install mhutchie.git-graph
+winget install ms-azure-devops.azure-pipelines
+winget install ms-azuretools.vscode-azureterraform
+winget install vs-publisher-1448185.keyoti-changeallendoflinesequence
+winget install ms-kubernetes-tools.vscode-kubernetes-tools
+winget install msazurermtools.azurerm-vscode-tools
+winget install ms-azuretools.vscode-bicep
+winget install ms-azuretools.vscode-azurecontainerapps
 
 # Azurite Storage Emulator
 npm install -g azurite
